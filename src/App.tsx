@@ -7,11 +7,14 @@ import theme from "./Style/Theme/theme";
 // CSS
 import "./Style/ResetCSS/reset.css";
 
+// Components
+import HeaderLoggedOut from "./components/Header/HeaderLoggedOut/HeaderLoggedOut";
+
 function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <h1>Hello World</h1>
+        <HeaderLoggedOut />
       </ThemeProvider>
     </>
   );
