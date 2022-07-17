@@ -5,6 +5,8 @@ import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem"; // @ts-ignore
 import PopupState, { bindTrigger, bindMenu } from "material-ui-popup-state";
+// icons
+import { FaCat } from "react-icons/fa";
 
 function HeaderLoggedOut() {
   const theme = useTheme();
@@ -14,7 +16,8 @@ function HeaderLoggedOut() {
         <PopupState variant="popover" popupId="demo-popup-menu">
           {(popupState: any) => (
             <React.Fragment>
-              <Button sx={{ height: "3rem", backgroundColor: theme.palette.primary.main , border: "none" , boxShadow: "none" }} variant="contained" {...bindTrigger(popupState)}>
+              <Button sx={{ height: "3rem", backgroundColor: theme.palette.primary.main, border: "none", boxShadow: "none" }} variant="contained" {...bindTrigger(popupState)}>
+                <FaCat />
                 گربه
               </Button>
               <Menu {...bindMenu(popupState)}>

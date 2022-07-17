@@ -4,11 +4,11 @@ import React from "react";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "./Style/Theme/theme";
 
-// CSS
-import "./Style/ResetCSS/reset.css";
-
 // Components
 import HeaderLoggedOut from "./components/Header/HeaderLoggedOut/HeaderLoggedOut";
+
+// CSS
+import "./Style/ResetCSS/reset.css";
 
 function App() {
   return (

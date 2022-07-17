@@ -1,4 +1,20 @@
+@font-face {
+    font-family: "Shabnam";
+    src: url("../../../public/font/Shabnam.woff");
+    font-weight: normal;
+  }
+@font-face {
+    font-family: "Shabnam";
+    src: url("../../../public/font/Shabnam-Light.woff");
+    font-weight: 300;
+  }
+@font-face {
+    font-family: "Shabnam";
+    src: url("../../../public/font/Shabnam-Bold.woff");
+    font-weight: bold;
+  }
 *{
+    font-family: "Shabnam" , Arial, Helvetica, sans-serif !important;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
