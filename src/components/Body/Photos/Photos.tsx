@@ -2,6 +2,7 @@ import { Box, styled } from "@mui/material";
 import Tooltip, { TooltipProps, tooltipClasses } from "@mui/material/Tooltip";
 import Fade from "@mui/material/Fade";
 import React from "react";
+import "../../../Style/card-animation/animation.css";
 
 // images
 import cat from "../../../images/cat.jpg";
@@ -22,16 +23,16 @@ function Photos() {
     <>
       <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center", width: "100%", flexWrap: "wrap", flexDirection: "row-reverse" }}>
         <LightTooltip title="خرید لوازم گربه" TransitionComponent={Fade} TransitionProps={{ timeout: 600 }} followCursor>
-          <Box sx={{ height: "31.25rem", width: { sm: "100%", md: "50%", lg: "25%" }, cursor: "pointer", "&:hover": { transform: "scale(1.1,1.1)", borderRadius: "16px", border: "5px solid #005B9F" } }} component="img" src={cat} alt="cat" />
+          <Box sx={{ height: "31.25rem", width: { sm: "100%", md: "50%", lg: "25%" }, cursor: "pointer", animationName: "cardAnimation", animationDuration: "2s", "&:hover": { transform: "scale(1.1,1.1)", borderRadius: "16px", border: "5px solid #005B9F" } }} component="img" src={cat} alt="cat" />
         </LightTooltip>
         <LightTooltip title="خرید لوازم سگ" TransitionComponent={Fade} TransitionProps={{ timeout: 600 }} followCursor>
-          <Box sx={{ height: "31.25rem", width: { sm: "100%", md: "50%", lg: "25%" }, cursor: "pointer", "&:hover": { transform: "scale(1.1,1.1)", borderRadius: "16px", border: "5px solid #005B9F" } }} component="img" src={dog} alt="dog" />
+          <Box sx={{ height: "31.25rem", width: { sm: "100%", md: "50%", lg: "25%" }, cursor: "pointer", animationName: "cardAnimation", animationDuration: "2.5s", "&:hover": { transform: "scale(1.1,1.1)", borderRadius: "16px", border: "5px solid #005B9F" } }} component="img" src={dog} alt="dog" />
         </LightTooltip>
         <LightTooltip title="خرید لوازم پرندگان" TransitionComponent={Fade} TransitionProps={{ timeout: 600 }} followCursor>
-          <Box sx={{ height: "31.25rem", width: { sm: "100%", md: "50%", lg: "25%" }, cursor: "pointer", "&:hover": { transform: "scale(1.1,1.1)", borderRadius: "16px", border: "5px solid #005B9F" } }} component="img" src={bird} alt="bird" />
+          <Box sx={{ height: "31.25rem", width: { sm: "100%", md: "50%", lg: "25%" }, cursor: "pointer", animationName: "cardAnimation", animationDuration: "3s", "&:hover": { transform: "scale(1.1,1.1)", borderRadius: "16px", border: "5px solid #005B9F" } }} component="img" src={bird} alt="bird" />
         </LightTooltip>
         <LightTooltip title="خرید لوازم جوندگان" TransitionComponent={Fade} TransitionProps={{ timeout: 600 }} followCursor>
-          <Box sx={{ height: "31.25rem", width: { sm: "100%", md: "50%", lg: "25%" }, cursor: "pointer", "&:hover": { transform: "scale(1.1,1.1)", borderRadius: "16px", border: "5px solid #005B9F" } }} component="img" src={pig} alt="rodents" />
+          <Box sx={{ height: "31.25rem", width: { sm: "100%", md: "50%", lg: "25%" }, cursor: "pointer", animationName: "cardAnimation", animationDuration: "3.5s", "&:hover": { transform: "scale(1.1,1.1)", borderRadius: "16px", border: "5px solid #005B9F" } }} component="img" src={pig} alt="rodents" />
         </LightTooltip>
       </Box>
     </>

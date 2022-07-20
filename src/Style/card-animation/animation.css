@@ -1,0 +1,4 @@
+@keyframes cardAnimation {
+    0%   {transform:translateX(400%)}
+    100% {transform:translateX(0)}
+  }
