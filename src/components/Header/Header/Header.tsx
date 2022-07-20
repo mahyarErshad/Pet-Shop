@@ -122,7 +122,7 @@ export default function PrimarySearchAppBar() {
   );
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1 , marginBottom: "0.5rem"}}>
       <AppBar position="static">
         <Toolbar>
           <IconButton sx={{ margin: "0 0.5rem" }} size="large" aria-label="show 17 new notifications" color="inherit">
