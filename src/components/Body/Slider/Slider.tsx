@@ -11,10 +11,21 @@ import "../../../Style/slider/slider.css";
 
 // import required modules
 import { EffectCoverflow, Pagination, Navigation } from "swiper";
+import { Divider, styled, Typography } from "@mui/material";
 
 export default function Slider() {
+  const Root = styled("div")(({ theme }) => ({
+    width: "100%",
+    ...theme.typography.body2,
+    "& > :not(style) + :not(style)": {
+    },
+  }));
+  const content = <Typography variant="h5">برندهای موجود در سایت</Typography>;
   return (
     <>
+      <Root>
+        <Divider textAlign="right">{content}</Divider>
+      </Root>
       <Swiper
         rewind={true}
         effect={"coverflow"}
