@@ -1,10 +1,15 @@
+import { Box } from "@mui/material";
 import React from "react";
 import Photos from "../Photos/Photos";
+import Slider from "../Slider/Slider";
 
 function Main() {
   return (
     <>
-      <Photos />
+      <Box sx={{ width: "100%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
+        <Photos />
+        <Slider />
+      </Box>
     </>
   );
 }
