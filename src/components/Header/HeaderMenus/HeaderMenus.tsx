@@ -25,11 +25,11 @@ function HeaderMenus(props: Iprops) {
       <PopupState variant="popover" popupId="demo-popup-menu">
         {(popupState: any) => (
           <React.Fragment>
-            <Button sx={{ height: "3rem", backgroundColor: theme.palette.primary.main, border: "none", boxShadow: "none", display: "flex", justifyContent: "space-between", alignItems: "center" }} variant="contained" {...bindTrigger(popupState)}>
+            <Button sx={{ height: "3rem", backgroundColor: theme.palette.primary.main, border: "none", boxShadow: "none", display: "flex", justifyContent: "space-between", alignItems: "center" , gap: "0.5rem" }} variant="contained" {...bindTrigger(popupState)}>
               <Typography align="center" sx={{ fontSize: "1rem", fontWeight: "bold" }}>
                 گربه
               </Typography>
-              <GiCat />
+              <GiCat fontSize={20} />
             </Button>
             <Menu sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", direction: "rtl" }} {...bindMenu(popupState)}>
               <MenuItem onClick={popupState.close}>غذای گربه</MenuItem>
@@ -43,11 +43,11 @@ function HeaderMenus(props: Iprops) {
       <PopupState variant="popover" popupId="demo-popup-menu">
         {(popupState: any) => (
           <React.Fragment>
-            <Button sx={{ height: "3rem", backgroundColor: theme.palette.primary.main, border: "none", boxShadow: "none", display: "flex", justifyContent: "space-between", alignItems: "center" }} variant="contained" {...bindTrigger(popupState)}>
+            <Button sx={{ height: "3rem", backgroundColor: theme.palette.primary.main, border: "none", boxShadow: "none", display: "flex", justifyContent: "space-between", alignItems: "center" , gap: "0.5rem" }} variant="contained" {...bindTrigger(popupState)}>
               <Typography align="center" sx={{ fontSize: "1rem", fontWeight: "bold" }}>
                 سگ
               </Typography>
-              <GiSittingDog />
+              <GiSittingDog fontSize={20} />
             </Button>
             <Menu sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", direction: "rtl" }} {...bindMenu(popupState)}>
               <MenuItem onClick={popupState.close}>غذای سگ</MenuItem>
@@ -60,11 +60,11 @@ function HeaderMenus(props: Iprops) {
       <PopupState variant="popover" popupId="demo-popup-menu">
         {(popupState: any) => (
           <React.Fragment>
-            <Button sx={{ height: "3rem", backgroundColor: theme.palette.primary.main, border: "none", boxShadow: "none", display: "flex", justifyContent: "space-between", alignItems: "center" }} variant="contained" {...bindTrigger(popupState)}>
+            <Button sx={{ height: "3rem", backgroundColor: theme.palette.primary.main, border: "none", boxShadow: "none", display: "flex", justifyContent: "space-between", alignItems: "center" , gap: "0.5rem" }} variant="contained" {...bindTrigger(popupState)}>
               <Typography align="center" sx={{ fontSize: "1rem", fontWeight: "bold" }}>
                 پرندگان
               </Typography>
-              <GiHummingbird />
+              <GiHummingbird fontSize={20} />
             </Button>
             <Menu sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", direction: "rtl" }} {...bindMenu(popupState)}>
               <MenuItem onClick={popupState.close}>غذای پرندگان</MenuItem>
@@ -77,11 +77,11 @@ function HeaderMenus(props: Iprops) {
       <PopupState variant="popover" popupId="demo-popup-menu">
         {(popupState: any) => (
           <React.Fragment>
-            <Button sx={{ height: "3rem", backgroundColor: theme.palette.primary.main, border: "none", boxShadow: "none", display: "flex", justifyContent: "space-between", alignItems: "center" }} variant="contained" {...bindTrigger(popupState)}>
+            <Button sx={{ height: "3rem", backgroundColor: theme.palette.primary.main, border: "none", boxShadow: "none", display: "flex", justifyContent: "space-between", alignItems: "center" , gap: "0.5rem"}} variant="contained" {...bindTrigger(popupState)}>
               <Typography align="center" sx={{ fontSize: "1rem", fontWeight: "bold" }}>
                 جوندگان
               </Typography>
-              <GiSquirrel />
+              <GiSquirrel fontSize={20} />
             </Button>
             <Menu sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", direction: "rtl" }} {...bindMenu(popupState)}>
               <MenuItem onClick={popupState.close}>غذای جوندگان</MenuItem>
