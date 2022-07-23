@@ -20,11 +20,11 @@ const theme = createTheme({
       main: "#fff",
     },
     secondary: {
-      main: "#005B9F",
+      main: "#532482",
     },
   },
   accent: {
-    red: "#EF394E",
+    red: "#FFB929",
   },
 });
 
