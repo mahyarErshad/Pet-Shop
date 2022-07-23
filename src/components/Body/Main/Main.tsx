@@ -6,7 +6,7 @@ import Slider from "../Slider/Slider";
 function Main() {
   return (
     <>
-      <Box sx={{ width: "100%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
+      <Box sx={{ width: "100%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", mt: "4.5rem" }}>
         <Photos />
         <Slider />
       </Box>
