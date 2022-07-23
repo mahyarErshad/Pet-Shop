@@ -6,7 +6,7 @@ function Footer() {
   const theme = useTheme();
   return (
     <>
-      <Box sx={{ mt: "0.5rem", backgroundColor: theme.palette.primary.main, p: "0.5rem", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
+      <Box sx={{ borderTop: `0.0625rem solid ${theme.palette.secondary.main}`, mt: "0.5rem", backgroundColor: theme.palette.primary.main, p: "0.5rem", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
         <FooterPhotos />
       </Box>
     </>
