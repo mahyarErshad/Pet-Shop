@@ -1,5 +1,6 @@
 import { Box, Typography, useTheme } from "@mui/material";
 import React from "react";
+import { Link } from "react-router-dom";
 
 function FooterTexts() {
   const theme = useTheme();
@@ -27,10 +28,19 @@ function FooterTexts() {
     textAlign: "justify",
     textJustify: "inter - word",
   };
+  const linkStyle = { textDecoration: "none" };
+  function goToTop() {
+    window.scrollTo(0, 0);
+  }
   return (
     <>
       <Box sx={{ p: "1rem", mt: "1.5rem", mb: "1.5rem", width: "100%", display: "flex", flexDirection: "row-reverse", flexWrap: "wrap", alignItems: "flex-start", justifyContent: "space-between", gap: "0.5rem" }}>
         <Box sx={{ width: "30%", display: "flex", flexDirection: "column", alignItems: "flex-end", justifyContent: "center", gap: "0.7rem" }}>
+          <Link to="/" style={linkStyle}>
+            <Typography onClick={() => goToTop()} sx={fontStyle}>
+              صفحه اصلی
+            </Typography>
+          </Link>
           <Typography sx={fontStyle}>رویه ارسال سفارش</Typography>
           <Typography sx={fontStyle}>شیوه های پرداخت</Typography>
           <Typography sx={fontStyle}>قوانین و مقررات سایت</Typography>
