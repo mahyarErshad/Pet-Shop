@@ -9,8 +9,13 @@ import Header from "./components/Header/Header/Header";
 import Main from "./components/Body/Main/Main/Main";
 import Footer from "./components/Footer/Main/Footer";
 
+//pages
+import Register from "./pages/Register";
+
 // CSS
 import "./Style/ResetCSS/reset.css";
+
+// utils
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
@@ -21,6 +26,7 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" element={<Main />} />
+            <Route path="/register" element={<Register />} />
           </Routes>
           <Footer />
         </BrowserRouter>
