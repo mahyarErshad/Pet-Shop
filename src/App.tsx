@@ -14,6 +14,7 @@ import Register from "./pages/Register/Register/Register";
 
 // CSS
 import "./Style/ResetCSS/reset.css";
+import "./Style/global/style.css";
 
 // utils
 import { BrowserRouter, Route, Routes } from "react-router-dom";
