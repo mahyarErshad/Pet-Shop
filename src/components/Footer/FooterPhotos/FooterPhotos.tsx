@@ -18,6 +18,7 @@ function FooterPhotos() {
   const fontStyle = {
     fontSize: "0.8rem",
     fontWeight: "bold",
+    direction: "rtl",
   };
   return (
     <>
