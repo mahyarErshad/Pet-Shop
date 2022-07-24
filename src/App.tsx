@@ -10,7 +10,7 @@ import Main from "./components/Body/Main/Main/Main";
 import Footer from "./components/Footer/Main/Footer";
 
 //pages
-import Register from "./pages/Register";
+import Register from "./pages/Register/Register/Register";
 
 // CSS
 import "./Style/ResetCSS/reset.css";
