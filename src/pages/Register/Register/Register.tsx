@@ -4,6 +4,7 @@ import Login from "../Login/Login";
 import Signup from "../Signup/Signup";
 
 function Register() {
+  document.title = "حساب کاربری من";
   return (
     <>
       <Box sx={{ width: "100%", display: "flex", flexDirection: "row", flexWrap: "wrap" }}>
