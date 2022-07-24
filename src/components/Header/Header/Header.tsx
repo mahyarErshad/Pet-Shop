@@ -119,7 +119,7 @@ export default function PrimarySearchAppBar() {
             </IconButton>
           </Box>
           <Box sx={{ mt: "1rem" }}>
-            <Link to="/">
+            <Link className="noDecoration" to="/">
               <LightTooltip title="بازگشت به صفحه اصلی" TransitionComponent={Fade} TransitionProps={{ timeout: 600 }} followCursor>
                 <Box component="img" src={logo} alt="Home" sx={{ height: "3rem", backgroundColor: theme.palette.primary.main, border: `2px solid ${theme.palette.secondary.main}`, borderRadius: "50%" }} />
               </LightTooltip>

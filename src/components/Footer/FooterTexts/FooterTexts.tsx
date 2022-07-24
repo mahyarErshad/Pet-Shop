@@ -28,7 +28,6 @@ function FooterTexts() {
     textAlign: "justify",
     textJustify: "inter - word",
   };
-  const linkStyle = { textDecoration: "none" };
   function goToTop() {
     window.scrollTo(0, 0);
   }
@@ -36,7 +35,7 @@ function FooterTexts() {
     <>
       <Box sx={{ p: "1rem", mt: "1.5rem", mb: "1.5rem", width: "100%", display: "flex", flexDirection: "row-reverse", flexWrap: "wrap", alignItems: "flex-start", justifyContent: "space-between", gap: "0.5rem" }}>
         <Box sx={{ width: "30%", display: "flex", flexDirection: "column", alignItems: "flex-end", justifyContent: "center", gap: "0.7rem" }}>
-          <Link to="/" style={linkStyle}>
+          <Link to="/" className="noDecoration">
             <Typography onClick={() => goToTop()} sx={fontStyle}>
               صفحه اصلی
             </Typography>
