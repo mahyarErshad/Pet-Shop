@@ -14,7 +14,6 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Button, ButtonBase, Typography } from "@mui/material";
 import HeaderMenus from "../HeaderMenus/HeaderMenus";
-import { Link as RouterLink } from "react-router-dom";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -132,7 +131,7 @@ export default function PrimarySearchAppBar() {
             </Badge>
           </IconButton>
           <ButtonBase>
-            <Button component={RouterLink} variant="contained" color="secondary" to="/register">
+            <Button variant="contained" color="secondary">
               <Typography sx={{ textOverflow: "ellipsis", whiteSpace: "nowrap", overflow: "hidden" }}>ورود / عضویت</Typography>
             </Button>
           </ButtonBase>
