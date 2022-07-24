@@ -1,6 +1,7 @@
 import { Box, Typography, useTheme } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
+import "../../../Style/global/style.css";
 
 function FooterTexts() {
   const theme = useTheme();
@@ -29,7 +30,10 @@ function FooterTexts() {
     textJustify: "inter - word",
   };
   function goToTop() {
-    window.scrollTo(0, 0);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   }
   return (
     <>

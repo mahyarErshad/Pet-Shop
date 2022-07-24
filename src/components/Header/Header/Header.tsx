@@ -13,6 +13,7 @@ import { Button, ButtonBase, Fade, styled, Tooltip, tooltipClasses, TooltipProps
 import HeaderMenus from "../HeaderMenus/HeaderMenus";
 import { Link } from "react-router-dom";
 import logo from "../../../images/logo.png";
+import "../../../Style/global/style.css";
 
 export default function PrimarySearchAppBar() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -99,7 +100,7 @@ export default function PrimarySearchAppBar() {
             </Badge>
           </IconButton>
           <ButtonBase>
-            <Link to="/register">
+            <Link className="noDecoration" to="/register">
               <Button variant="contained" color="secondary">
                 <Typography sx={{ textOverflow: "ellipsis", whiteSpace: "nowrap", overflow: "hidden" }}>ورود / عضویت</Typography>
               </Button>
@@ -118,8 +119,8 @@ export default function PrimarySearchAppBar() {
               <MenuIcon />
             </IconButton>
           </Box>
-          <Box sx={{ mt: "1rem" }}>
-            <Link className="noDecoration" to="/">
+          <Box sx={{ mt: "1rem", marginLeft: "0.5rem" }}>
+            <Link to="/">
               <LightTooltip title="بازگشت به صفحه اصلی" TransitionComponent={Fade} TransitionProps={{ timeout: 600 }} followCursor>
                 <Box component="img" src={logo} alt="Home" sx={{ height: "3rem", backgroundColor: theme.palette.primary.main, border: `2px solid ${theme.palette.secondary.main}`, borderRadius: "50%" }} />
               </LightTooltip>

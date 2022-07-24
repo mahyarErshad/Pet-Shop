@@ -1,22 +1,24 @@
 @font-face {
-    font-family: Yekan;
-    src: url("../../../public/font/IRYekan.ttf");
-    font-weight: normal;
-  }
-@font-face {
-    font-family: Yekan;
-    src: url("../../../public/font/IRYekanBold.ttf");
-    font-weight: bold;
-  }
-*{
-    font-family: Yekan , Arial, Helvetica, sans-serif !important;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  font-family: Yekan;
+  src: url("../../../public/font/IRYekan.ttf");
+  font-weight: normal;
 }
-html , body , #root{
-    height: 100%;
-    width: 100%;
-    min-width: 320px;
-    background-color: #fff;
+@font-face {
+  font-family: Yekan;
+  src: url("../../../public/font/IRYekanBold.ttf");
+  font-weight: bold;
+}
+* {
+  font-family: Yekan, Arial, Helvetica, sans-serif !important;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  min-width: 320px;
+  background-color: #fff;
 }
