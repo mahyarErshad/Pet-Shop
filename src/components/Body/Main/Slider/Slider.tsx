@@ -7,21 +7,21 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "swiper/css/bundle";
-import "../../../Style/slider/slider.css";
+import "../../../../Style/slider/slider.css";
 
 // import required modules
 import { EffectCoverflow, Pagination, Navigation, Autoplay } from "swiper";
 import { Divider, styled, Typography } from "@mui/material";
 
 // slider photos
-import royal from "../../../images/slider/royal.png";
-import clauder from "../../../images/slider/clauder.jpg";
-import josera from "../../../images/slider/josera.png";
-import happycat from "../../../images/slider/happycat.png";
-import jerhigh from "../../../images/slider/jerhigh.jpg";
-import reflex from "../../../images/slider/reflex.png";
-import trxie from "../../../images/slider/trxie.png";
-import bephar from "../../../images/slider/bephar.jpg";
+import royal from "../../../../images/slider/royal.png";
+import clauder from "../../../../images/slider/clauder.jpg";
+import josera from "../../../../images/slider/josera.png";
+import happycat from "../../../../images/slider/happycat.png";
+import jerhigh from "../../../../images/slider/jerhigh.jpg";
+import reflex from "../../../../images/slider/reflex.png";
+import trxie from "../../../../images/slider/trxie.png";
+import bephar from "../../../../images/slider/bephar.jpg";
 
 export default function Slider() {
   const Root = styled("div")(({ theme }) => ({

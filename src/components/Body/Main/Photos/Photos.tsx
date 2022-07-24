@@ -2,13 +2,13 @@ import { Box, styled } from "@mui/material";
 import Tooltip, { TooltipProps, tooltipClasses } from "@mui/material/Tooltip";
 import Fade from "@mui/material/Fade";
 import React from "react";
-import "../../../Style/card-animation/animation.css";
+import "../../../../Style/card-animation/animation.css";
 
 // images
-import cat from "../../../images/cat.jpg";
-import dog from "../../../images/dog.jpg";
-import bird from "../../../images/bird.jpg";
-import pig from "../../../images/pig.jpg";
+import cat from "../../../../images/cat.jpg";
+import dog from "../../../../images/dog.jpg";
+import bird from "../../../../images/bird.jpg";
+import pig from "../../../../images/pig.jpg";
 
 function Photos() {
   const LightTooltip = styled(({ className, ...props }: TooltipProps) => <Tooltip {...props} classes={{ popper: className }} />)(({ theme }) => ({

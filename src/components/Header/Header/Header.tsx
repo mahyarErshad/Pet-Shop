@@ -14,6 +14,7 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Button, ButtonBase, Typography } from "@mui/material";
 import HeaderMenus from "../HeaderMenus/HeaderMenus";
+import { Link as RouterLink } from "react-router-dom";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -117,12 +118,12 @@ export default function PrimarySearchAppBar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-        <HeaderMenus flexRow={false} />
+      <HeaderMenus flexRow={false} />
     </Menu>
   );
 
   return (
-    <Box sx={{ flexGrow: 1 , marginBottom: "0.5rem"}}>
+    <Box sx={{ flexGrow: 1, marginBottom: "0.5rem" }}>
       <AppBar position="static">
         <Toolbar>
           <IconButton sx={{ margin: "0 0.5rem" }} size="large" aria-label="show 17 new notifications" color="inherit">
@@ -131,7 +132,7 @@ export default function PrimarySearchAppBar() {
             </Badge>
           </IconButton>
           <ButtonBase>
-            <Button variant="contained" color="secondary">
+            <Button component={RouterLink} variant="contained" color="secondary" to="/register">
               <Typography sx={{ textOverflow: "ellipsis", whiteSpace: "nowrap", overflow: "hidden" }}>ورود / عضویت</Typography>
             </Button>
           </ButtonBase>
@@ -147,7 +148,7 @@ export default function PrimarySearchAppBar() {
           </Search>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <HeaderMenus flexRow={true}/>
+            <HeaderMenus flexRow={true} />
           </Box>
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
             <IconButton size="large" aria-label="show more" aria-controls={mobileMenuId} aria-haspopup="true" onClick={handleMobileMenuOpen} color="inherit">

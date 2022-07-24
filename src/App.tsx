@@ -6,7 +6,7 @@ import theme from "./Style/Theme/theme";
 
 // Components
 import Header from "./components/Header/Header/Header";
-import Main from "./components/Body/Main/Main";
+import Body from "./components/Body/Body/Body";
 import Footer from "./components/Footer/Main/Footer";
 
 // CSS
@@ -17,7 +17,7 @@ function App() {
     <>
       <ThemeProvider theme={theme}>
         <Header />
-        <Main />
+        <Body />
         <Footer />
       </ThemeProvider>
     </>
