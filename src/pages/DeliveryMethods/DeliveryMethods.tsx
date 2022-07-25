@@ -3,6 +3,7 @@ import React from "react";
 import delivery from "../../images/delivery.jpg";
 
 function DeliveryMethods() {
+  document.title = "روش های ارسال";
   const fontStyle = {
     fontSize: "0.875rem",
     fontWeight: "normal",
