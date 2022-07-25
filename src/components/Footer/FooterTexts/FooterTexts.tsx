@@ -45,7 +45,9 @@ function FooterTexts() {
             </Typography>
           </Link>
           <Link to="/delivery-methods" className="noDecoration">
-            <Typography sx={fontStyle}>رویه ارسال سفارش</Typography>
+            <Typography sx={fontStyle} onClick={() => goToTop()}>
+              رویه ارسال سفارش
+            </Typography>
           </Link>
           <Typography sx={fontStyle}>شیوه های پرداخت</Typography>
           <Typography sx={fontStyle}>قوانین و مقررات سایت</Typography>
