@@ -49,7 +49,11 @@ function FooterTexts() {
               رویه ارسال سفارش
             </Typography>
           </Link>
-          <Typography sx={fontStyle}>شیوه های پرداخت</Typography>
+          <Link to="/payment-methods" className="noDecoration">
+            <Typography onClick={() => goToTop()} sx={fontStyle}>
+              شیوه های پرداخت
+            </Typography>
+          </Link>
           <Typography sx={fontStyle}>قوانین و مقررات سایت</Typography>
           <Typography sx={fontStyle}>تماس با ما</Typography>
         </Box>

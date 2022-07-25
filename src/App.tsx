@@ -13,6 +13,7 @@ import Footer from "./components/Footer/Main/Footer";
 import Register from "./pages/Register/Register/Register";
 import NotFound from "./pages/NotFound/NotFound";
 import DeliveryMethods from "./pages/DeliveryMethods/DeliveryMethods";
+import PaymentMethods from "./pages/PaymentMethods/PaymentMethods";
 
 // CSS
 import "./Style/ResetCSS/reset.css";
@@ -31,6 +32,7 @@ function App() {
             <Route path="/" element={<Main />} />
             <Route path="/register" element={<Register />} />
             <Route path="/delivery-methods" element={<DeliveryMethods />} />
+            <Route path="/payment-methods" element={<PaymentMethods />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />
