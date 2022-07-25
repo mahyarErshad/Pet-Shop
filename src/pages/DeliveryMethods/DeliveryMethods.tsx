@@ -1,5 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
+import delivery from "../../images/delivery.jpg";
 
 function DeliveryMethods() {
   const fontStyle = {
@@ -12,7 +13,8 @@ function DeliveryMethods() {
   };
   return (
     <>
-      <Box sx={{ width: "100%", py: "1rem", px: "3rem", direction: "rtl", mb: "1rem" }}>
+      <Box sx={{ width: "100%", py: "1rem", px: "3rem", direction: "rtl", mb: "1rem", display: "flex", flexDirection: "column" }}>
+        <Box component="img" src={delivery} alt="delivery" sx={{ mb: "0.5rem", alignSelf: "center" }} />
         <Typography sx={fontStyle}>
           {" "}
           <strong>هزینه ارسال: </strong>هزینه ارسال برای خرید بالای ۵۰۰ هزار تومان به سراسرکشور <strong>رایگان</strong> است و برای خرید های کم تر از ۵۰۰ هزار تومان ۲۹ هزار تومان می باشد (وزن و ابعاد بسته اهمیتی ندارد).
