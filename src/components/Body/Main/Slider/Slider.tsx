@@ -26,6 +26,7 @@ import bephar from "../../../../images/slider/bephar.jpg";
 export default function Slider() {
   const Root = styled("div")(({ theme }) => ({
     width: "100%",
+    marginBottom: "0.5rem",
     ...theme.typography.body2,
     "& > :not(style) + :not(style)": {},
   }));
