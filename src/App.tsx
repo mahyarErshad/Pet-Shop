@@ -11,6 +11,7 @@ import Footer from "./components/Footer/Main/Footer";
 
 //pages
 import Register from "./pages/Register/Register/Register";
+import NotFound from "./pages/NotFound/NotFound";
 
 // CSS
 import "./Style/ResetCSS/reset.css";
@@ -28,6 +29,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Main />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/*" element={<NotFound />} />
           </Routes>
           <Footer />
         </BrowserRouter>
