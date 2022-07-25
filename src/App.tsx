@@ -19,7 +19,6 @@ import "./Style/global/style.css";
 
 // utils
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Loading from "./pages/Loading/Loading";
 
 function App() {
   return (
@@ -30,7 +29,6 @@ function App() {
           <Routes>
             <Route path="/" element={<Main />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/loading" element={<Loading />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />
