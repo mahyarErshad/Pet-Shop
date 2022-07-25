@@ -44,7 +44,9 @@ function FooterTexts() {
               صفحه اصلی
             </Typography>
           </Link>
-          <Typography sx={fontStyle}>رویه ارسال سفارش</Typography>
+          <Link to="/delivery-methods" className="noDecoration">
+            <Typography sx={fontStyle}>رویه ارسال سفارش</Typography>
+          </Link>
           <Typography sx={fontStyle}>شیوه های پرداخت</Typography>
           <Typography sx={fontStyle}>قوانین و مقررات سایت</Typography>
           <Typography sx={fontStyle}>تماس با ما</Typography>
