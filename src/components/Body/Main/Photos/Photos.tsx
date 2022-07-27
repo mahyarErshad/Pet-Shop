@@ -23,7 +23,7 @@ function Photos() {
   const birdAndPigsStyle = { height: { xs: "15.625rem", md: "31.25rem" }, width: { xs: "100%", sm: "50%", md: "50%", lg: "25%" }, cursor: "pointer", animationName: "cardAnimation", animationDuration: "3s", "&:hover": { zIndex: "2", transform: "scale(1.1,1.1)", borderRadius: "16px", border: "5px solid #FFB929", mb: { xs: "1rem", lg: "0.5rem" } }, transition: " 0.3s all" };
   return (
     <>
-      <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center", width: "100%", flexWrap: "wrap", flexDirection: "row-reverse", marginBottom: "0.5rem", overflowX: "hidden" }}>
+      <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center", width: "100%", flexWrap: "wrap", flexDirection: "row-reverse", marginBottom: "0.5rem" }}>
         <LightTooltip title="خرید لوازم گربه" TransitionComponent={Fade} TransitionProps={{ timeout: 600 }} followCursor>
           <Box sx={catAndDogStyle} component="img" src={cat} alt="cat" />
         </LightTooltip>
