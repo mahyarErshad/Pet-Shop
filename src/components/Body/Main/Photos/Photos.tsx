@@ -19,21 +19,21 @@ function Photos() {
       fontSize: 11,
     },
   }));
-  const photoStyle = { height: { xs: "15.625rem", md: "31.25rem" }, width: { xs: "100%", sm: "50%", md: "50%", lg: "25%" }, cursor: "pointer", animationName: { lg: "cardAnimation", md: "" }, animationDuration: "2s", "&:hover": { zIndex: "2", transform: "scale(1.1,1.1)", borderRadius: "16px", border: "2px solid #FFB929", transition: " 0.3s " } };
+  const photoStyle = { height: { xs: "15.625rem", md: "31.25rem" }, width: { xs: "100%", sm: "50%", md: "50%", lg: "25%" }, cursor: "pointer", animationName: { lg: "cardAnimation", md: "" }, "&:hover": { zIndex: "2", transform: "scale(1.1,1.1)", borderRadius: "16px", border: "2px solid #FFB929", transition: "all 0.3s " } };
   return (
     <>
       <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center", width: "100%", flexWrap: "wrap", flexDirection: "row-reverse", marginBottom: "0.5rem" }}>
         <LightTooltip title="خرید لوازم گربه" TransitionComponent={Fade} TransitionProps={{ timeout: 600 }} followCursor>
-          <Box sx={photoStyle} component="img" src={cat} alt="cat" />
+          <Box sx={{ ...photoStyle, animationDuration: "2s" }} component="img" src={cat} alt="cat" />
         </LightTooltip>
         <LightTooltip title="خرید لوازم سگ" TransitionComponent={Fade} TransitionProps={{ timeout: 600 }} followCursor>
-          <Box sx={photoStyle} component="img" src={dog} alt="dog" />
+          <Box sx={{ ...photoStyle, animationDuration: "2.5s" }} component="img" src={dog} alt="dog" />
         </LightTooltip>
         <LightTooltip title="خرید لوازم پرندگان" TransitionComponent={Fade} TransitionProps={{ timeout: 600 }} followCursor>
-          <Box sx={photoStyle} component="img" src={bird} alt="bird" />
+          <Box sx={{ ...photoStyle, animationDuration: "3s" }} component="img" src={bird} alt="bird" />
         </LightTooltip>
         <LightTooltip title="خرید لوازم جوندگان" TransitionComponent={Fade} TransitionProps={{ timeout: 600 }} followCursor>
-          <Box sx={photoStyle} component="img" src={pig} alt="rodents" />
+          <Box sx={{ ...photoStyle, animationDuration: "3.5s" }} component="img" src={pig} alt="rodents" />
         </LightTooltip>
       </Box>
     </>
