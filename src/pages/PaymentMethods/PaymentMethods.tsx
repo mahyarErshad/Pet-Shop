@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import { useTheme } from "@mui/system";
 import React from "react";
+import payment from "../../images/payment.jpg";
 
 function PaymentMethods() {
   document.title = "روش های پرداخت";
@@ -21,6 +22,7 @@ function PaymentMethods() {
   };
   return (
     <Box sx={{ width: "100%", py: "1rem", px: "3rem", direction: "rtl", mb: "1rem", display: "flex", flexDirection: "column" }}>
+      <Box component="img" src={payment} alt="payment" sx={{ my: "0.5rem", alignSelf: "center", width: "15.625rem", height: "15.625rem", borderRadius: "8px" }} />
       <Typography variant="h5">روش های پرداخت:</Typography>
       <Typography sx={titleStyle}>پرداخت اینترنتی:</Typography>
       <Typography sx={paragraphStyle}>
