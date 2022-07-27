@@ -19,8 +19,8 @@ function Photos() {
       fontSize: 11,
     },
   }));
-  const catAndDogStyle = { height: { xs: "15.625rem", md: "31.25rem" }, width: { xs: "100%", sm: "50%", md: "50%", lg: "25%" }, cursor: "pointer", animationName: "cardAnimation", animationDuration: "2s", "&:hover": { zIndex: "2", transform: "scale(1.1,1.1)", borderRadius: "16px", border: "5px solid #FFB929", mb: "1rem" }, transition: " 0.3s all" };
-  const birdAndPigsStyle = { height: { xs: "15.625rem", md: "31.25rem" }, width: { xs: "100%", sm: "50%", md: "50%", lg: "25%" }, cursor: "pointer", animationName: "cardAnimation", animationDuration: "3s", "&:hover": { zIndex: "2", transform: "scale(1.1,1.1)", borderRadius: "16px", border: "5px solid #FFB929", mb: { xs: "1rem", lg: "0.5rem" } }, transition: " 0.3s all" };
+  const catAndDogStyle = { height: { xs: "15.625rem", md: "31.25rem" }, width: { xs: "100%", sm: "50%", md: "50%", lg: "25%" }, cursor: "pointer", animationName: "cardAnimation", animationDuration: "2s", "&:hover": { zIndex: "2", transform: "scale(1.1,1.1)", borderRadius: "16px", border: "2px solid #FFB929", mb: "1rem", transition: " 0.3s all" } };
+  const birdAndPigsStyle = { height: { xs: "15.625rem", md: "31.25rem" }, width: { xs: "100%", sm: "50%", md: "50%", lg: "25%" }, cursor: "pointer", animationName: "cardAnimation", animationDuration: "3s", "&:hover": { zIndex: "2", transform: "scale(1.1,1.1)", borderRadius: "16px", border: "2px solid #FFB929", mb: { xs: "1rem", lg: "0.5rem" }, transition: " 0.3s all" } };
   return (
     <>
       <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center", width: "100%", flexWrap: "wrap", flexDirection: "row-reverse", marginBottom: "0.5rem" }}>
