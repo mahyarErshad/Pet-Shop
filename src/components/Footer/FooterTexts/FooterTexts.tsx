@@ -54,7 +54,11 @@ function FooterTexts() {
               شیوه های پرداخت
             </Typography>
           </Link>
-          <Typography sx={fontStyle}>قوانین و مقررات سایت</Typography>
+          <Link to="/terms" className="noDecoration">
+            <Typography onClick={() => goToTop()} sx={fontStyle}>
+              قوانین و مقررات سایت
+            </Typography>
+          </Link>
           <Typography sx={fontStyle}>تماس با ما</Typography>
         </Box>
         <Typography sx={paragraphStyle}>پت شاپ فینیکس به عنوان یکی از قدیمی‌ترین پت شاپ های اینترنتی با بیش از هزار محصول خارجی آماده پاسخگویی به همه ی نیازهای پت شماست. پت شاپ فینیکس، ویترینی از غذای سگ و غذای گربه با برندهای معتبر مانند: رویال کنین، جوسرا و ... همراه با طیف وسیعی از لوازم جانبی برای پت شماست. کالای مورد نیاز پت خود را میتوانید با چند کلیک انتخاب کنید و در سریع ترین زمان ممکن درب منزل تحویل بگیرید.</Typography>

@@ -15,6 +15,7 @@ import NotFound from "./pages/NotFound/NotFound";
 import DeliveryMethods from "./pages/DeliveryMethods/DeliveryMethods";
 import PaymentMethods from "./pages/PaymentMethods/PaymentMethods";
 import Loading from "./pages/Loading/Loading";
+import Terms from "./pages/Terms/Terms";
 
 // CSS
 import "./Style/ResetCSS/reset.css";
@@ -34,6 +35,7 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/delivery-methods" element={<DeliveryMethods />} />
             <Route path="/payment-methods" element={<PaymentMethods />} />
+            <Route path="/terms" element={<Terms />} />
             {/* for testing loading page */}
             <Route path="/loading" element={<Loading />} />
             <Route path="*" element={<NotFound />} />
