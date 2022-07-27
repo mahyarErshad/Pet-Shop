@@ -51,7 +51,7 @@ function FooterTexts() {
           </Link>
           <Link to="/payment-methods" className="noDecoration">
             <Typography onClick={() => goToTop()} sx={fontStyle}>
-              شیوه های پرداخت
+              روش های پرداخت
             </Typography>
           </Link>
           <Link to="/terms" className="noDecoration">

@@ -1,3 +1,6 @@
 .noDecoration {
   text-decoration: none !important;
 }
+.contact-icons:hover {
+  font-size: 4.2rem;
+}

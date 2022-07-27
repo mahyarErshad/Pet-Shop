@@ -16,6 +16,7 @@ import DeliveryMethods from "./pages/DeliveryMethods/DeliveryMethods";
 import PaymentMethods from "./pages/PaymentMethods/PaymentMethods";
 import Loading from "./pages/Loading/Loading";
 import Terms from "./pages/Terms/Terms";
+import Contact from "./pages/Contact/Contact";
 
 // CSS
 import "./Style/ResetCSS/reset.css";
@@ -36,6 +37,7 @@ function App() {
             <Route path="/delivery-methods" element={<DeliveryMethods />} />
             <Route path="/payment-methods" element={<PaymentMethods />} />
             <Route path="/terms" element={<Terms />} />
+            <Route path="/contact" element={<Contact />} />
             {/* for testing loading page */}
             <Route path="/loading" element={<Loading />} />
             <Route path="*" element={<NotFound />} />
