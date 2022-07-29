@@ -7,9 +7,9 @@ function Login() {
   return (
     <>
       <FormControl sx={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "1rem" }}>
-        <RegisterInputs label="Email" type="text" title="آدرس ایمیل: " />
+        <RegisterInputs focus={true} label="Email" type="text" title="آدرس ایمیل: " />
         <RegisterInputs label="Password" type="Password" title="گذر واژه: " />
-        <RegisterButton label="ورود" />
+        <RegisterButton title="ورود" />
       </FormControl>
     </>
   );

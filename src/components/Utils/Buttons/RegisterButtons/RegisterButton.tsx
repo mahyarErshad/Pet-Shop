@@ -1,18 +1,20 @@
 import React from "react";
-import { Typography, Button, ButtonBase } from "@mui/material";
+import { Box, Button, ButtonBase } from "@mui/material";
 
 interface IButton {
-  label: string;
+  title: string;
 }
 
 function RegisterButton(props: IButton) {
   const inputStyle = { width: { lg: "50%", md: "50%", xs: "75%" }, alignSelf: "flex-end" };
-  const label = props.label;
+  const title = props.title;
   return (
     <>
       <ButtonBase sx={inputStyle}>
         <Button sx={{ p: "0.5rem", width: "100%", alignSelf: "flex-end" }} variant="contained" color="secondary">
-          <Typography sx={{ textOverflow: "ellipsis", whiteSpace: "nowrap", overflow: "hidden" }}>{label}</Typography>
+          <Box component="label" sx={{ textOverflow: "ellipsis", whiteSpace: "nowrap", overflow: "hidden" }}>
+            {title}
+          </Box>
         </Button>
       </ButtonBase>
     </>
