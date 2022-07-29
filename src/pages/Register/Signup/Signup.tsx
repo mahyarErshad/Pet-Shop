@@ -1,7 +1,6 @@
-import { Typography, FormControl, Button, ButtonBase } from "@mui/material";
-
 import React from "react";
-import RegisterInputs from "../../../components/InputField/RegisterInputs/RegisterInputs";
+import { Typography, FormControl, Button, ButtonBase } from "@mui/material";
+import RegisterInputs from "../../../components/Utils/Inputs/RegisterInputs/RegisterInputs";
 
 function Signup() {
   const inputStyle = { width: { lg: "50%", md: "50%", xs: "75%" } };
@@ -12,7 +11,7 @@ function Signup() {
         <RegisterInputs label="Password" type="Password" />
         <ButtonBase sx={inputStyle}>
           <Button sx={{ p: "0.5rem", width: "100%" }} variant="contained" color="secondary">
-            <Typography sx={{ textOverflow: "ellipsis", whiteSpace: "nowrap", overflow: "hidden" }}>عضویت</Typography>
+            <Typography sx={{ textOverflow: "ellipsis", whiteSpace: "nowrap", overflow: "hidden" }}>ورود</Typography>
           </Button>
         </ButtonBase>
       </FormControl>

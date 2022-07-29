@@ -1,7 +1,6 @@
 import { Typography, FormControl, Button, ButtonBase } from "@mui/material";
-
+import RegisterInputs from "../../../components/Utils/Inputs/RegisterInputs/RegisterInputs";
 import React from "react";
-import RegisterInputs from "../../../components/InputField/RegisterInputs/RegisterInputs";
 
 function Login() {
   const inputStyle = { width: { lg: "50%", md: "50%", xs: "75%" } };
