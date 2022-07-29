@@ -1,4 +1,4 @@
-import { TextField, Typography } from "@mui/material";
+import { TextField } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 
@@ -19,8 +19,10 @@ function RegisterInputs(props: IInput) {
   return (
     <>
       <Box sx={{ width: "100%", display: "flex", alignItems: "flex-end", justifyContent: "center", flexDirection: "column", gap: "0.2rem" }}>
-        <Typography sx={{ direction: "rtl", fontSize: "0.875rem" }}>{title}</Typography>
-        <TextField autoFocus={focus} sx={inputStyle} type={`${type}`} color="secondary" required id="outlined-basic" label={`${label}`} variant="outlined" />
+        <Box component="label" htmlFor={label} sx={{ direction: "rtl", fontSize: "0.875rem", cursor: "pointer" }}>
+          {title}
+        </Box>
+        <TextField autoFocus={focus} sx={inputStyle} type={`${type}`} color="secondary" required id={label} label={`${label}`} variant="outlined" />
       </Box>
     </>
   );

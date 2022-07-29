@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Button, ButtonBase } from "@mui/material";
+import { Button, ButtonBase, Typography } from "@mui/material";
 
 interface IButton {
   title: string;
@@ -12,9 +12,7 @@ function RegisterButton(props: IButton) {
     <>
       <ButtonBase sx={inputStyle}>
         <Button sx={{ p: "0.5rem", width: "100%", alignSelf: "flex-end" }} variant="contained" color="secondary">
-          <Box component="label" sx={{ textOverflow: "ellipsis", whiteSpace: "nowrap", overflow: "hidden" }}>
-            {title}
-          </Box>
+          <Typography sx={{ textOverflow: "ellipsis", whiteSpace: "nowrap", overflow: "hidden" }}>{title}</Typography>
         </Button>
       </ButtonBase>
     </>
