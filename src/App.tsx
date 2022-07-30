@@ -17,6 +17,7 @@ import PaymentMethods from "./pages/PaymentMethods/PaymentMethods";
 import Loading from "./pages/Loading/Loading";
 import Terms from "./pages/Terms/Terms";
 import Contact from "./pages/Contact/Contact";
+import Products from "./pages/Products/Products";
 
 // CSS
 import "./Style/ResetCSS/reset.css";
@@ -38,6 +39,7 @@ function App() {
             <Route path="/payment-methods" element={<PaymentMethods />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/products" element={<Products />} />
             {/* for testing loading page */}
             <Route path="/loading" element={<Loading />} />
             <Route path="*" element={<NotFound />} />
