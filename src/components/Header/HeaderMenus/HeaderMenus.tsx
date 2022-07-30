@@ -79,7 +79,7 @@ function HeaderMenus(props: Iprops) {
               </Typography>
               <GiHummingbird fontSize={20} />
             </Button>
-            <Menu sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", direction: "rtl" }} {...bindMenu(popupState)}>
+            <Menu sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }} {...bindMenu(popupState)}>
               <MenuItem sx={menuFontStyle} dir="rtl" onClick={popupState.close}>
                 غذای پرندگان
               </MenuItem>
