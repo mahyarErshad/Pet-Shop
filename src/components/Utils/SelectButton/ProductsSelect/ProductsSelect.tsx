@@ -21,10 +21,10 @@ export default function SelectVariants(props: Iprops) {
   return (
     <div>
       <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
-        <InputLabel dir="rtl" sx={{ fontSize: "0.875rem" }} color="secondary" id="demo-simple-select-standard-label">
+        <InputLabel dir="rtl" sx={{ fontSize: "0.875rem", fontWeight: "normal" }} color="secondary" id="demo-simple-select-standard-label">
           {label}
         </InputLabel>
-        <Select dir="rtl" autoWidth labelId="demo-simple-select-standard-label" id={label} value={state} onChange={handleChange} label={label}>
+        <Select dir="rtl" sx={{ fontSize: "0.875rem", fontWeight: "normal" }} autoWidth labelId="demo-simple-select-standard-label" id={label} value={state} onChange={handleChange} label={label}>
           <MenuItem dir="rtl" sx={{ fontSize: "0.75rem" }} value="">
             <em>انتخاب کنید</em>
           </MenuItem>
