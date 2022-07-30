@@ -4,35 +4,37 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 
-export default function SelectVariants() {
-  const [age, setAge] = React.useState("");
+interface Iprops {
+  categories: any[];
+  value?: string;
+  label: string;
+}
+
+export default function SelectVariants(props: Iprops) {
+  const [state, setState] = React.useState("");
 
   const handleChange = (event: SelectChangeEvent) => {
-    setAge(event.target.value);
+    setState(event.target.value);
   };
-
+  const label = props.label;
+  const categories = props.categories;
   return (
     <div>
       <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
-        <InputLabel id="demo-simple-select-standard-label">Age</InputLabel>
-        <Select labelId="demo-simple-select-standard-label" id="demo-simple-select-standard" value={age} onChange={handleChange} label="Age">
-          <MenuItem value="">
-            <em>None</em>
+        <InputLabel sx={{ fontSize: "0.875rem" }} color="secondary" id="demo-simple-select-standard-label">
+          {label}
+        </InputLabel>
+        <Select autoWidth labelId="demo-simple-select-standard-label" id={label} value={state} onChange={handleChange} label={label}>
+          <MenuItem dir="rtl" sx={{ fontSize: "0.75rem" }} value="">
+            <em>انتخاب کنید</em>
           </MenuItem>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
-        </Select>
-      </FormControl>
-      <FormControl variant="filled" sx={{ m: 1, minWidth: 120 }}>
-        <InputLabel id="demo-simple-select-filled-label">Age</InputLabel>
-        <Select labelId="demo-simple-select-filled-label" id="demo-simple-select-filled" value={age} onChange={handleChange}>
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
+          {categories.map((category: any, index: number) => {
+            return (
+              <MenuItem sx={{ fontSize: "0.75rem" }} dir="rtl" key={index} value={index}>
+                {category}
+              </MenuItem>
+            );
+          })}
         </Select>
       </FormControl>
     </div>
