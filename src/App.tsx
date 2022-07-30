@@ -17,7 +17,7 @@ import PaymentMethods from "./pages/PaymentMethods/PaymentMethods";
 import Loading from "./pages/Loading/Loading";
 import Terms from "./pages/Terms/Terms";
 import Contact from "./pages/Contact/Contact";
-import Products from "./pages/Products/Products";
+import Products from "./pages/Products/Main/Products";
 
 // CSS
 import "./Style/ResetCSS/reset.css";
