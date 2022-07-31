@@ -6,7 +6,7 @@ export default function Paginations() {
   return (
     <>
       <Stack spacing={2}>
-        <Pagination count={10} color="secondary" />
+        <Pagination size="large" count={10} color="secondary" />
       </Stack>
     </>
   );
