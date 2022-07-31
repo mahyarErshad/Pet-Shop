@@ -7,6 +7,12 @@ import { Box, CardActionArea, CardActions } from "@mui/material";
 import ButtonGroup from "@mui/material/ButtonGroup";
 import Button from "@mui/material/Button";
 
+interface Iprops {
+  title: string;
+  image: string;
+  description: string;
+}
+
 export default function Cards() {
   return (
     <Card sx={{ width: { lg: "30%", md: "27%", sm: "40%", xs: "80%" } }}>
