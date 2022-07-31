@@ -1,9 +1,7 @@
-import { Box, styled } from "@mui/material";
-import Tooltip, { TooltipProps, tooltipClasses } from "@mui/material/Tooltip";
-import Fade from "@mui/material/Fade";
+import { Box } from "@mui/material";
 import React from "react";
-import { Link } from "react-router-dom";
 import "../../../../Style/card-animation/animation.css";
+import CategoryPhotos from "../../../Utils/CategoryPhotos/CategoryPhotos";
 
 // images
 import cat from "../../../../images/cat.jpg";
@@ -12,34 +10,13 @@ import bird from "../../../../images/bird.jpg";
 import pig from "../../../../images/pig.jpg";
 
 function Photos() {
-  const LightTooltip = styled(({ className, ...props }: TooltipProps) => <Tooltip {...props} classes={{ popper: className }} />)(({ theme }) => ({
-    [`& .${tooltipClasses.tooltip}`]: {
-      backgroundColor: theme.palette.common.white,
-      color: "#212121",
-      boxShadow: theme.shadows[1],
-      fontSize: 11,
-    },
-  }));
-  const photoStyle = { height: { xs: "15.625rem", md: "31.25rem" }, width: { xs: "100%", sm: "50%", md: "50%", lg: "25%" }, cursor: "pointer", animationName: { lg: "cardAnimation", md: "" }, "&:hover": { zIndex: "2", transform: "scale(1.1,1.1)", borderRadius: "16px", border: "2px solid #FFB929", transition: "all 0.3s " } };
   return (
     <>
       <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center", width: "100%", flexWrap: "wrap", flexDirection: "row-reverse", marginBottom: "0.5rem" }}>
-        <LightTooltip title="خرید لوازم گربه" TransitionComponent={Fade} TransitionProps={{ timeout: 600 }} followCursor>
-          <Box sx={{ ...photoStyle, animationDuration: "2s" }}>
-            <Link to="/products">
-              <Box sx={{ width: "100%", height: "100%" }} component="img" src={cat} alt="cat" />
-            </Link>
-          </Box>
-        </LightTooltip>
-        <LightTooltip title="خرید لوازم سگ" TransitionComponent={Fade} TransitionProps={{ timeout: 600 }} followCursor>
-          <Box sx={{ ...photoStyle, animationDuration: "2.5s" }} component="img" src={dog} alt="dog" />
-        </LightTooltip>
-        <LightTooltip title="خرید لوازم پرندگان" TransitionComponent={Fade} TransitionProps={{ timeout: 600 }} followCursor>
-          <Box sx={{ ...photoStyle, animationDuration: "3s" }} component="img" src={bird} alt="bird" />
-        </LightTooltip>
-        <LightTooltip title="خرید لوازم جوندگان" TransitionComponent={Fade} TransitionProps={{ timeout: 600 }} followCursor>
-          <Box sx={{ ...photoStyle, animationDuration: "3.5s" }} component="img" src={pig} alt="rodents" />
-        </LightTooltip>
+        <CategoryPhotos title="خرید لوازم گربه" linkTo="/products" image={cat} animationDuration="2s" />
+        <CategoryPhotos title="خرید لوازم سگ" linkTo="/products" image={dog} animationDuration="2.5s" />
+        <CategoryPhotos title="خرید لوازم پرندگان" linkTo="/products" image={bird} animationDuration="3s" />
+        <CategoryPhotos title="خرید لوازم جوندگان" linkTo="/products" image={pig} animationDuration="3.5s" />
       </Box>
     </>
   );
