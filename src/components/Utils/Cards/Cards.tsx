@@ -13,17 +13,20 @@ interface Iprops {
   description: string;
 }
 
-export default function Cards() {
+export default function Cards(props: Iprops) {
+  const title = props.title;
+  const image = props.image;
+  const description = props.description;
   return (
     <Card sx={{ width: { lg: "30%", md: "27%", sm: "40%", xs: "80%" } }}>
       <CardActionArea>
-        <CardMedia sx={{ objectFit: "contain", p: "0.5rem" }} component="img" height="200" image="https://eurovet.cdn.shoprenter.hu/custom/eurovet/image/cache/w2277h1500wt1/product/%C3%A1llateledel%20k%C3%A9pei/Royal/xydkeqcnmzk80dqsjeli.png?lastmod=1657093064.1490595398" alt="green iguana" />
+        <CardMedia sx={{ objectFit: "contain", p: "0.5rem" }} component="img" height="200" image={image} alt={title} />
         <CardContent>
           <Typography dir="rtl" gutterBottom variant="h5" component="div">
-            Lizard
+            {title}
           </Typography>
           <Typography sx={{ fontSize: "0.875rem" }} dir="rtl" variant="body2" color="#000">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica
+            {description}
           </Typography>
         </CardContent>
       </CardActionArea>
