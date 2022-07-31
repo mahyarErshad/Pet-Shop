@@ -17,20 +17,23 @@ export default function Cards(props: Iprops) {
   const title = props.title;
   const image = props.image;
   const price = props.price;
+
   return (
     <Card sx={{ width: { lg: "30%", md: "27%", sm: "40%", xs: "80%" } }}>
       <CardActionArea>
         <CardMedia sx={{ objectFit: "contain", p: "0.5rem" }} component="img" height="200" image={image} alt={title} />
-        <CardContent>
-          <Typography dir="rtl" gutterBottom variant="h5" component="div">
+        <CardContent sx={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+          <Typography sx={{ fontSize: "1rem", fontWeight: "bold" }} dir="rtl" gutterBottom variant="h5" component="div">
             {title}
           </Typography>
-          <Typography sx={{ fontSize: "0.875rem" }} dir="ltr" variant="body2" color="#000">
-            {price}
-          </Typography>
+          <Box sx={{ alignSelf: "flex-start", backgroundColor: "#D5C9E0", p: "0.5rem", borderRadius: "20px" }}>
+            <Typography sx={{ fontSize: "1rem", fontWeight: "bold", direction: "rtl" }} variant="body2" color="#000">
+              {`${price} تومان`}
+            </Typography>
+          </Box>
         </CardContent>
       </CardActionArea>
-      <CardActions>
+      <CardActions sx={{ px: "1rem", py: "0.5rem" }}>
         <ButtonGroup disableElevation variant="contained" color="secondary">
           <Button>+</Button>
           <Box sx={{ width: "2.5612rem", height: "2.2813rem", backgroundColor: "#ECEFF1", display: "flex", justifyContent: "center", alignItems: "center", border: "1px solid #000" }}>
