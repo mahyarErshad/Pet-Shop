@@ -10,13 +10,13 @@ import Button from "@mui/material/Button";
 interface Iprops {
   title: string;
   image: string;
-  description: string;
+  price: string;
 }
 
 export default function Cards(props: Iprops) {
   const title = props.title;
   const image = props.image;
-  const description = props.description;
+  const price = props.price;
   return (
     <Card sx={{ width: { lg: "30%", md: "27%", sm: "40%", xs: "80%" } }}>
       <CardActionArea>
@@ -25,8 +25,8 @@ export default function Cards(props: Iprops) {
           <Typography dir="rtl" gutterBottom variant="h5" component="div">
             {title}
           </Typography>
-          <Typography sx={{ fontSize: "0.875rem" }} dir="rtl" variant="body2" color="#000">
-            {description}
+          <Typography sx={{ fontSize: "0.875rem" }} dir="ltr" variant="body2" color="#000">
+            {price}
           </Typography>
         </CardContent>
       </CardActionArea>
