@@ -2,6 +2,7 @@ import { Box, styled } from "@mui/material";
 import Tooltip, { TooltipProps, tooltipClasses } from "@mui/material/Tooltip";
 import Fade from "@mui/material/Fade";
 import React from "react";
+import { Link } from "react-router-dom";
 import "../../../../Style/card-animation/animation.css";
 
 // images
@@ -24,7 +25,11 @@ function Photos() {
     <>
       <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center", width: "100%", flexWrap: "wrap", flexDirection: "row-reverse", marginBottom: "0.5rem" }}>
         <LightTooltip title="خرید لوازم گربه" TransitionComponent={Fade} TransitionProps={{ timeout: 600 }} followCursor>
-          <Box sx={{ ...photoStyle, animationDuration: "2s" }} component="img" src={cat} alt="cat" />
+          <Box sx={{ ...photoStyle, animationDuration: "2s" }}>
+            <Link to="/products">
+              <Box sx={{ width: "100%", height: "100%" }} component="img" src={cat} alt="cat" />
+            </Link>
+          </Box>
         </LightTooltip>
         <LightTooltip title="خرید لوازم سگ" TransitionComponent={Fade} TransitionProps={{ timeout: 600 }} followCursor>
           <Box sx={{ ...photoStyle, animationDuration: "2.5s" }} component="img" src={dog} alt="dog" />
