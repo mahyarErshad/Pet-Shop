@@ -4,7 +4,7 @@ import InDeButton from "../../Buttons/InDeButton/InDeButton";
 
 function SingleProductsDetails() {
   return (
-    <Box dir="rtl" sx={{ backgroundColor: "pink", width: { xs: "90%", md: "48%" }, minHeight: "15.625rem", p: "1rem", display: "flex", justifyContent: "flex-start", alignItems: "flex-start", flexDirection: "column", gap: "1rem" }}>
+    <Box dir="rtl" sx={{ backgroundColor: "pink", width: { xs: "90%", md: "48%" }, minHeight: "15.625rem", p: "1rem", display: "flex", justifyContent: "flex-start", alignItems: { xs: "center", md: "flex-start" }, flexDirection: "column", gap: "1rem" }}>
       <Typography dir="rtl" variant="h5" sx={{ fontSize: "1.5rem", fontWeight: "bold", mt: "1rem" }}>
         غذای خشک گربه پرشین رویال کنین
       </Typography>
