@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import React from "react";
-import SingleProductImage from "../../components/Utils/SingleProductImage/SingleProductImage";
+import SingleProductImage from "../../components/Utils/SingleProducts/SingleProductImage/SingleProductImage";
 
 function SingleProduct() {
   return (
