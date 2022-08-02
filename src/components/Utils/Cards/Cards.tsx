@@ -11,13 +11,22 @@ import "../../../Style/global/style.css";
 interface Iprops {
   title: string;
   image: string;
-  price: string;
+  price: number;
 }
 
 export default function Cards(props: Iprops) {
   const title = props.title;
   const image = props.image;
   const price = props.price;
+  const persian = (number: string) => {
+    const persian = number.replace(/\d/g, (d: any) => "۰۱۲۳۴۵۶۷۸۹"[d]);
+    return persian;
+  };
+  function separateNumber(number: number) {
+    let newNumber = number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    newNumber = persian(newNumber);
+    return newNumber;
+  }
 
   return (
     <>
@@ -30,8 +39,8 @@ export default function Cards(props: Iprops) {
                 {title}
               </Typography>
               <Box sx={{ alignSelf: "flex-start", backgroundColor: "#D5C9E0", p: "0.5rem", borderRadius: "20px" }}>
-                <Typography sx={{ fontSize: "1rem", fontWeight: "bold", direction: "rtl" }} variant="body2" color="#000">
-                  {`${price} تومان`}
+                <Typography dir="rtl" sx={{ fontSize: "1rem", fontWeight: "bold" }} variant="body2" color="#000">
+                  {separateNumber(price)} تومان
                 </Typography>
               </Box>
             </CardContent>
