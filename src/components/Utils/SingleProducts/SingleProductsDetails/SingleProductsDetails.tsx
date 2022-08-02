@@ -1,6 +1,12 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
 import InDeButton from "../../Buttons/InDeButton/InDeButton";
+interface props {
+  image: string;
+  title: string;
+  price: number;
+  balance: number;
+}
 
 function SingleProductsDetails() {
   return (
