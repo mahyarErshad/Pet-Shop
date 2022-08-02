@@ -5,6 +5,7 @@ import Paginations from "../../../components/Utils/Paginations/Paginations";
 import ProductsHeader from "../ProductsHeader/ProductsHeader";
 
 function Products() {
+  document.title = "محصولات | پت شاپ فینیکس";
   return (
     <>
       <Box>
