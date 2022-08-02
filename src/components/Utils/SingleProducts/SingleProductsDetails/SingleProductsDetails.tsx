@@ -4,7 +4,7 @@ import InDeButton from "../../Buttons/InDeButton/InDeButton";
 interface props {
   title: string;
   price: number;
-  balance: string | number;
+  balance: number;
 }
 
 function SingleProductsDetails(props: props) {
@@ -30,7 +30,7 @@ function SingleProductsDetails(props: props) {
         {separateNumber(price)} تومان
       </Typography>
       <Typography dir="rtl" sx={{ fontSize: "1rem", fontWeight: "normal" }}>
-        موجود در انبار : {balance} عدد
+        موجود در انبار : {separateNumber(balance)} عدد
       </Typography>
       <InDeButton width="4rem" height="3rem" />
     </Box>
