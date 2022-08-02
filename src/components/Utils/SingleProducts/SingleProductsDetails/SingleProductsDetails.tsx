@@ -10,6 +10,9 @@ function SingleProductsDetails() {
       <Typography dir="rtl" sx={{ fontSize: "1.2rem", fontWeight: "normal", mt: "0.7rem" }}>
         ۱.۲۰۰.۰۰۰ تومان
       </Typography>
+      <Typography dir="rtl" sx={{ fontSize: "1rem", fontWeight: "normal", mt: "0.7rem" }}>
+        موجود در انبار : ۱۰۰۰ عدد
+      </Typography>
     </Box>
   );
 }
