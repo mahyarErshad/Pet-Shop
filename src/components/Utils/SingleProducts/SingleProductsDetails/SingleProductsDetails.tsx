@@ -7,6 +7,9 @@ function SingleProductsDetails() {
       <Typography dir="rtl" variant="h5" sx={{ fontSize: "1.5rem", fontWeight: "bold", mt: "1rem" }}>
         غذای خشک گربه پرشین رویال کنین
       </Typography>
+      <Typography dir="rtl" sx={{ fontSize: "1.2rem", fontWeight: "normal", mt: "0.7rem" }}>
+        ۱.۲۰۰.۰۰۰ تومان
+      </Typography>
     </Box>
   );
 }
