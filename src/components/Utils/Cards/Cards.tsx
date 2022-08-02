@@ -4,8 +4,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Box, CardActionArea, CardActions } from "@mui/material";
-import ButtonGroup from "@mui/material/ButtonGroup";
-import Button from "@mui/material/Button";
+import InDeButton from "../Buttons/InDeButton/InDeButton";
 
 interface Iprops {
   title: string;
@@ -34,15 +33,7 @@ export default function Cards(props: Iprops) {
         </CardContent>
       </CardActionArea>
       <CardActions sx={{ px: "1rem", py: "0.5rem" }}>
-        <ButtonGroup disableElevation variant="contained" color="secondary">
-          <Button>+</Button>
-          <Box sx={{ width: "2.5612rem", height: "2.2813rem", backgroundColor: "#ECEFF1", display: "flex", justifyContent: "center", alignItems: "center", border: "1px solid #000" }}>
-            <Typography variant="h5" color="#000">
-              ۰
-            </Typography>
-          </Box>
-          <Button>-</Button>
-        </ButtonGroup>
+        <InDeButton />
       </CardActions>
     </Card>
   );
