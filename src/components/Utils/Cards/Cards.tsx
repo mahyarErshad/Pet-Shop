@@ -7,6 +7,7 @@ import { Box, CardActionArea, CardActions } from "@mui/material";
 import InDeButton from "../Buttons/InDeButton/InDeButton";
 import { Link } from "react-router-dom";
 import "../../../Style/global/style.css";
+import { separateNumber } from "../../../functions/functions";
 
 interface Iprops {
   title: string;
@@ -18,15 +19,6 @@ export default function Cards(props: Iprops) {
   const title = props.title;
   const image = props.image;
   const price = props.price;
-  const persian = (number: string) => {
-    const persian = number.replace(/\d/g, (d: any) => "۰۱۲۳۴۵۶۷۸۹"[d]);
-    return persian;
-  };
-  function separateNumber(number: number) {
-    let newNumber = number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    newNumber = persian(newNumber);
-    return newNumber;
-  }
 
   return (
     <>
