@@ -3,7 +3,7 @@ import React from "react";
 import InDeButton from "../../Buttons/InDeButton/InDeButton";
 interface props {
   title: string;
-  price: string | number;
+  price: number;
   balance: string | number;
 }
 
@@ -11,6 +11,15 @@ function SingleProductsDetails(props: props) {
   document.title = props.title;
   const title = props.title;
   const price = props.price;
+  const persian = (number: string) => {
+    const persian = number.replace(/\d/g, (d: any) => "۰۱۲۳۴۵۶۷۸۹"[d]);
+    return persian;
+  };
+  function separateNumber(number: number) {
+    let newNumber = number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    newNumber = persian(newNumber);
+    return newNumber;
+  }
   const balance = props.balance;
   return (
     <Box dir="rtl" sx={{ width: { xs: "90%", md: "48%" }, minHeight: "15.625rem", p: "1rem", display: "flex", justifyContent: "flex-start", alignItems: { xs: "center", md: "flex-start" }, flexDirection: "column", gap: "1rem" }}>
@@ -18,7 +27,7 @@ function SingleProductsDetails(props: props) {
         {title}
       </Typography>
       <Typography dir="rtl" sx={{ fontSize: "1.2rem", fontWeight: "normal" }}>
-        {price} تومان
+        {separateNumber(price)} تومان
       </Typography>
       <Typography dir="rtl" sx={{ fontSize: "1rem", fontWeight: "normal" }}>
         موجود در انبار : {balance} عدد
