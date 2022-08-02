@@ -14,7 +14,7 @@ function SingleProductsDetails() {
       <Typography dir="rtl" sx={{ fontSize: "1rem", fontWeight: "normal" }}>
         موجود در انبار : ۱۰۰۰ عدد
       </Typography>
-      <InDeButton />
+      <InDeButton width="4rem" height="3rem" />
     </Box>
   );
 }
