@@ -7,6 +7,11 @@ interface props {
 function SingleProductImage(props: props) {
   const image = props.image;
   const [style, setStyle] = useState(true);
+  const counter = 0;
+  const updateRate = 10;
+  const isTimeToUpdate = function () {
+    return counter++ % updateRate === 0;
+  };
   const onMouseEnterHandler = function (event: any) {
     update(event);
   };
