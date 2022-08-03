@@ -7,7 +7,7 @@ interface IButton {
 
 function RegisterButton(props: IButton) {
   const inputStyle = { width: { lg: "25%", md: "25%", xs: "37%" }, alignSelf: "flex-end" };
-  const title = props.title;
+  const { title } = props;
   return (
     <>
       <ButtonBase sx={inputStyle}>

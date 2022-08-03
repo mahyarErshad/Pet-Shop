@@ -16,8 +16,7 @@ export default function SelectVariants(props: Iprops) {
   const handleChange = (event: SelectChangeEvent) => {
     setState(event.target.value);
   };
-  const label = props.label;
-  const categories = props.categories;
+  const { label, categories } = props;
   return (
     <div>
       <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>

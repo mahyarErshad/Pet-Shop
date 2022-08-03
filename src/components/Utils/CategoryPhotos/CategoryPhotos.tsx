@@ -19,10 +19,7 @@ function CategoryPhotos(props: Iprops) {
       fontSize: 11,
     },
   }));
-  const title = props.title;
-  const linkTo = props.linkTo;
-  const image = props.image;
-  const animationDuration = props.animationDuration;
+  const { title, linkTo, image, animationDuration } = props;
   const photoStyle = { height: { xs: "15.625rem", md: "31.25rem" }, width: { xs: "100%", sm: "50%", md: "50%", lg: "25%" }, cursor: "pointer", animationName: { lg: "cardAnimation", md: "" } };
 
   return (

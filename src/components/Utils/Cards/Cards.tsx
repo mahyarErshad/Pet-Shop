@@ -16,9 +16,7 @@ interface Iprops {
 }
 
 export default function Cards(props: Iprops) {
-  const title = props.title;
-  const image = props.image;
-  const price = props.price;
+  const { title, image, price } = props;
 
   return (
     <>

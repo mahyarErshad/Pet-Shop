@@ -10,8 +10,7 @@ interface FooterTextsProps {
 
 function FooterLinks(props: FooterTextsProps) {
   const theme = useTheme();
-  const text = props.text;
-  const link = props.link;
+  const { text, link } = props;
   const fontStyle = {
     fontSize: "0.8rem",
     color: "#4A5F73",

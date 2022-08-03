@@ -10,10 +10,9 @@ interface props {
 }
 
 function InDeButton(props: props) {
-  const screen = props.width || "2.5612rem";
-  const buttons = props.width || "";
-  const height = props.height || "2.2813rem";
-  const fontSize = props.fontSize || "2rem";
+  const { width, height, fontSize } = props;
+  const screen = width || "2.5612rem";
+  const buttons = width || "";
   const buttonsStyle = { width: buttons, fontSize, height };
   return (
     <>

@@ -11,9 +11,7 @@ interface IInput {
 
 function RegisterInputs(props: IInput) {
   const inputStyle = { width: { lg: "50%", md: "50%", xs: "75%" } };
-  const label = props.label;
-  const type = props.type;
-  const title = props.title;
+  const { label, title, type } = props;
   const focus = props.focus ? true : false;
 
   return (

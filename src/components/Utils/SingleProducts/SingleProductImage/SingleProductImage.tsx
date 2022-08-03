@@ -5,7 +5,7 @@ interface props {
 }
 
 function SingleProductImage(props: props) {
-  const image = props.image;
+  const { image } = props;
   return (
     <>
       <Box sx={{ backgroundColor: "#ECEFF1", width: { xs: "75%", sm: "65%", md: "48%" }, height: { xs: "15.625rem", sm: "21.875rem", md: "31.25rem" }, p: "0", display: "flex", justifyContent: "center", alignItems: "center", borderRadius: "8px" }}>

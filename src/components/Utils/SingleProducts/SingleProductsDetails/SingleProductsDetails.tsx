@@ -10,11 +10,9 @@ interface props {
 }
 
 function SingleProductsDetails(props: props) {
-  document.title = props.title;
-  const title = props.title;
-  const price = props.price;
-  const balance = props.balance;
+  const { title, price, balance } = props;
   const fontSize = props.fontSize || "";
+  document.title = props.title;
 
   return (
     <>
