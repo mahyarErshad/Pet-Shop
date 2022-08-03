@@ -30,7 +30,7 @@ function createData(title: string, answer: string) {
   return { title, answer };
 }
 
-const rows = [createData("وزن", "۴ کیلوگرم"), createData("کشور سازنده", "فرانسه"), createData("گونه", "گربه"), createData("برند", "رویال کنین")];
+const rows = [createData("وزن", "4000"), createData("کشور سازنده", "فرانسه"), createData("گونه", "گربه"), createData("برند", "رویال کنین")];
 
 export default function CustomizedTables() {
   return (
