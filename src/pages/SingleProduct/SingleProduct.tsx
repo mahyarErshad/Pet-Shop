@@ -11,7 +11,7 @@ function SingleProduct() {
         <SingleProductImage image="https://rabinseh.com/wp-content/uploads/2022/06/4-dgdd-247x247.jpg" />
         <Box dir="rtl" sx={{ width: { xs: "90%", md: "48%" }, minHeight: "15.625rem", p: "1rem", display: "flex", justifyContent: "flex-start", alignItems: { xs: "center", md: "flex-start" }, flexDirection: "column", gap: "1rem" }}>
           <SingleProductsDetails title="غذای خشک گربه پرشین رویال کنین" price={1200000} balance={1000} fontSize="3rem" />
-          <CustomizedTables />
+          <CustomizedTables weight={4000} country="فرانسه" brand="رویال کنین" breed="گربه" />
         </Box>
       </Box>
       <SingleProductsDescription />

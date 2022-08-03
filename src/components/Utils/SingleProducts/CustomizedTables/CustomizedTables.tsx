@@ -6,6 +6,7 @@ import TableCell, { tableCellClasses } from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import { separateNumber } from "../../../../functions/functions";
 
 interface props {
   weight: number;
@@ -33,13 +34,14 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-function createData(title: string, answer: string) {
-  return { title, answer };
-}
+export default function CustomizedTables(props: props) {
+  const { weight, country, breed, brand } = props;
+  const persianWeight = `${separateNumber(weight)} گرم`;
+  function createData(title: string, answer: string) {
+    return { title, answer };
+  }
 
-const rows = [createData("وزن", "4000"), createData("کشور سازنده", "فرانسه"), createData("گونه", "گربه"), createData("برند", "رویال کنین")];
-
-export default function CustomizedTables() {
+  const rows = [createData("وزن", persianWeight), createData("کشور سازنده", country), createData("گونه", breed), createData("برند", brand)];
   return (
     <TableContainer sx={{ width: "20rem", mt: "2rem" }} component={Paper}>
       <Table aria-label="customized table">
