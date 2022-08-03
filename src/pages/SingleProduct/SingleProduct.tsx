@@ -1,6 +1,7 @@
 import { Box } from "@mui/material";
 import React from "react";
 import SingleProductImage from "../../components/Utils/SingleProducts/SingleProductImage/SingleProductImage";
+import SingleProductsDescription from "../../components/Utils/SingleProducts/SingleProductsDescription/SingleProductsDescription";
 import SingleProductsDetails from "../../components/Utils/SingleProducts/SingleProductsDetails/SingleProductsDetails";
 
 function SingleProduct() {
@@ -10,6 +11,7 @@ function SingleProduct() {
         <SingleProductImage image="https://rabinseh.com/wp-content/uploads/2022/06/4-dgdd-247x247.jpg" />
         <SingleProductsDetails title="غذای خشک گربه پرشین رویال کنین" price={1200000} balance={1000} fontSize="3rem" />
       </Box>
+      <SingleProductsDescription />
     </Box>
   );
 }
