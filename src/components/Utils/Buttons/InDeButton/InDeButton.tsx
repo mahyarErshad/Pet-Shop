@@ -17,7 +17,7 @@ function InDeButton(props: props) {
       <ButtonGroup disableElevation variant="contained" color="secondary">
         <Button sx={{ width: buttons }}>+</Button>
         <Box sx={{ width: screen, height, backgroundColor: "#ECEFF1", display: "flex", justifyContent: "center", alignItems: "center", borderTop: "1px solid #000", borderBottom: "1px solid #000" }}>
-          <Typography variant="h5" color="#000">
+          <Typography sx={{ fontSize: "2rem" }} variant="h5" color="#000">
             ۰
           </Typography>
         </Box>
