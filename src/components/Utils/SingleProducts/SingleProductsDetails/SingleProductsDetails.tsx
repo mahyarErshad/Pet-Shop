@@ -6,6 +6,7 @@ interface props {
   title: string;
   price: number;
   balance: number;
+  fontSize?: string;
 }
 
 function SingleProductsDetails(props: props) {
@@ -13,6 +14,7 @@ function SingleProductsDetails(props: props) {
   const title = props.title;
   const price = props.price;
   const balance = props.balance;
+  const fontSize = props.fontSize || "";
 
   return (
     <Box dir="rtl" sx={{ width: { xs: "90%", md: "48%" }, minHeight: "15.625rem", p: "1rem", display: "flex", justifyContent: "flex-start", alignItems: { xs: "center", md: "flex-start" }, flexDirection: "column", gap: "1rem" }}>
@@ -25,7 +27,7 @@ function SingleProductsDetails(props: props) {
       <Typography dir="rtl" sx={{ fontSize: "1rem", fontWeight: "normal" }}>
         موجود در انبار : {separateNumber(balance)} عدد
       </Typography>
-      <InDeButton width="4rem" height="3rem" />
+      <InDeButton width="4rem" height="3rem" fontSize={fontSize} />
     </Box>
   );
 }
