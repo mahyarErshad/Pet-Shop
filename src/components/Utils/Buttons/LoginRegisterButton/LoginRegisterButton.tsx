@@ -7,11 +7,12 @@ interface props {
 }
 
 function LoginRegisterButton(props: props) {
+  const { text } = props;
   return (
     <>
       <Link className="noDecoration" to="/register">
         <Button variant="contained" color="secondary">
-          <Typography sx={{ textOverflow: "ellipsis", whiteSpace: "nowrap", overflow: "hidden" }}>ورود / عضویت</Typography>
+          <Typography sx={{ textOverflow: "ellipsis", whiteSpace: "nowrap", overflow: "hidden" }}>{text}</Typography>
         </Button>
       </Link>
     </>
