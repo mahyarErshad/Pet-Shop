@@ -19,6 +19,7 @@ import Terms from "./pages/Terms/Terms";
 import Contact from "./pages/Contact/Contact";
 import Products from "./pages/Products/Main/Products";
 import SingleProduct from "./pages/SingleProduct/SingleProduct";
+import Cart from "./pages/Cart/Cart";
 
 // CSS
 import "./Style/ResetCSS/reset.css";
@@ -44,6 +45,7 @@ function App() {
             {/* This is for testing. The url will be /products/:id when this App starts to be alive */}
             <Route path="/id" element={<SingleProduct />} />
             {/* for testing loading page */}
+            <Route path="/cart" element={<Cart />} />
             <Route path="/loading" element={<Loading />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
