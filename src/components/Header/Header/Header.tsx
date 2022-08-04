@@ -94,12 +94,14 @@ export default function PrimarySearchAppBar() {
     <Box sx={{ flexGrow: 1, marginBottom: "0.5rem" }}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton sx={{ margin: "0 0.5rem" }} size="large" aria-label="show 17 new notifications" color="inherit">
-            <Badge badgeContent={5} color="error">
-              <ShoppingCartIcon color="secondary" fontSize="large" />
-            </Badge>
-          </IconButton>
-          <ButtonBase>
+          <Link to="/cart">
+            <IconButton sx={{ margin: "0 0.5rem" }} size="large" aria-label="show 17 new notifications" color="inherit">
+              <Badge badgeContent={5} color="error">
+                <ShoppingCartIcon color="secondary" fontSize="large" />
+              </Badge>
+            </IconButton>
+          </Link>
+          <ButtonBase></ButtonBase>
             <Link className="noDecoration" to="/register">
               <Button variant="contained" color="secondary">
                 <Typography sx={{ textOverflow: "ellipsis", whiteSpace: "nowrap", overflow: "hidden" }}>ورود / عضویت</Typography>
