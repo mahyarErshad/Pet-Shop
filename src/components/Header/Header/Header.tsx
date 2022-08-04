@@ -9,11 +9,12 @@ import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { Button, Fade, styled, Tooltip, tooltipClasses, TooltipProps, Typography, useTheme } from "@mui/material";
+import { Fade, styled, Tooltip, tooltipClasses, TooltipProps, Typography, useTheme } from "@mui/material";
 import HeaderMenus from "../HeaderMenus/HeaderMenus";
 import { Link } from "react-router-dom";
 import logo from "../../../images/logo.png";
 import "../../../Style/global/style.css";
+import LoginRegisterButton from "../../Utils/Buttons/LoginRegisterButton/LoginRegisterButton";
 
 export default function PrimarySearchAppBar() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -101,7 +102,7 @@ export default function PrimarySearchAppBar() {
               </Badge>
             </IconButton>
           </Link>
-
+          <LoginRegisterButton text="ورود / عضویت" />
           <IconButton sx={{ margin: "0 0.5rem" }} size="large" edge="end" aria-label="account of current user" aria-controls={menuId} aria-haspopup="true" onClick={handleProfileMenuOpen} color="inherit">
             <AccountCircle />
             <Typography variant="h6">فلانی</Typography>
