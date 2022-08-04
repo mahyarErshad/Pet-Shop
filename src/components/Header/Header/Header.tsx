@@ -9,7 +9,7 @@ import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { Button, ButtonBase, Fade, styled, Tooltip, tooltipClasses, TooltipProps, Typography, useTheme } from "@mui/material";
+import { Button, Fade, styled, Tooltip, tooltipClasses, TooltipProps, Typography, useTheme } from "@mui/material";
 import HeaderMenus from "../HeaderMenus/HeaderMenus";
 import { Link } from "react-router-dom";
 import logo from "../../../images/logo.png";
@@ -94,20 +94,20 @@ export default function PrimarySearchAppBar() {
     <Box sx={{ flexGrow: 1, marginBottom: "0.5rem" }}>
       <AppBar position="static">
         <Toolbar>
-          <Link to="/cart">
+          <Link className="noDecoration" to="/cart">
             <IconButton sx={{ margin: "0 0.5rem" }} size="large" aria-label="show 17 new notifications" color="inherit">
               <Badge badgeContent={5} color="error">
                 <ShoppingCartIcon color="secondary" fontSize="large" />
               </Badge>
             </IconButton>
           </Link>
-          <ButtonBase></ButtonBase>
-            <Link className="noDecoration" to="/register">
-              <Button variant="contained" color="secondary">
-                <Typography sx={{ textOverflow: "ellipsis", whiteSpace: "nowrap", overflow: "hidden" }}>ورود / عضویت</Typography>
-              </Button>
-            </Link>
-          </ButtonBase>
+
+          <Link className="noDecoration" to="/register">
+            <Button variant="contained" color="secondary">
+              <Typography sx={{ textOverflow: "ellipsis", whiteSpace: "nowrap", overflow: "hidden" }}>ورود / عضویت</Typography>
+            </Button>
+          </Link>
+
           <IconButton sx={{ margin: "0 0.5rem" }} size="large" edge="end" aria-label="account of current user" aria-controls={menuId} aria-haspopup="true" onClick={handleProfileMenuOpen} color="inherit">
             <AccountCircle />
             <Typography variant="h6">فلانی</Typography>
