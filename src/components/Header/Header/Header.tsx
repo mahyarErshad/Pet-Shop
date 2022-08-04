@@ -102,12 +102,6 @@ export default function PrimarySearchAppBar() {
             </IconButton>
           </Link>
 
-          <Link className="noDecoration" to="/register">
-            <Button variant="contained" color="secondary">
-              <Typography sx={{ textOverflow: "ellipsis", whiteSpace: "nowrap", overflow: "hidden" }}>ورود / عضویت</Typography>
-            </Button>
-          </Link>
-
           <IconButton sx={{ margin: "0 0.5rem" }} size="large" edge="end" aria-label="account of current user" aria-controls={menuId} aria-haspopup="true" onClick={handleProfileMenuOpen} color="inherit">
             <AccountCircle />
             <Typography variant="h6">فلانی</Typography>
