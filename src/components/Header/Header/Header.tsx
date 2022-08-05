@@ -6,8 +6,7 @@ import IconButton from "@mui/material/IconButton";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
-import AccountCircle from "@mui/icons-material/AccountCircle";
-import { Fade, styled, Tooltip, tooltipClasses, TooltipProps, Typography, useTheme } from "@mui/material";
+import { Fade, styled, Tooltip, tooltipClasses, TooltipProps, useTheme } from "@mui/material";
 import HeaderMenus from "../HeaderMenus/HeaderMenus";
 import { Link } from "react-router-dom";
 import logo from "../../../images/logo.png";
@@ -31,10 +30,6 @@ export default function PrimarySearchAppBar() {
     },
   }));
 
-  const handleProfileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
-
   const handleMobileMenuClose = () => {
     setMobileMoreAnchorEl(null);
   };
@@ -47,8 +42,8 @@ export default function PrimarySearchAppBar() {
   const handleMobileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
-
   const menuId = "primary-search-account-menu";
+
   const renderMenu = (
     <Menu
       anchorEl={anchorEl}
@@ -96,10 +91,7 @@ export default function PrimarySearchAppBar() {
         <Toolbar>
           <CartIcon count={2} />
           <LoginRegisterButton text="ورود / عضویت" />
-          <IconButton sx={{ margin: "0 0.5rem" }} size="large" edge="end" aria-label="account of current user" aria-controls={menuId} aria-haspopup="true" onClick={handleProfileMenuOpen} color="inherit">
-            <AccountCircle />
-            <Typography variant="h6">فلانی</Typography>
-          </IconButton>
+
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <HeaderMenus flexRow={true} />
