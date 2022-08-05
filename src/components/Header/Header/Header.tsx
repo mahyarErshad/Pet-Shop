@@ -94,7 +94,7 @@ export default function PrimarySearchAppBar() {
     <Box sx={{ flexGrow: 1, marginBottom: "0.5rem" }}>
       <AppBar position="static">
         <Toolbar>
-          <CartIcon />
+          <CartIcon count={2} />
           <LoginRegisterButton text="ورود / عضویت" />
           <IconButton sx={{ margin: "0 0.5rem" }} size="large" edge="end" aria-label="account of current user" aria-controls={menuId} aria-haspopup="true" onClick={handleProfileMenuOpen} color="inherit">
             <AccountCircle />
