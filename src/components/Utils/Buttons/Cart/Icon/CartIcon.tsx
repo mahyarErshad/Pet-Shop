@@ -3,7 +3,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
-function CartIcon() {
+interface IProps {
+  count: number;
+}
+
+function CartIcon(props: IProps) {
   return (
     <>
       <Link className="noDecoration" to="/cart">
