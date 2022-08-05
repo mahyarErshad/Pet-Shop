@@ -2,6 +2,7 @@ import { Badge, IconButton } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import "../../../../../Style/global/style.css";
 
 interface IProps {
   count: number;
