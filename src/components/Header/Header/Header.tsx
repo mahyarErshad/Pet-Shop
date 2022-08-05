@@ -6,14 +6,11 @@ import IconButton from "@mui/material/IconButton";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Fade, styled, Tooltip, tooltipClasses, TooltipProps, useTheme } from "@mui/material";
 import HeaderMenus from "../HeaderMenus/HeaderMenus";
-import { Link } from "react-router-dom";
-import logo from "../../../images/logo.png";
-import "../../../Style/global/style.css";
 import LoginRegisterButton from "../../Utils/Buttons/LoginRegisterButton/LoginRegisterButton";
 import CartIcon from "../../Utils/Buttons/Cart/Icon/CartIcon";
 import AccountIcon from "../../Utils/Buttons/AccountIcon/AccountIcon";
+import Logo from "../../Utils/Logo/Logo";
 
 export default function PrimarySearchAppBar() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -21,15 +18,6 @@ export default function PrimarySearchAppBar() {
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-
-  const LightTooltip = styled(({ className, ...props }: TooltipProps) => <Tooltip {...props} classes={{ popper: className }} />)(({ theme }) => ({
-    [`& .${tooltipClasses.tooltip}`]: {
-      backgroundColor: theme.palette.common.white,
-      color: "#212121",
-      boxShadow: theme.shadows[1],
-      fontSize: 11,
-    },
-  }));
 
   const handleMobileMenuClose = () => {
     setMobileMoreAnchorEl(null);
@@ -85,7 +73,6 @@ export default function PrimarySearchAppBar() {
       <HeaderMenus flexRow={false} />
     </Menu>
   );
-  const theme = useTheme();
   return (
     <Box sx={{ flexGrow: 1, marginBottom: "0.5rem" }}>
       <AppBar position="static">
@@ -102,13 +89,7 @@ export default function PrimarySearchAppBar() {
               <MenuIcon />
             </IconButton>
           </Box>
-          <Box sx={{ mt: "1rem", marginLeft: "0.5rem" }}>
-            <Link to="/">
-              <LightTooltip title="بازگشت به صفحه اصلی" TransitionComponent={Fade} TransitionProps={{ timeout: 600 }} followCursor>
-                <Box component="img" src={logo} alt="Home" sx={{ height: "3rem", backgroundColor: theme.palette.primary.main, border: `2px solid ${theme.palette.secondary.main}`, borderRadius: "50%" }} />
-              </LightTooltip>
-            </Link>
-          </Box>
+          <Logo />
         </Toolbar>
       </AppBar>
       {renderMobileMenu}
