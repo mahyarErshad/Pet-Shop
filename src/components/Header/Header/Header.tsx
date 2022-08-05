@@ -3,18 +3,17 @@ import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
-import Badge from "@mui/material/Badge";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import AccountCircle from "@mui/icons-material/AccountCircle";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Fade, styled, Tooltip, tooltipClasses, TooltipProps, Typography, useTheme } from "@mui/material";
 import HeaderMenus from "../HeaderMenus/HeaderMenus";
 import { Link } from "react-router-dom";
 import logo from "../../../images/logo.png";
 import "../../../Style/global/style.css";
 import LoginRegisterButton from "../../Utils/Buttons/LoginRegisterButton/LoginRegisterButton";
+import CartIcon from "../../Utils/Buttons/Cart/Icon/CartIcon";
 
 export default function PrimarySearchAppBar() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -95,13 +94,7 @@ export default function PrimarySearchAppBar() {
     <Box sx={{ flexGrow: 1, marginBottom: "0.5rem" }}>
       <AppBar position="static">
         <Toolbar>
-          <Link className="noDecoration" to="/cart">
-            <IconButton sx={{ margin: "0 0.5rem" }} size="large" aria-label="notifications" color="secondary">
-              <Badge badgeContent={5} color="error">
-                <ShoppingCartIcon color="secondary" fontSize="large" />
-              </Badge>
-            </IconButton>
-          </Link>
+          <CartIcon />
           <LoginRegisterButton text="ورود / عضویت" />
           <IconButton sx={{ margin: "0 0.5rem" }} size="large" edge="end" aria-label="account of current user" aria-controls={menuId} aria-haspopup="true" onClick={handleProfileMenuOpen} color="inherit">
             <AccountCircle />
