@@ -96,7 +96,7 @@ export default function PrimarySearchAppBar() {
       <AppBar position="static">
         <Toolbar>
           <Link className="noDecoration" to="/cart">
-            <IconButton sx={{ margin: "0 0.5rem" }} size="large" aria-label="show 17 new notifications" color="inherit">
+            <IconButton sx={{ margin: "0 0.5rem" }} size="large" aria-label="notifications" color="secondary">
               <Badge badgeContent={5} color="error">
                 <ShoppingCartIcon color="secondary" fontSize="large" />
               </Badge>
