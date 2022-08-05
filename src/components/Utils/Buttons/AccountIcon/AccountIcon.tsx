@@ -3,12 +3,13 @@ import { IconButton, Typography } from "@mui/material";
 import React from "react";
 
 interface IProps {
-  setAnchorEl: (event: React.MouseEvent<HTMLElement>) => void;
+  setAnchorEl: Function;
   menuId: string;
   title: string;
 }
 
-function AccountIcon() {
+function AccountIcon(props: IProps) {
+  const { setAnchorEl, menuId, title } = props;
   const handleProfileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   };
@@ -16,7 +17,7 @@ function AccountIcon() {
     <>
       <IconButton sx={{ margin: "0 0.5rem" }} size="large" edge="end" aria-label="account of current user" aria-controls={menuId} aria-haspopup="true" onClick={handleProfileMenuOpen} color="inherit">
         <AccountCircle />
-        <Typography variant="h6">فلانی</Typography>
+        <Typography variant="h6">{title}</Typography>
       </IconButton>
     </>
   );
