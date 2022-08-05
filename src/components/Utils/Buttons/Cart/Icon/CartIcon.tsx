@@ -3,7 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
-function CarIcon() {
+function CartIcon() {
   return (
     <>
       <Link className="noDecoration" to="/cart">
@@ -17,4 +17,4 @@ function CarIcon() {
   );
 }
 
-export default CarIcon;
+export default CartIcon;
