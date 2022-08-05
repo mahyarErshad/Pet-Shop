@@ -8,11 +8,12 @@ interface IProps {
 }
 
 function CartIcon(props: IProps) {
+  const { count } = props;
   return (
     <>
       <Link className="noDecoration" to="/cart">
         <IconButton sx={{ margin: "0 0.5rem" }} size="large" aria-label="notifications" color="secondary">
-          <Badge badgeContent={5} color="error">
+          <Badge badgeContent={count} color="error">
             <ShoppingCartIcon color="secondary" fontSize="large" />
           </Badge>
         </IconButton>
