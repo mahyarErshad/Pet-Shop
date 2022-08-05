@@ -3,18 +3,14 @@ import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
-import Badge from "@mui/material/Badge";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
-import AccountCircle from "@mui/icons-material/AccountCircle";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { Fade, styled, Tooltip, tooltipClasses, TooltipProps, Typography, useTheme } from "@mui/material";
 import HeaderMenus from "../HeaderMenus/HeaderMenus";
-import { Link } from "react-router-dom";
-import logo from "../../../images/logo.png";
-import "../../../Style/global/style.css";
 import LoginRegisterButton from "../../Utils/Buttons/LoginRegisterButton/LoginRegisterButton";
+import CartIcon from "../../Utils/Buttons/Cart/Icon/CartIcon";
+import AccountIcon from "../../Utils/Buttons/AccountIcon/AccountIcon";
+import Logo from "../../Utils/Logo/Logo";
 
 export default function PrimarySearchAppBar() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -22,19 +18,6 @@ export default function PrimarySearchAppBar() {
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-
-  const LightTooltip = styled(({ className, ...props }: TooltipProps) => <Tooltip {...props} classes={{ popper: className }} />)(({ theme }) => ({
-    [`& .${tooltipClasses.tooltip}`]: {
-      backgroundColor: theme.palette.common.white,
-      color: "#212121",
-      boxShadow: theme.shadows[1],
-      fontSize: 11,
-    },
-  }));
-
-  const handleProfileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
 
   const handleMobileMenuClose = () => {
     setMobileMoreAnchorEl(null);
@@ -48,8 +31,8 @@ export default function PrimarySearchAppBar() {
   const handleMobileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
-
   const menuId = "primary-search-account-menu";
+
   const renderMenu = (
     <Menu
       anchorEl={anchorEl}
@@ -90,23 +73,13 @@ export default function PrimarySearchAppBar() {
       <HeaderMenus flexRow={false} />
     </Menu>
   );
-  const theme = useTheme();
   return (
     <Box sx={{ flexGrow: 1, marginBottom: "0.5rem" }}>
       <AppBar position="static">
         <Toolbar>
-          <Link className="noDecoration" to="/cart">
-            <IconButton sx={{ margin: "0 0.5rem" }} size="large" aria-label="show 17 new notifications" color="inherit">
-              <Badge badgeContent={5} color="error">
-                <ShoppingCartIcon color="secondary" fontSize="large" />
-              </Badge>
-            </IconButton>
-          </Link>
+          <CartIcon count={2} />
           <LoginRegisterButton text="ورود / عضویت" />
-          <IconButton sx={{ margin: "0 0.5rem" }} size="large" edge="end" aria-label="account of current user" aria-controls={menuId} aria-haspopup="true" onClick={handleProfileMenuOpen} color="inherit">
-            <AccountCircle />
-            <Typography variant="h6">فلانی</Typography>
-          </IconButton>
+          <AccountIcon setAnchorEl={setAnchorEl} menuId={menuId} title="فلانی" />
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <HeaderMenus flexRow={true} />
@@ -116,13 +89,7 @@ export default function PrimarySearchAppBar() {
               <MenuIcon />
             </IconButton>
           </Box>
-          <Box sx={{ mt: "1rem", marginLeft: "0.5rem" }}>
-            <Link to="/">
-              <LightTooltip title="بازگشت به صفحه اصلی" TransitionComponent={Fade} TransitionProps={{ timeout: 600 }} followCursor>
-                <Box component="img" src={logo} alt="Home" sx={{ height: "3rem", backgroundColor: theme.palette.primary.main, border: `2px solid ${theme.palette.secondary.main}`, borderRadius: "50%" }} />
-              </LightTooltip>
-            </Link>
-          </Box>
+          <Logo />
         </Toolbar>
       </AppBar>
       {renderMobileMenu}
