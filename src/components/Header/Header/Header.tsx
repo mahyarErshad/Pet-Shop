@@ -13,6 +13,7 @@ import logo from "../../../images/logo.png";
 import "../../../Style/global/style.css";
 import LoginRegisterButton from "../../Utils/Buttons/LoginRegisterButton/LoginRegisterButton";
 import CartIcon from "../../Utils/Buttons/Cart/Icon/CartIcon";
+import AccountIcon from "../../Utils/Buttons/AccountIcon/AccountIcon";
 
 export default function PrimarySearchAppBar() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -91,7 +92,7 @@ export default function PrimarySearchAppBar() {
         <Toolbar>
           <CartIcon count={2} />
           <LoginRegisterButton text="ورود / عضویت" />
-
+          <AccountIcon setAnchorEl={setAnchorEl} menuId={menuId} title="فلانی" />
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <HeaderMenus flexRow={true} />
