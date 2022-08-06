@@ -7,10 +7,10 @@ import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import HeaderMenus from "../HeaderMenus/HeaderMenus";
-import LoginRegisterButton from "../../Utils/Buttons/LoginRegisterButton/LoginRegisterButton";
 import CartIcon from "../../Utils/Buttons/Cart/Icon/CartIcon";
 import AccountIcon from "../../Utils/Buttons/AccountIcon/AccountIcon";
 import Logo from "../../Utils/Logo/Logo";
+import MyButton from "../../Utils/Buttons/MyButton/MyButton";
 
 export default function PrimarySearchAppBar() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -78,7 +78,7 @@ export default function PrimarySearchAppBar() {
       <AppBar position="static">
         <Toolbar>
           <CartIcon count={2} />
-          <LoginRegisterButton text="ورود / عضویت" />
+          <MyButton linkTo="/register" text="ورود / عضویت" />
           <AccountIcon setAnchorEl={setAnchorEl} menuId={menuId} title="فلانی" />
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>

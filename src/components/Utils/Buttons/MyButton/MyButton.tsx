@@ -5,14 +5,18 @@ import "../../../../Style/global/style.css";
 
 interface props {
   text: string;
+  linkTo?: string;
+  color?: "primary" | "success" | "error" | "info" | "warning";
 }
 
-function LoginRegisterButton(props: props) {
+function MyButton(props: props) {
   const { text } = props;
+  const linkTo = props.linkTo ? props.linkTo : "";
+  const color = props.color ? props.color : "secondary";
   return (
     <>
-      <Link className="noDecoration" to="/register">
-        <Button variant="contained" color="secondary">
+      <Link className="noDecoration" to={linkTo}>
+        <Button variant="contained" color={color}>
           <Typography sx={{ textOverflow: "ellipsis", whiteSpace: "nowrap", overflow: "hidden" }}>{text}</Typography>
         </Button>
       </Link>
@@ -20,4 +24,4 @@ function LoginRegisterButton(props: props) {
   );
 }
 
-export default LoginRegisterButton;
+export default MyButton;
