@@ -16,14 +16,14 @@ function InDeButton(props: props) {
   const buttonsStyle = { width: buttons, fontSize, height };
   return (
     <>
-      <ButtonGroup disableElevation variant="contained" color="secondary">
-        <Button sx={buttonsStyle}>-</Button>
+      <ButtonGroup dir="rtl" disableElevation variant="contained" color="secondary">
+        <Button sx={buttonsStyle}>+</Button>
         <Box sx={{ width: screen, height, backgroundColor: "#ECEFF1", display: "flex", justifyContent: "center", alignItems: "center", borderTop: "1px solid #000", borderBottom: "1px solid #000" }}>
           <Typography sx={{ fontSize }} variant="h5" color="#000">
             ۰
           </Typography>
         </Box>
-        <Button sx={buttonsStyle}>+</Button>
+        <Button sx={buttonsStyle}>-</Button>
       </ButtonGroup>
     </>
   );
