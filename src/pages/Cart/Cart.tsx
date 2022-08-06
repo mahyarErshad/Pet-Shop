@@ -10,6 +10,9 @@ function Cart() {
         <Box sx={{ width: "100%", display: "flex", paddingLeft: "7.3rem" }}>
           <MyButton text="حذف همه" color="error" />
         </Box>
+        <Box sx={{ width: "100%", display: "flex", flexWrap: "no-wrap", flexDirection: "row", justifyContent: "center", alignItems: "center" }}>
+          <Box component="img" src="https://rabinseh.com/wp-content/uploads/2022/06/4-dgdd-247x247.jpg" alt="تصویر محصول" sx={{ width: "5rem", height: "5rem", borderRadius: "8px" }} />
+        </Box>
       </Box>
     </>
   );
