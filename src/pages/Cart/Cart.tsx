@@ -11,10 +11,10 @@ function Cart() {
         <Box sx={{ width: "100%", display: "flex", paddingLeft: "7.3rem" }}>
           <MyButton text="حذف همه" color="error" />
         </Box>
-        <Box sx={{ width: "100%", display: "flex", flexWrap: "no-wrap", flexDirection: "row-reverse", gap: "1.5rem", justifyContent: "center", alignItems: "center", borderRadius: "16px", border: "1px solid #ECEFF1", p: "0.5rem" }}>
+        <Box sx={{ width: "100%", display: "flex", flexDirection: "row-reverse", gap: "1.5rem", justifyContent: "center", alignItems: "center", borderRadius: "16px", border: "1px solid #ECEFF1", p: "0.5rem" }}>
           <Box sx={{ display: "flex", flexDirection: "row-reverse", gap: "0.2rem", justifyContent: "center", alignItems: "center" }}>
             <Box component="img" src="https://rabinseh.com/wp-content/uploads/2022/06/4-dgdd-247x247.jpg" alt="تصویر محصول" sx={{ width: "3rem", height: "3rem", borderRadius: "50%" }} />
-            <Typography variant="h5" sx={{ fontSize: "1rem", fontWeight: "normal" }}>
+            <Typography dir="rtl" variant="h5" sx={{ fontSize: "1rem", fontWeight: "normal", textOverflow: "ellipsis", textAlign: "right" }}>
               غذای خشک گربه پرشین رویال کنین
             </Typography>
           </Box>
