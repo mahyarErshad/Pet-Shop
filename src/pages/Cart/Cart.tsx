@@ -11,7 +11,7 @@ function Cart() {
         <Box sx={{ width: "100%", display: "flex", paddingLeft: "7.3rem" }}>
           <MyButton text="حذف همه" color="error" />
         </Box>
-        <CartItem />
+        <CartItem image="https://rabinseh.com/wp-content/uploads/2022/06/4-dgdd-247x247.jpg" title="غذای خشک گربه پرشین رویال کنین" price={1200000} />
       </Box>
     </>
   );
