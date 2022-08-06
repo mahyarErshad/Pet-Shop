@@ -7,7 +7,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import HeaderMenus from "../HeaderMenus/HeaderMenus";
-import LoginRegisterButton from "../../Utils/Buttons/myButton/LoginRegisterButton";
+import LoginRegisterButton from "../../Utils/Buttons/MyButton/LoginRegisterButton";
 import CartIcon from "../../Utils/Buttons/Cart/Icon/CartIcon";
 import AccountIcon from "../../Utils/Buttons/AccountIcon/AccountIcon";
 import Logo from "../../Utils/Logo/Logo";
