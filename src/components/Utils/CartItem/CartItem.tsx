@@ -4,6 +4,12 @@ import { Link } from "react-router-dom";
 import InDeButton from "../Buttons/InDeButton/InDeButton";
 import "../../../Style/global/style.css";
 
+interface IProps {
+  image: string;
+  title: string;
+  price: number;
+}
+
 function CartItem() {
   return (
     <>
