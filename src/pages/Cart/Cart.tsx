@@ -1,5 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
+import InDeButton from "../../components/Utils/Buttons/InDeButton/InDeButton";
 import MyButton from "../../components/Utils/Buttons/MyButton/MyButton";
 
 function Cart() {
@@ -15,6 +16,7 @@ function Cart() {
           <Typography variant="h5" sx={{ fontSize: "1rem", fontWeight: "normal" }}>
             غذای خشک گربه پرشین رویال کنین
           </Typography>
+          <InDeButton />
         </Box>
       </Box>
     </>
