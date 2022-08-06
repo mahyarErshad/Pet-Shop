@@ -5,10 +5,12 @@ import "../../../../Style/global/style.css";
 
 interface props {
   text: string;
+  linkTo?: string;
+  color?: string;
 }
 
-function LoginRegisterButton(props: props) {
-  const { text } = props;
+function MyButton(props: props) {
+  const { text, linkTo, color } = props;
   return (
     <>
       <Link className="noDecoration" to="/register">
@@ -20,4 +22,4 @@ function LoginRegisterButton(props: props) {
   );
 }
 
-export default LoginRegisterButton;
+export default MyButton;
