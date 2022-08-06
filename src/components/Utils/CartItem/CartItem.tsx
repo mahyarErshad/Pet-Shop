@@ -10,7 +10,8 @@ interface IProps {
   price: number;
 }
 
-function CartItem() {
+function CartItem(props: IProps) {
+  const { image, title, price } = props;
   return (
     <>
       <Box sx={{ width: { xs: "100%", sm: "100%", md: "70%", lg: "60%" }, my: "0.5rem", display: "flex", flexWrap: "wrap", flexDirection: "row-reverse", justifyContent: "space-between", alignItems: "center", gap: "0.5rem", borderRadius: "16px", border: "1px solid #ECEFF1", p: "0.5rem", alignSelf: "center" }}>
