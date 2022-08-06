@@ -1,11 +1,14 @@
+import { Box } from "@mui/material";
 import React from "react";
 
 function Cart() {
   document.title = "پت شاپ فینیکس | سبد خرید";
   return (
-    <div>
-      <div></div>
-    </div>
+    <>
+      <Box sx={{ width: "100%", px: "1rem", display: "flex", flexDirection: "column", gap: "1rem" }}>
+        <Box></Box>
+      </Box>
+    </>
   );
 }
 
