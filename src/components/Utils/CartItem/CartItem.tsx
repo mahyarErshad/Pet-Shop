@@ -2,6 +2,7 @@ import { Box, Typography } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
 import InDeButton from "../Buttons/InDeButton/InDeButton";
+import "../../../Style/global/style.css";
 
 function CartItem() {
   return (
