@@ -3,6 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import InDeButton from "../../components/Utils/Buttons/InDeButton/InDeButton";
 import MyButton from "../../components/Utils/Buttons/MyButton/MyButton";
+import "../../Style/global/style.css";
 
 function Cart() {
   document.title = "پت شاپ فینیکس | سبد خرید";
