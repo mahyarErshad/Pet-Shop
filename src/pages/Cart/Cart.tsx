@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import React from "react";
 import MyButton from "../../components/Utils/Buttons/MyButton/MyButton";
 
@@ -10,8 +10,11 @@ function Cart() {
         <Box sx={{ width: "100%", display: "flex", paddingLeft: "7.3rem" }}>
           <MyButton text="حذف همه" color="error" />
         </Box>
-        <Box sx={{ width: "100%", display: "flex", flexWrap: "no-wrap", flexDirection: "row", justifyContent: "center", alignItems: "center" }}>
-          <Box component="img" src="https://rabinseh.com/wp-content/uploads/2022/06/4-dgdd-247x247.jpg" alt="تصویر محصول" sx={{ width: "5rem", height: "5rem", borderRadius: "8px" }} />
+        <Box sx={{ width: "100%", display: "flex", flexWrap: "no-wrap", flexDirection: "row-reverse", gap: "0.5rem", justifyContent: "center", alignItems: "center" }}>
+          <Box component="img" src="https://rabinseh.com/wp-content/uploads/2022/06/4-dgdd-247x247.jpg" alt="تصویر محصول" sx={{ width: "3rem", height: "3rem", borderRadius: "50%" }} />
+          <Typography variant="h5" sx={{ fontSize: "1rem", fontWeight: "normal" }}>
+            غذای خشک گربه پرشین رویال کنین
+          </Typography>
         </Box>
       </Box>
     </>
