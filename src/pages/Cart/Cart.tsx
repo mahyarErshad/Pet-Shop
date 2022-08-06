@@ -13,7 +13,7 @@ function Cart() {
         <Box sx={{ width: "100%", display: "flex", paddingLeft: "7.3rem" }}>
           <MyButton text="حذف همه" color="error" />
         </Box>
-        <Box sx={{ width: { xs: "100%", sm: "100%", md: "70%", lg: "60%" }, display: "flex", flexWrap: "wrap", flexDirection: "row-reverse", justifyContent: "space-between", alignItems: "center", gap: "0.5rem", borderRadius: "16px", border: "1px solid #ECEFF1", p: "0.5rem", alignSelf: "center" }}>
+        <Box sx={{ width: { xs: "100%", sm: "100%", md: "70%", lg: "60%" }, my: "0.5rem", display: "flex", flexWrap: "wrap", flexDirection: "row-reverse", justifyContent: "space-between", alignItems: "center", gap: "0.5rem", borderRadius: "16px", border: "1px solid #ECEFF1", p: "0.5rem", alignSelf: "center" }}>
           <Box className="noDecoration" component={Link} to="/id" sx={{ width: { xs: "50%", sm: "40%", md: "50%" }, display: "flex", flexDirection: "row-reverse", gap: "0.2rem", justifyContent: "center", alignItems: "center" }}>
             <Box component="img" src="https://rabinseh.com/wp-content/uploads/2022/06/4-dgdd-247x247.jpg" alt="تصویر محصول" sx={{ width: "3rem", height: "3rem", borderRadius: "50%" }} />
             <Typography dir="rtl" variant="h5" sx={{ fontSize: "1rem", color: "#000", fontWeight: "normal", textOverflow: "ellipsis", overflow: "hidden" }}>
