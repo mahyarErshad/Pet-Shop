@@ -6,7 +6,7 @@ import "../../../../Style/global/style.css";
 interface props {
   text: string;
   linkTo?: string;
-  color?: string;
+  color?: "secondary" | "inherit" | "primary" | "success" | "error" | "info" | "warning";
 }
 
 function MyButton(props: props) {
