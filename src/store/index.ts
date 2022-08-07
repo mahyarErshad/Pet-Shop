@@ -1,11 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-const store = configureStore({
-  reducer: {
-    posts: postsReducer,
-    comments: commentsReducer,
-    users: usersReducer,
-  },
+export const store = configureStore({
+  reducer: {},
 });
 
 export type RootState = ReturnType<typeof store.getState>;
