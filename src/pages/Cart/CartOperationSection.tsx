@@ -13,9 +13,9 @@ function CartOperationSection() {
         </Box>
         <Box sx={{ width: { xs: "100%", md: "65%" }, flexDirection: { xs: "column", md: "row-reverse" }, px: "1rem", display: "flex", justifyContent: "center", alignItems: "center", gap: "1rem" }}>
           <Typography dir="rtl" sx={{ height: "2.5rem", borderRadius: "12px", px: "1rem", paddingTop: "0.6rem", paddingBottom: "2.5rem", fontSize: "1.2rem", fontWeight: "normal", backgroundColor: "#D5C9E0" }} variant="h5">
-            جمع کل: <strong>{separateNumber(3600000)} تومان</strong>
+            جمع کل: {separateNumber(3600000)} تومان
           </Typography>
-          <Input dir="rtl" color="secondary" sx={{ width: "15.4475rem" }} placeholder="کد تخفیف دارید؟" />
+          <Input dir="rtl" color="secondary" sx={{ width: "14.4025rem" }} placeholder="کد تخفیف دارید؟" />
         </Box>
       </Box>
     </>
