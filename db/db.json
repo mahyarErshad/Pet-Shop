@@ -1,0 +1,23 @@
+{
+  "cat": {
+    "food": [],
+    "litter": [],
+    "toys": [],
+    "box": [],
+    "health": []
+  },
+  "dog": {
+    "food": [],
+    "toys": [],
+    "collar": [],
+    "health": []
+  },
+  "bird": {
+    "food": [],
+    "toys": []
+  },
+  "pig": {
+    "food": [],
+    "toys": []
+  }
+}
