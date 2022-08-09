@@ -1,8 +1,11 @@
 import * as React from "react";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
+interface IProps {
+  page: number;
+}
 
-export default function Paginations() {
+export default function PaginationComponent(props: IProps) {
   return (
     <>
       <Stack spacing={2}>
