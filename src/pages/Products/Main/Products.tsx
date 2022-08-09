@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import React from "react";
 import Cards from "../../../components/Utils/Cards/Cards";
-import Paginations from "../../../components/Utils/Paginations/Paginations";
+import Paginations from "../../../components/Utils/Pagination/Paginations";
 import ProductsHeader from "../ProductsHeader/ProductsHeader";
 
 function Products() {
