@@ -19,7 +19,7 @@ function Products() {
           <Cards title="غذای خشک گربه پرشین رویال کنین" image="https://rabinseh.com/wp-content/uploads/2022/06/4-dgdd-247x247.jpg" price={1200000} />
         </Box>
         <Box sx={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center", mb: "1rem" }}>
-          <Paginations />
+          <Paginations page={10} />
         </Box>
       </Box>
     </>
