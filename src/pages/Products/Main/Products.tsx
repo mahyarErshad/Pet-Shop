@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import React from "react";
-import Cards from "../../../components/Utils/Cards/Cards";
+import Cards from "../../../components/Utils/Card/Cards";
 import PaginationComponent from "../../../components/Utils/PaginationComponent/PaginationComponent";
 import ProductsHeader from "../ProductsHeader/ProductsHeader";
 
