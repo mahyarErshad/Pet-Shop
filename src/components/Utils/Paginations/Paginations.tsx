@@ -5,7 +5,7 @@ interface IProps {
   page: number;
 }
 
-export default function Paginations() {
+export default function Paginations(props: IProps) {
   return (
     <>
       <Stack spacing={2}>
