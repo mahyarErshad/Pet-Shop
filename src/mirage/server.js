@@ -34,7 +34,6 @@ export function makeServer({ environment = "test" } = {}) {
       });
       mockUsers.forEach((user) => {
         server.create("user", {
-          username: user.username,
           email: user.email,
           password: user.password,
           cart: user.cart,
@@ -61,11 +60,6 @@ export function makeServer({ environment = "test" } = {}) {
 
       this.get("/categories", (schema) => {
         return schema.categories.all();
-      });
-
-      this.get("/users/:username", (schema, request) => {
-        let userName = request.params.username;
-        return schema.users.find(userName);
       });
 
       this.post("/users", (schema, request) => {
