@@ -226,17 +226,111 @@ const mockProducts = [
     quantity: 100,
   },
   {
-    id: 12,
+    id: 13,
+    title: "غذای خشک گربه عقیم شده هپی کت مینکاس",
+    image: "https://rabinseh.com/wp-content/uploads/2022/02/%D8%B9%D9%82%DB%8C%D9%85-510x510.jpg",
+    brand: "هپی کت",
+    breed: "گربه",
+    country: "آلمان",
+    weight: 10000,
+    description: `
+    غذای کامل متعادل، با محتوای چربی کاهش یافته و مقادیر بهینه فیبر رضایت بخش، به گربه شما کمک می کند تا وزن ایده آل خود را حفظ کند.
+
+این غذای خشک خوشمزه دارای ویتامین ها و مواد معدنی زیادی است و از سیستم ایمنی بدن حمایت می کند.
+    `,
+    category: "غذای گربه",
+    price: 2400000,
+    quantity: 100,
+  },
+  {
+    id: 14,
+    title: "غذای گربه جوسرا دیلی کت",
+    image: "https://rabinseh.com/wp-content/uploads/2022/05/joseradailycat2149-510x510.jpg",
+    brand: "جوسرا",
+    breed: "گربه",
+    country: "آلمان",
+    weight: 2000,
+    description: `
+    غذای گربه جوسرا دیلی کت 2 کیلوگرم + ارسال رایگان
+    `,
+    category: "غذای گربه",
+    price: 800000,
+    quantity: 100,
+  },
+  {
+    id: 15,
+    title: "غذای بچه گربه جوسرا طعم مرغ",
+    image: "https://rabinseh.com/wp-content/uploads/2022/05/%DA%A9%DB%8C%D8%AA%D9%86-%D8%AC%D9%88%D8%B3%D8%B1%D8%A7-510x510.jpg",
+    brand: "جوسرا",
+    breed: "گربه",
+    country: "آلمان",
+    weight: 2000,
+    description: `
+    غذای بچه گربه جوسرا طعم مرغ 2 کیلوگرم + ارسال رایگان
+    `,
+    category: "غذای گربه",
+    price: 750000,
+    quantity: 100,
+  },
+  {
+    id: 16,
+    title: "غذای خشک جوسرا گربه بالغ مدل نیچرکت",
+    image: "https://rabinseh.com/wp-content/uploads/2019/07/naturecatcat-510x510.jpg",
+    brand: "جوسرا",
+    breed: "گربه",
+    country: "آلمان",
+    weight: 2000,
+    description: `
+    غذای خشک جوسرا گربه بالغ مدل نیچرکت حاوی گوشت مرغ و ماهی
+بدون غلات مخصوص گربه بالغ و بچه گربه های بالای شش ماه است.
+این محصول ساخت کشور آلمان است در وزن ۲ کیلوگرمی تقدیم شما می شود.
+    `,
+    category: "غذای گربه",
+    price: 750000,
+    quantity: 100,
+  },
+  {
+    id: 17,
+    title: "غذای گربه یورینری رفلکس پلاس",
+    image: "https://rabinseh.com/wp-content/uploads/2021/05/201910116135139613.jpg",
+    brand: "رفلکس",
+    breed: "گربه",
+    country: "ترکیه",
+    weight: 1500,
+    description: `
+    غذای مورد علاقه فینیکس.
+    `,
+    category: "غذای گربه",
+    price: 320000,
+    quantity: 100,
+  },
+  {
+    id: 18,
+    title: "غذای خشک گربه پرشین رویال کنین",
+    image: "https://rabinseh.com/wp-content/uploads/2022/06/%D9%BE%D8%B1%D8%B4%DB%8C%D9%86-510x510.jpg",
+    brand: "رویال کنین",
+    breed: "گربه",
+    country: "فرانسه",
+    weight: 2000,
+    description: `
+    ترکیبات ویژه و مغذی این غذا پروتئین های ویژه با قابلیت جذب سریع و پریبیوتیکها موجب تقویت سلامت دستگاه گوارش و بدن می‌شوند.
+    `,
+    category: "غذای گربه",
+    price: 990000,
+    quantity: 100,
+  },
+  {
+    id: 18,
     title: "کنین",
     image: "https",
-    brand: "بیفار",
-    breed: "سگ",
-    country: "هلند",
+    brand: "جوسرا",
+    breed: "گربه",
+    country: "آلمان",
     weight: 1500,
     description: `
     
     `,
-    category: "بهداشتی سگ",
+    category: "غذای گربه",
     price: 1100000,
     quantity: 100,
   },
