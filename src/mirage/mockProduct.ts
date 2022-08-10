@@ -417,31 +417,61 @@ const mockProducts = [
   },
   {
     id: 25,
-    title: "کنین",
-    image: "https",
-    brand: "تریکسی",
-    breed: "گربه",
+    title: "آبخوری جوندگان دلوکس",
+    image: "https://rabinseh.com/wp-content/uploads/2020/04/s-l1600-1697.jpg",
+    brand: "دلوکس",
+    breed: "جوندگان",
     country: "آلمان",
-    weight: 7000,
+    weight: 75,
     description: `
-    
+    جنس پلاستیک و فلز استیل (جنس قسمت لوله‌ای ظرف آب فلزی )
     `,
-    category: "بهداشتی گربه",
-    price: 1100000,
+    category: "ملزومات جوندگان",
+    price: 250000,
     quantity: 100,
   },
   {
-    id: 25,
+    id: 26,
+    title: "توالت مثلثی خرگوش",
+    image: "https://rabinseh.com/wp-content/uploads/2022/03/%D8%AE%D8%B1%DA%AF%D9%88%D8%B4%D8%B4%D8%B4%D8%B4-510x510.jpg",
+    brand: "تریکسی",
+    breed: "جوندگان",
+    country: "آلمان",
+    weight: 150,
+    description: `
+    توالت مثلثی خرگوش سایز بزرگ
+    `,
+    category: "ملزومات جوندگان",
+    price: 350000,
+    quantity: 100,
+  },
+  {
+    id: 27,
+    title: "توالت گرد خرگوش",
+    image: "https://rabinseh.com/wp-content/uploads/2020/05/Untitled-5.jpg",
+    brand: "تریکسی",
+    breed: "جوندگان",
+    country: "آلمان",
+    weight: 200,
+    description: `
+    توالت گرد خرگوش دی پی اس
+    `,
+    category: "ملزومات جوندگان",
+    price: 320000,
+    quantity: 100,
+  },
+  {
+    id: 27,
     title: "کنین",
     image: "https",
     brand: "تریکسی",
-    breed: "گربه",
+    breed: "جوندگان",
     country: "آلمان",
     weight: 7000,
     description: `
     
     `,
-    category: "بهداشتی گربه",
+    category: "ملزومات جوندگان",
     price: 1100000,
     quantity: 100,
   },
