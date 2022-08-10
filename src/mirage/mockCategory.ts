@@ -1,3 +1,3 @@
-const mockCategories = ["خوار و بار", "پروتئینی", "لبنیات"];
+const mockCategories = ["گربه", "سگ", "پرندگان", "جوندگان"];
 
 export default mockCategories;
