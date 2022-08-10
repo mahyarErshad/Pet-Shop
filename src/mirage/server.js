@@ -57,6 +57,10 @@ export function makeServer({ environment = "test" } = {}) {
         let categoryName = request.params.categoryName;
         return schema.products.where({ category: categoryName });
       });
+      this.get("/products/:breed", (schema, request) => {
+        let breed = request.params.breed;
+        return schema.products.where({ breed: breed });
+      });
 
       this.get("/categories", (schema) => {
         return schema.categories.all();
