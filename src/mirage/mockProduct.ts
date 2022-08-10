@@ -371,17 +371,77 @@ const mockProducts = [
     quantity: 100,
   },
   {
-    id: 21,
+    id: 22,
+    title: "قرص خوران و شربت خوران گربه",
+    image: "https://rabinseh.com/wp-content/uploads/2022/07/%D8%B4%D8%B1%D8%A8%D8%AA-%D8%AE%D9%88%D8%B1-510x509.jpg",
+    brand: "تریکسی",
+    breed: "گربه",
+    country: "آلمان",
+    weight: 15,
+    description: `
+    شربت خوران و قرص خوران گربه و سگ محصولی برای راحتی بیشتر در دارو دادن به حیوان شما است
+    `,
+    category: "بهداشتی گربه",
+    price: 60000,
+    quantity: 100,
+  },
+  {
+    id: 23,
+    title: "ناخن گیر گربه تریکسی",
+    image: "https://rabinseh.com/wp-content/uploads/2022/05/%D9%86%D8%A7%D8%AE%D9%86-%DA%AF%DB%8C%D8%B1-510x510.jpg",
+    brand: "تریکسی",
+    breed: "گربه",
+    country: "آلمان",
+    weight: 18,
+    description: `
+    ناخن گیر سگ و گربه تریکسی
+    `,
+    category: "بهداشتی گربه",
+    price: 320000,
+    quantity: 100,
+  },
+  {
+    id: 24,
+    title: "خمیر دندان گربه تریکسی ",
+    image: "https://rabinseh.com/wp-content/uploads/2022/03/%D9%85%D8%B3%D9%88%D8%A7%DA%AF-510x510.jpg",
+    brand: "تریکسی",
+    breed: "گربه",
+    country: "آلمان",
+    weight: 100,
+    description: `
+    ست مسواک و خمیر دندان مخصوص گربه، برای مراقبت کامل از بهداشت دهان و دندان است. شامل: خمیر دندان، مسواک کوچک و مسواک دو طرفه با دو سر برس مختلف (برس بزرگ برای دندان های نیش و جلویی و برس کوچک برای دندان های آسیا)
+    `,
+    category: "بهداشتی گربه",
+    price: 230000,
+    quantity: 100,
+  },
+  {
+    id: 25,
     title: "کنین",
     image: "https",
-    brand: "ون کت",
+    brand: "تریکسی",
     breed: "گربه",
-    country: "ایران",
+    country: "آلمان",
     weight: 7000,
     description: `
     
     `,
-    category: "خاک گربه",
+    category: "بهداشتی گربه",
+    price: 1100000,
+    quantity: 100,
+  },
+  {
+    id: 25,
+    title: "کنین",
+    image: "https",
+    brand: "تریکسی",
+    breed: "گربه",
+    country: "آلمان",
+    weight: 7000,
+    description: `
+    
+    `,
+    category: "بهداشتی گربه",
     price: 1100000,
     quantity: 100,
   },
