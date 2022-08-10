@@ -506,17 +506,78 @@ const mockProducts = [
     quantity: 100,
   },
   {
-    id: 30,
+    id: 31,
+    title: "غذای مخصوص مرغ مینا",
+    image: "https://rabinseh.com/wp-content/uploads/2020/12/MoFeed-Myna-Food-510x510.jpg",
+    brand: "مفید",
+    breed: "پرندگان",
+    country: "ایران",
+    weight: 1000,
+    description: `
+    غذای مخصوص مرغ مینا مفید وزن 1 کیلوگرم
+    `,
+    category: "غذای پرندگان",
+    price: 150000,
+    quantity: 100,
+  },
+  {
+    id: 32,
+    title: "غذای طوطی مفید",
+    image: "https://rabinseh.com/wp-content/uploads/2020/12/mofeed-african-mixture-parrot-bird-1000gr-1.jpg",
+    brand: "مفید",
+    breed: "پرندگان",
+    country: "ایران",
+    weight: 1000,
+    description: `
+    غذای طوطی مفید مدل AFRICAN MIXTURE KASKO وزن 1 کیلوگرم
+    `,
+    category: "غذای پرندگان",
+    price: 200000,
+    quantity: 100,
+  },
+  {
+    id: 33,
+    title: "غذای عروس هلندی و مرغ عشق",
+    image: "https://rabinseh.com/wp-content/uploads/2020/09/3a9efed584f64e7fb9413c51a02bacde.jpg",
+    brand: "مفید",
+    breed: "پرندگان",
+    country: "ایران",
+    weight: 1000,
+    description: `
+    غذای عروس هلندی و مرغ عشق مفید 1kg
+    `,
+    category: "غذای پرندگان",
+    price: 150000,
+    quantity: 100,
+  },
+  {
+    id: 34,
+    title: "غذای مرغ عشق Grandmix",
+    image: "https://rabinseh.com/wp-content/uploads/2019/07/2449.jpeg",
+    brand: "گرند میکس",
+    breed: "پرندگان",
+    country: "انگلیس",
+    weight: 1000,
+    description: `
+    غذای مرغ عشق Grandmix  غذایی کامل روزانه میباشد.
+این غذا دارای ویتامینهای ضروری و عناصر کمیاب مورد نیاز مرغ عشق است.
+    `,
+    category: "غذای پرندگان",
+    price: 130000,
+    quantity: 100,
+  },
+  {
+    id: 34,
     title: "کنین",
     image: "https",
-    brand: "تریکسی",
-    breed: "جوندگان",
-    country: "آلمان",
+    brand: "مفید",
+    breed: "پرندگان",
+    country: "ایران",
     weight: 7000,
     description: `
     
     `,
-    category: "ملزومات جوندگان",
+    category: "غذای پرندگان",
     price: 1100000,
     quantity: 100,
   },
