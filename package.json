@@ -17,7 +17,6 @@
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
     "material-ui-popup-state": "^4.0.1",
-    "miragejs": "^0.1.45",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
@@ -54,5 +53,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "miragejs": "^0.1.45"
   }
 }
