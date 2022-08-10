@@ -1,5 +1,11 @@
 import { createServer } from "miragejs";
 
 export default function () {
-  createServer();
+  createServer({
+    routes() {
+      this.get("/api/reminders", () => ({
+        reminders: [],
+      }));
+    },
+  });
 }
