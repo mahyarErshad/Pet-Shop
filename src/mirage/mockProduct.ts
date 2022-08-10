@@ -7,6 +7,7 @@ const mockProducts = [
     breed: "شیر بادام",
     country: "ایران",
     weight: "1 لیتر",
+    description: "test",
     category: "لبنیات",
     price: 30000,
     quantity: 0,

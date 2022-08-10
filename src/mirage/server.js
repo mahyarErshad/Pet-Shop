@@ -17,14 +17,15 @@ export function makeServer({ environment = "test" } = {}) {
       mockProducts.forEach((product) => {
         server.create("product", {
           title: product.title,
-          underTitle: product.underTitle,
+          id: product.id,
           description: product.description,
           brand: product.brand,
           category: product.category,
           quantity: product.quantity,
-          image1: product.image1,
-          image2: product.image2,
-          image3: product.image3,
+          image: product.image,
+          breed: product.breed,
+          country: product.country,
+          weight: product.weight,
           price: product.price,
         });
       });
