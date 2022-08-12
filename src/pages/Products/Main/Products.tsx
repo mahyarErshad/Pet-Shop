@@ -9,11 +9,13 @@ function Products() {
   document.title = "محصولات | پت شاپ فینیکس";
   const breed = useParams().breed;
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     fetch("/api/products")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
+        setLoading(false);
       })
       .catch((err) => console.log(err));
   }, [breed]);
