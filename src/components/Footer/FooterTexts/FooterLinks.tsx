@@ -1,6 +1,7 @@
 import { Typography, useTheme } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
+import { goToTop } from "../../../functions/functions";
 import "../../../Style/global/style.css";
 
 interface FooterTextsProps {
@@ -26,12 +27,7 @@ function FooterLinks(props: FooterTextsProps) {
       color: theme.palette.secondary.main,
     },
   };
-  function goToTop() {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  }
+
   return (
     <>
       <Link to={link} className="noDecoration">
