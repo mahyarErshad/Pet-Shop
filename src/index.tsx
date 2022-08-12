@@ -5,7 +5,7 @@ import App from "./App";
 import { makeServer } from "./mirage/server";
 import { store } from "./redux/store";
 
-if (process.env.NODE_ENV === "development") {
+if (process.env.NODE_ENV === "development" || process.env.NODE_ENV === "production") {
   makeServer({ environment: "development" });
 }
 
