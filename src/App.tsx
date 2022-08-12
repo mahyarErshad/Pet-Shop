@@ -14,7 +14,6 @@ import Register from "./pages/Register/Register/Register";
 import NotFound from "./pages/NotFound/NotFound";
 import DeliveryMethods from "./pages/DeliveryMethods/DeliveryMethods";
 import PaymentMethods from "./pages/PaymentMethods/PaymentMethods";
-import Loading from "./pages/Loading/Loading";
 import Terms from "./pages/Terms/Terms";
 import Contact from "./pages/Contact/Contact";
 import Products from "./pages/Products/Main/Products";
@@ -43,9 +42,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/products/:breed" element={<Products />} />
             <Route path="/product/:id" element={<SingleProduct />} />
-            {/* for testing loading page */}
             <Route path="/cart" element={<Cart />} />
-            <Route path="/loading" element={<Loading />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />
