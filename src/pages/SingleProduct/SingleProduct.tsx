@@ -9,8 +9,8 @@ import Loading from "../Loading/Loading";
 import NotFound from "../NotFound/NotFound";
 function SingleProduct() {
   const { id } = useParams();
-  const [loading, setLoading] = useState(true);
-  const [notFound, setNotFound] = useState(true);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [notFound, setNotFound] = useState<boolean>(true);
   const [product, setProduct] = useState<any>([]);
 
   useEffect(() => {
