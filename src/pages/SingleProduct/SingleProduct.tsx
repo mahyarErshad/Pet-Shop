@@ -10,27 +10,22 @@ import NotFound from "../NotFound/NotFound";
 function SingleProduct() {
   const { id } = useParams();
   const [loading, setLoading] = useState(true);
-  const [notFound, setNotFound] = useState<boolean>();
   const [product, setProduct] = useState<any>([]);
-  const fetchProduct = async () => {
-    const res = await fetch(`/api/products/${id}`);
-    const data = await res.json();
-    if (data.product) {
-      setProduct(data.product);
-      setLoading(false);
-    } else {
-      setNotFound(true);
-    }
-  };
 
   useEffect(() => {
-    fetchProduct();
+    if (id) {
+      setLoading(true);
+      fetch(`/api/products/single/${id}`)
+        .then((res) => res.json())
+        .then((data) => setProduct(data.product))
+        .then(() => setLoading(false))
+        .catch((error) => console.log(error))
+        .finally(() => setLoading(false));
+    }
   }, [id]);
 
   if (loading) return <Loading />;
-  return notFound ? (
-    <NotFound />
-  ) : (
+  return (
     <>
       <Box sx={{ width: "100%", mb: "1rem", display: "flex", flexDirection: "column", px: { xs: "0.5rem", md: "1rem", alignItems: "center", justifyContent: "center", gap: "0.5rem" } }}>
         <Box sx={{ width: "100%", display: "flex", flexDirection: "row-reverse", alignItems: { xs: "center", md: "flex-start" }, justifyContent: { xs: "center", md: "flex-start" }, flexWrap: "wrap", borderBottom: "2px solid #ECEFF1", pb: "0.15rem" }}>
@@ -47,26 +42,3 @@ function SingleProduct() {
 }
 
 export default SingleProduct;
-
-// if (id) {
-//   setLoading(true);
-//   fetch(`/api/products/single/${id}`)
-//     .then((res) => {
-//       if (res === null) {
-//         setNotFound(true);
-//         return;
-//       } else {
-//         return res.json();
-//       }
-//     })
-//     .then((data) => {
-//       if (data.product) {
-//         setProduct(data.product);
-//         setNotFound(false);
-//         setLoading(false);
-//       } else {
-//         setNotFound(true);
-//         setLoading(false);
-//       }
-//     })
-//     .catch((error) => console.log(error));
