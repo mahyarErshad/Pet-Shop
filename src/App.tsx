@@ -41,9 +41,9 @@ function App() {
             <Route path="/payment-methods" element={<PaymentMethods />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/products" element={<Products />} />
-            {/* This is for testing. The url will be /products/:id when this App starts to be alive */}
-            <Route path="/id" element={<SingleProduct />} />
+            <Route path="/products/:breed" element={<Products />}>
+              <Route path="/products/:breed/:id" element={<SingleProduct />} />
+            </Route>
             {/* for testing loading page */}
             <Route path="/cart" element={<Cart />} />
             <Route path="/loading" element={<Loading />} />
