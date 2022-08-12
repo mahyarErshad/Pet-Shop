@@ -29,7 +29,7 @@ function Products() {
           console.log(products);
           setLoading(false);
         });
-  }, [breed]);
+  }, [breed, products]);
 
   if (loading) {
     return <Loading />;
