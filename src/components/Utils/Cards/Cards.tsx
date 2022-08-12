@@ -13,10 +13,11 @@ interface Iprops {
   title: string;
   image: string;
   price: number;
+  id: number;
 }
 
 export default function Cards(props: Iprops) {
-  const { title, image, price } = props;
+  const { title, image, price, id } = props;
 
   return (
     <>
