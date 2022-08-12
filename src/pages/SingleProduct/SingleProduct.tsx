@@ -34,7 +34,7 @@ function SingleProduct() {
             <CustomizedTables weight={product?.weight} country={product?.country} brand={product?.brand} breed={product?.breed} />
           </Box>
         </Box>
-        <SingleProductsDescription />
+        <SingleProductsDescription description={product?.description} />
       </Box>
     );
   }
