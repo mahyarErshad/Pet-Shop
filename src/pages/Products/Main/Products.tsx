@@ -17,6 +17,7 @@ function Products() {
       fetch("/api/products/" + breed)
         .then((res) => res.json())
         .then((data) => {
+          setLoading(true);
           setProducts(data.products);
           console.log(products);
           setLoading(false);
@@ -38,7 +39,7 @@ function Products() {
       <>
         <Box>
           <ProductsHeader />
-          <Box sx={{ mb: "1rem", width: "100%", px: "1rem", display: "flex", justifyContent: "center", alignItems: "center", gap: "1rem", flexWrap: "wrap" }}>{products && products.map((product: any) => <Cards id={product.id} key={product.id} title={product.title} image={product.image} price={product.price}  />)}</Box>
+          <Box sx={{ mb: "1rem", width: "100%", px: "1rem", display: "flex", justifyContent: "center", alignItems: "center", gap: "1rem", flexWrap: "wrap" }}>{products && products.map((product: any) => <Cards id={product.id} key={product.id} title={product.title} image={product.image} price={product.price} />)}</Box>
           <Box sx={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center", mb: "1rem" }}>
             <PaginationComponent page={10} />
           </Box>
