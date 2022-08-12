@@ -10,6 +10,7 @@ import NotFound from "../NotFound/NotFound";
 function SingleProduct() {
   const { id } = useParams();
   const [loading, setLoading] = useState(true);
+  const [notFound, setNotFound] = useState(true);
   const [product, setProduct] = useState<any>([]);
 
   useEffect(() => {
@@ -17,7 +18,12 @@ function SingleProduct() {
       setLoading(true);
       fetch(`/api/products/single/${id}`)
         .then((res) => res.json())
-        .then((data) => setProduct(data.product))
+        .then((data) => {
+          if (data) {
+            setProduct(data.product);
+            setNotFound(false);
+          }
+        })
         .then(() => setLoading(false))
         .catch((error) => console.log(error))
         .finally(() => setLoading(false));
@@ -25,6 +31,7 @@ function SingleProduct() {
   }, [id]);
 
   if (loading) return <Loading />;
+  if (notFound) return <NotFound />;
   return (
     <>
       <Box sx={{ width: "100%", mb: "1rem", display: "flex", flexDirection: "column", px: { xs: "0.5rem", md: "1rem", alignItems: "center", justifyContent: "center", gap: "0.5rem" } }}>
