@@ -4,44 +4,47 @@ import { useParams } from "react-router-dom";
 import Cards from "../../../components/Utils/Cards/Cards";
 import PaginationComponent from "../../../components/Utils/PaginationComponent/PaginationComponent";
 import Loading from "../../Loading/Loading";
+import NotFound from "../../NotFound/NotFound";
 import ProductsHeader from "../ProductsHeader/ProductsHeader";
 
 function Products() {
   document.title = "محصولات | پت شاپ فینیکس";
-  const { breed } = useParams<{ breed: string }>();
-  const [loading, setLoading] = useState(true);
+  const { breed } = useParams<string>();
+  const [loading, setLoading] = useState<boolean>(true);
+  const [notFound, setNotFound] = useState<boolean>(true);
   const [products, setProducts] = useState<any>([]);
 
   useEffect(() => {
     if (breed) {
       setLoading(true);
-      fetch("/api/products/" + breed)
+      fetch(`/api/products/${breed}`)
         .then((res) => res.json())
         .then((data) => {
-          setProducts(data.products);
-          console.log(products);
-          setLoading(false);
+          if (data && data.products.length) {
+            setProducts(data.products);
+            setNotFound(false);
+          }
         })
-        .catch((error) => console.log(error));
+        .then(() => setLoading(false))
+        .catch((error) => console.log(error))
+        .finally(() => setLoading(false));
     }
     // eslint-disable-next-line
   }, [breed]);
 
-  if (loading) {
-    return <Loading />;
-  } else {
-    return (
-      <>
-        <Box>
-          <ProductsHeader />
-          <Box sx={{ mb: "1rem", width: "100%", px: "1rem", display: "flex", justifyContent: "center", alignItems: "center", gap: "1rem", flexWrap: "wrap" }}>{products && products.map((product: any) => <Cards id={product.id} key={product.id} title={product.title} image={product.image} price={product.price} />)}</Box>
-          <Box sx={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center", mb: "1rem" }}>
-            <PaginationComponent page={10} />
-          </Box>
+  if (loading) return <Loading />;
+  if (notFound) return <NotFound />;
+  return (
+    <>
+      <Box>
+        <ProductsHeader />
+        <Box sx={{ mb: "1rem", width: "100%", px: "1rem", display: "flex", justifyContent: "center", alignItems: "center", gap: "1rem", flexWrap: "wrap" }}>{products && products.map((product: any) => <Cards id={product.id} key={product.id} title={product.title} image={product.image} price={product.price} />)}</Box>
+        <Box sx={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center", mb: "1rem" }}>
+          <PaginationComponent page={10} />
         </Box>
-      </>
-    );
-  }
+      </Box>
+    </>
+  );
 }
 
 export default Products;
