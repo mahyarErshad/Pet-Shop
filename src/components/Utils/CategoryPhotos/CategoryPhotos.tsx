@@ -2,6 +2,7 @@ import { Box, styled, Tooltip, tooltipClasses, TooltipProps } from "@mui/materia
 import React from "react";
 import { Link } from "react-router-dom";
 import Fade from "@mui/material/Fade";
+import { goToTop } from "../../../functions/functions";
 
 interface Iprops {
   title: string;
@@ -25,7 +26,7 @@ function CategoryPhotos(props: Iprops) {
   return (
     <>
       <LightTooltip title={title} TransitionComponent={Fade} TransitionProps={{ timeout: 600 }} followCursor>
-        <Box sx={{ ...photoStyle, animationDuration: `${animationDuration}` }}>
+        <Box onClick={() => goToTop()} sx={{ ...photoStyle, animationDuration: `${animationDuration}` }}>
           <Link to={linkTo}>
             <Box sx={{ width: "100%", height: "100%", "&:hover": { borderRadius: "16px", border: "2px solid #FFB929", zIndex: "2", transform: "scale(1.1,1.1)", transition: "all 0.3s " } }} component="img" src={image} alt={title} />
           </Link>
