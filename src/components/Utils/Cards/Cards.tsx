@@ -7,7 +7,7 @@ import { Box, CardActionArea, CardActions } from "@mui/material";
 import InDeButton from "../Buttons/InDeButton/InDeButton";
 import { Link } from "react-router-dom";
 import "../../../Style/global/style.css";
-import { separateNumber } from "../../../functions/functions";
+import { goToTop, separateNumber } from "../../../functions/functions";
 
 interface Iprops {
   title: string;
@@ -23,7 +23,7 @@ export default function Cards(props: Iprops) {
     <>
       <Card sx={{ width: { lg: "30%", md: "27%", sm: "40%", xs: "80%" } }}>
         <CardActionArea>
-          <Link className="noDecoration" to={`/product/${id}`}>
+          <Link onClick={() => goToTop()} className="noDecoration" to={`/product/${id}`}>
             <CardMedia sx={{ objectFit: "contain", p: "0.5rem" }} component="img" height="200" image={image} alt={title} />
             <CardContent sx={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
               <Typography sx={{ fontSize: "1rem", fontWeight: "bold", color: "#000" }} dir="rtl" gutterBottom variant="h5" component="div">
