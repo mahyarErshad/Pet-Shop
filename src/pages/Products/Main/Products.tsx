@@ -1,11 +1,14 @@
 import { Box } from "@mui/material";
 import React from "react";
+import { useParams } from "react-router-dom";
 import Cards from "../../../components/Utils/Cards/Cards";
 import PaginationComponent from "../../../components/Utils/PaginationComponent/PaginationComponent";
 import ProductsHeader from "../ProductsHeader/ProductsHeader";
 
 function Products() {
   document.title = "محصولات | پت شاپ فینیکس";
+  const breed = useParams().breed;
+  console.log(breed);
   return (
     <>
       <Box>
