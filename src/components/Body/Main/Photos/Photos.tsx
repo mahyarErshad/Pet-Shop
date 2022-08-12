@@ -4,19 +4,23 @@ import "../../../../Style/card-animation/animation.css";
 import CategoryPhotos from "../../../Utils/CategoryPhotos/CategoryPhotos";
 
 // images
-import cat from "../../../../images/cat.jpg";
-import dog from "../../../../images/dog.jpg";
-import bird from "../../../../images/bird.jpg";
-import pig from "../../../../images/pig.jpg";
+import catImage from "../../../../images/cat.jpg";
+import dogImage from "../../../../images/dog.jpg";
+import birdImage from "../../../../images/bird.jpg";
+import pigImage from "../../../../images/pig.jpg";
 
 function Photos() {
+  const cat = "گربه";
+  const dog = "سگ";
+  const bird = "پرندگان";
+  const rodent = "جوندگان";
   return (
     <>
       <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center", width: "100%", flexWrap: "wrap", flexDirection: "row-reverse", marginBottom: "0.5rem" }}>
-        <CategoryPhotos title="خرید لوازم گربه" linkTo="/products" image={cat} animationDuration="2s" />
-        <CategoryPhotos title="خرید لوازم سگ" linkTo="/products" image={dog} animationDuration="2.5s" />
-        <CategoryPhotos title="خرید لوازم پرندگان" linkTo="/products" image={bird} animationDuration="3s" />
-        <CategoryPhotos title="خرید لوازم جوندگان" linkTo="/products" image={pig} animationDuration="3.5s" />
+        <CategoryPhotos title="خرید لوازم گربه" linkTo={`/products/${cat}`} image={catImage} animationDuration="2s" />
+        <CategoryPhotos title="خرید لوازم سگ" linkTo={`/products/${dog}`} image={dogImage} animationDuration="2.5s" />
+        <CategoryPhotos title="خرید لوازم پرندگان" linkTo={`/products/${bird}`} image={birdImage} animationDuration="3s" />
+        <CategoryPhotos title="خرید لوازم جوندگان" linkTo={`/products/${rodent}`} image={pigImage} animationDuration="3.5s" />
       </Box>
     </>
   );

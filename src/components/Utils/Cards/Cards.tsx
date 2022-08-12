@@ -13,16 +13,17 @@ interface Iprops {
   title: string;
   image: string;
   price: number;
+  id: number;
 }
 
 export default function Cards(props: Iprops) {
-  const { title, image, price } = props;
+  const { title, image, price, id } = props;
 
   return (
     <>
       <Card sx={{ width: { lg: "30%", md: "27%", sm: "40%", xs: "80%" } }}>
         <CardActionArea>
-          <Link className="noDecoration" to="/id">
+          <Link className="noDecoration" to={`/product/${id}`}>
             <CardMedia sx={{ objectFit: "contain", p: "0.5rem" }} component="img" height="200" image={image} alt={title} />
             <CardContent sx={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
               <Typography sx={{ fontSize: "1rem", fontWeight: "bold", color: "#000" }} dir="rtl" gutterBottom variant="h5" component="div">

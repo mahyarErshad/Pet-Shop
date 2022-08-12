@@ -1,7 +1,11 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
+interface IProps {
+  description: string;
+}
 
-function SingleProductsDescription() {
+function SingleProductsDescription(props: IProps) {
+  const { description } = props;
   const paragraphStyle = {
     fontSize: "1rem",
     fontWeight: "normal",
@@ -18,20 +22,7 @@ function SingleProductsDescription() {
         </Typography>
         <Box sx={{ width: "100%", px: "1.5rem" }}>
           <Typography dir="rtl" sx={paragraphStyle}>
-            • سلامت پوست و موی گربه
-            <br />
-            • کاهش و کنترل هربال (تجمع گلوله مو در دستگاه گوارش)
-            <br />
-            • غذای کامل برای گربه های پرشین بالغ (بزرگتر از 12 ماه)
-            <br />
-            • حاوی غلات و عصاره پروتئین گیاهی
-            <br />
-            • حاوی تکه‌های لذیذ در شیره مغذی گوشت
-            <br />
-            • سرشار از مواد معدنی و مشتقات منشا گیاهی
-            <br />
-            • حاوی ویتامین‌های D3, E1, E2, E4 و عناصر منگنز و روی
-            <br />• دارای آنتی اکسیدان و ویتامین برای کمک به سیستم دفاعی
+            {description}
           </Typography>
         </Box>
       </Box>

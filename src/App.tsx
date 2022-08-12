@@ -14,7 +14,6 @@ import Register from "./pages/Register/Register/Register";
 import NotFound from "./pages/NotFound/NotFound";
 import DeliveryMethods from "./pages/DeliveryMethods/DeliveryMethods";
 import PaymentMethods from "./pages/PaymentMethods/PaymentMethods";
-import Loading from "./pages/Loading/Loading";
 import Terms from "./pages/Terms/Terms";
 import Contact from "./pages/Contact/Contact";
 import Products from "./pages/Products/Main/Products";
@@ -41,12 +40,9 @@ function App() {
             <Route path="/payment-methods" element={<PaymentMethods />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/products" element={<Products />} />
-            {/* This is for testing. The url will be /products/:id when this App starts to be alive */}
-            <Route path="/id" element={<SingleProduct />} />
-            {/* for testing loading page */}
+            <Route path="/products/:breed" element={<Products />} />
+            <Route path="/product/:id" element={<SingleProduct />} />
             <Route path="/cart" element={<Cart />} />
-            <Route path="/loading" element={<Loading />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />

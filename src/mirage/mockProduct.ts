@@ -1,4 +1,6 @@
-const mockProducts = [
+import { IProduct } from "../Types/types";
+
+const mockProducts: IProduct[] = [
   {
     id: 1,
     title: "غذای توله سگ رفلکس پلاس",
