@@ -7,3 +7,9 @@ export function separateNumber(number: number) {
   newNumber = persian(newNumber);
   return newNumber;
 }
+export function goToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+}
