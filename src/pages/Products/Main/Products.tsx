@@ -13,23 +13,18 @@ function Products() {
   const [products, setProducts] = useState<any>([]);
 
   useEffect(() => {
-    if (breed)
+    if (breed) {
+      setLoading(true);
       fetch("/api/products/" + breed)
         .then((res) => res.json())
         .then((data) => {
-          setLoading(true);
           setProducts(data.products);
           console.log(products);
           setLoading(false);
-        });
-    else
-      fetch("/api/products")
-        .then((res) => res.json())
-        .then((data) => {
-          setLoading(true);
-          setProducts(data.products);
-          setLoading(false);
-        }); // eslint-disable-next-line
+        })
+        .catch((error) => console.log(error));
+    }
+    // eslint-disable-next-line
   }, [breed]);
 
   if (loading) {
