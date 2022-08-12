@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Cards from "../../../components/Utils/Cards/Cards";
 import PaginationComponent from "../../../components/Utils/PaginationComponent/PaginationComponent";
+import { IProduct } from "../../../Types/types";
 import Loading from "../../Loading/Loading";
 import NotFound from "../../NotFound/NotFound";
 import ProductsHeader from "../ProductsHeader/ProductsHeader";
@@ -12,7 +13,7 @@ function Products() {
   const { breed } = useParams<string>();
   const [loading, setLoading] = useState<boolean>(true);
   const [notFound, setNotFound] = useState<boolean>(true);
-  const [products, setProducts] = useState<any>([]);
+  const [products, setProducts] = useState<IProduct[]>([]);
 
   useEffect(() => {
     if (breed) {
