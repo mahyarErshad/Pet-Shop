@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Cards from "../../../components/Utils/Cards/Cards";
 import PaginationComponent from "../../../components/Utils/PaginationComponent/PaginationComponent";
@@ -9,6 +9,14 @@ function Products() {
   document.title = "محصولات | پت شاپ فینیکس";
   const breed = useParams().breed;
   const [products, setProducts] = useState([]);
+  useEffect(() => {
+    fetch("/api/products")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((err) => console.log(err));
+  }, [breed]);
   return (
     <>
       <Box>
