@@ -41,9 +41,8 @@ function App() {
             <Route path="/payment-methods" element={<PaymentMethods />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/products/:breed" element={<Products />}>
-              <Route path="/products/:breed/:id" element={<SingleProduct />} />
-            </Route>
+            <Route path="/products/:breed" element={<Products />} />
+            <Route path="/product/:id" element={<SingleProduct />} />
             {/* for testing loading page */}
             <Route path="/cart" element={<Cart />} />
             <Route path="/loading" element={<Loading />} />
