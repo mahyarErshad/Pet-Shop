@@ -61,10 +61,10 @@ export function makeServer({ environment = "test" } = {}) {
         let breed = request.params.breed;
         return schema.products.where({ breed: breed });
       });
-      // this.get("/products/:category", (schema, request) => {
-      //   let category = request.params.category;
-      //   return schema.products.where({ category: category });
-      // });
+      this.get("/products/:productCategory", (schema, request) => {
+        let productCategory = request.params.productCategory;
+        return schema.products.where({ category: productCategory });
+      });
 
       this.get("/categories", (schema) => {
         return schema.categories.all();
