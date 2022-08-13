@@ -10,7 +10,7 @@ function MenuItems(props: IProps) {
   const { category } = props;
   return (
     <>
-      <Link to={`/category/${category}`}>
+      <Link to={`/products/category/${category}`}>
         <MenuItem sx={menuFontStyle} dir="rtl">
           {category}
         </MenuItem>
