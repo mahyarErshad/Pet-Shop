@@ -5,11 +5,12 @@ interface IProps {
 }
 
 function MenuItems(props: IProps) {
-  const menuFontStyle = { fontSize: "0.875rem" };
+  const menuFontStyle = { fontSize: "0.875rem", textAlign: "right" };
+  const { category } = props;
   return (
     <>
       <MenuItem sx={menuFontStyle} dir="rtl">
-        غذای گربه
+        {category}
       </MenuItem>
     </>
   );
