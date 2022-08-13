@@ -25,6 +25,8 @@ function Products() {
           if (data && data.products.length) {
             setProducts(data.products);
             setNotFound(false);
+          } else {
+            setNotFound(true);
           }
         })
         .then(() => setLoading(false))
@@ -39,6 +41,8 @@ function Products() {
           if (data && data.products.length) {
             setProducts(data.products);
             setNotFound(false);
+          } else {
+            setNotFound(true);
           }
         })
         .then(() => setLoading(false))
