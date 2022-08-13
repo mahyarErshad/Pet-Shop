@@ -28,10 +28,10 @@ function MenuItems(props: IProps) {
               {icon}
             </Button>
             <Menu sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", direction: "rtl" }} {...bindMenu(popupState)}>
-              {productCategory.map((item: any) => (
-                <Link className="noDecoration" to={`/products/category/${item}`}>
+              {productCategory.map((productCategory: any) => (
+                <Link className="noDecoration" to={`/products/category/${productCategory}`}>
                   <MenuItem onClick={popupState.close} sx={{ fontSize: "0.875rem", textAlign: "right", color: "#000" }} dir="rtl">
-                    {item}
+                    {productCategory}
                   </MenuItem>
                 </Link>
               ))}
