@@ -41,8 +41,9 @@ function App() {
             <Route path="/terms" element={<Terms />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/products/category/:breed" element={<Products />} />
+            <Route path="/products/category/:category" element={<Products />} />
             <Route path="/product/:id" element={<SingleProduct />} />
-            <Route path="/cart" element={<Cart />} />g
+            <Route path="/cart" element={<Cart />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />
