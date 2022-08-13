@@ -11,7 +11,7 @@ import ProductsHeader from "../ProductsHeader/ProductsHeader";
 function Products() {
   document.title = "محصولات | پت شاپ فینیکس";
   const { breed } = useParams<string>();
-  const { category } = useParams<string>();
+  const { productCategory } = useParams<string>();
   const [loading, setLoading] = useState<boolean>(true);
   const [notFound, setNotFound] = useState<boolean>(true);
   const [products, setProducts] = useState<IProduct[]>([]);
@@ -31,9 +31,9 @@ function Products() {
         .catch((error) => console.log(error))
         .finally(() => setLoading(false));
     }
-    if (category) {
+    if (productCategory) {
       setLoading(true);
-      fetch(`/api/products/${category}`)
+      fetch(`/api/products/${productCategory}`)
         .then((res) => res.json())
         .then((data) => {
           if (data && data.products.length) {
