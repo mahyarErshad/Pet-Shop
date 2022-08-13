@@ -46,7 +46,7 @@ function Products() {
         .finally(() => setLoading(false));
     }
     // eslint-disable-next-line
-  }, [breed, category]);
+  }, [breed, productCategory]);
 
   if (loading) return <Loading />;
   if (notFound) return <NotFound />;
