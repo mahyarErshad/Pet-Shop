@@ -1,7 +1,10 @@
 import { MenuItem } from "@mui/material";
 import React from "react";
+interface IProps {
+  category: string;
+}
 
-function MenuItems() {
+function MenuItems(props: IProps) {
   const menuFontStyle = { fontSize: "0.875rem" };
   return (
     <>
