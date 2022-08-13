@@ -1,5 +1,6 @@
 import { MenuItem } from "@mui/material";
 import React from "react";
+import { Link } from "react-router-dom";
 interface IProps {
   category: string;
 }
@@ -9,9 +10,11 @@ function MenuItems(props: IProps) {
   const { category } = props;
   return (
     <>
-      <MenuItem sx={menuFontStyle} dir="rtl">
-        {category}
-      </MenuItem>
+      <Link to={`/category/${category}`}>
+        <MenuItem sx={menuFontStyle} dir="rtl">
+          {category}
+        </MenuItem>
+      </Link>
     </>
   );
 }
