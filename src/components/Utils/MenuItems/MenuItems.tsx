@@ -1,20 +1,44 @@
-import { MenuItem } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
+import "../../../Style/global/style.css";
+
+// MUI
+import Button from "@mui/material/Button";
+import Menu from "@mui/material/Menu";
+import PopupState, { bindTrigger, bindMenu } from "material-ui-popup-state";
+import { MenuItem, Typography, useTheme } from "@mui/material";
 interface IProps {
-  category: string;
+  title: string;
+  productCategory: any;
+  icon: any;
 }
 
 function MenuItems(props: IProps) {
-  const menuFontStyle = { fontSize: "0.875rem", textAlign: "right" };
-  const { category } = props;
+  const { productCategory, title, icon } = props;
+  const theme = useTheme();
   return (
     <>
-      <Link to={`/products/category/${category}`}>
-        <MenuItem sx={menuFontStyle} dir="rtl">
-          {category}
-        </MenuItem>
-      </Link>
+      <PopupState variant="popover" popupId="cat-popup-menu">
+        {(popupState: any) => (
+          <React.Fragment>
+            <Button sx={{ height: "3rem", backgroundColor: theme.palette.primary.main, border: "none", boxShadow: "none", display: "flex", justifyContent: "space-between", alignItems: "center", gap: "0.5rem" }} variant="contained" {...bindTrigger(popupState)}>
+              <Typography align="center" sx={{ fontSize: "1rem", fontWeight: "bold" }}>
+                {title}
+              </Typography>
+              {icon}
+            </Button>
+            <Menu sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", direction: "rtl" }} {...bindMenu(popupState)}>
+              {productCategory.map((item: any) => (
+                <Link className="noDecoration" to={`/products/category/${item}`}>
+                  <MenuItem onClick={popupState.close} sx={{ fontSize: "0.875rem", textAlign: "right", color: "#000" }} dir="rtl">
+                    {item}
+                  </MenuItem>
+                </Link>
+              ))}
+            </Menu>
+          </React.Fragment>
+        )}
+      </PopupState>
     </>
   );
 }

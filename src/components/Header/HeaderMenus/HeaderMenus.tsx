@@ -16,29 +16,12 @@ interface Iprops {
 }
 
 function HeaderMenus(props: Iprops) {
-  const theme = useTheme();
   const flexDirection = props.flexRow;
   const row = flexDirection ? "row-reverse" : "column";
   return (
     <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: row }}>
-      <PopupState variant="popover" popupId="cat-popup-menu">
-        {(popupState: any) => (
-          <React.Fragment>
-            <Button sx={{ height: "3rem", backgroundColor: theme.palette.primary.main, border: "none", boxShadow: "none", display: "flex", justifyContent: "space-between", alignItems: "center", gap: "0.5rem" }} variant="contained" {...bindTrigger(popupState)}>
-              <Typography align="center" sx={{ fontSize: "1rem", fontWeight: "bold" }}>
-                گربه
-              </Typography>
-              <GiCat fontSize={20} />
-            </Button>
-            <Menu sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", direction: "rtl" }} {...bindMenu(popupState)}>
-              <MenuItems category="غذای گربه" />
-              <MenuItems category="خاک گربه" />
-              <MenuItems category="بهداشتی گربه" />
-            </Menu>
-          </React.Fragment>
-        )}
-      </PopupState>
-      {/* Hardcoded Dog */}
+      <MenuItems title="گربه" productCategory={["غذای گربه", "خاک گربه", "بهداشتی گربه"]} icon={<GiCat fontSize={20} />} />
+      {/* Hardcoded Dog
       <PopupState variant="popover" popupId="demo-popup-menu">
         {(popupState: any) => (
           <React.Fragment>
@@ -87,7 +70,7 @@ function HeaderMenus(props: Iprops) {
             </Menu>
           </React.Fragment>
         )}
-      </PopupState>
+      </PopupState> */}
     </Box>
   );
 }
