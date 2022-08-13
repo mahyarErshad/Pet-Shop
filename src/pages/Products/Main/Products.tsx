@@ -19,7 +19,7 @@ function Products() {
   useEffect(() => {
     if (breed) {
       setLoading(true);
-      fetch(`/api/products/${breed}`)
+      fetch(`/api/breed/${breed}`)
         .then((res) => res.json())
         .then((data) => {
           if (data && data.products.length) {

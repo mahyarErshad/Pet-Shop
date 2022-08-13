@@ -29,7 +29,7 @@ function MenuItems(props: IProps) {
             </Button>
             <Menu sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", direction: "rtl" }} {...bindMenu(popupState)}>
               {productCategory.map((productCategory: any) => (
-                <Link className="noDecoration" to={`/products/category/${productCategory}`}>
+                <Link key={productCategory} className="noDecoration" to={`/products/category/${productCategory}`}>
                   <MenuItem onClick={popupState.close} sx={{ fontSize: "0.875rem", textAlign: "right", color: "#000" }} dir="rtl">
                     {productCategory}
                   </MenuItem>
