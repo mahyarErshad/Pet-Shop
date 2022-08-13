@@ -21,7 +21,7 @@ function MenuItems(props: IProps) {
       <PopupState variant="popover" popupId="cat-popup-menu">
         {(popupState: any) => (
           <React.Fragment>
-            <Button sx={{ height: "3rem", backgroundColor: theme.palette.primary.main, border: "none", boxShadow: "none", display: "flex", justifyContent: "space-between", alignItems: "center", gap: "0.5rem" }} variant="contained" {...bindTrigger(popupState)}>
+            <Button sx={{ height: "3rem", backgroundColor: theme.palette.primary.main, border: "none", boxShadow: "none", display: "flex", justifyContent: "space-between", alignItems: "center", gap: "0.2rem" }} variant="contained" {...bindTrigger(popupState)}>
               <Typography align="center" sx={{ fontSize: "1rem", fontWeight: "bold" }}>
                 {title}
               </Typography>
