@@ -37,7 +37,7 @@ const mockProducts: IProduct[] = [
 
 قابل استفاده برای سگ های نژاد بزرگ بالغ`,
     category: "غذای سگ",
-    price: 30000,
+    price: 3000000,
     quantity: randomNumber(),
   },
   {
