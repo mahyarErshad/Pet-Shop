@@ -40,6 +40,7 @@ function Products(props: IProps) {
         if (data && data.products.length) {
           setProducts(data.products);
           _DATA.reset();
+          setPage(1);
           setNotFound(false);
         } else {
           setNotFound(true);
