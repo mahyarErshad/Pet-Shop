@@ -2,7 +2,8 @@ import { Box } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Cards from "../../../components/Utils/Cards/Cards";
-import PaginationComponent from "../../../components/Utils/PaginationComponent/PaginationComponent";
+import Pagination from "@mui/material/Pagination";
+import Stack from "@mui/material/Stack";
 import { IProduct } from "../../../Types/types";
 import Loading from "../../Loading/Loading";
 import NotFound from "../../NotFound/NotFound";
@@ -45,7 +46,9 @@ function Products(props: IProps) {
         <ProductsHeader />
         <Box sx={{ mb: "1rem", width: "100%", px: "1rem", display: "flex", justifyContent: "center", alignItems: "center", gap: "1rem", flexWrap: "wrap" }}>{products && products.map((product: any) => <Cards id={product.id} key={product.id} title={product.title} image={product.image} price={product.price} />)}</Box>
         <Box sx={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center", mb: "1rem" }}>
-          <PaginationComponent page={10} />
+          <Stack spacing={2}>
+            <Pagination size="large" count={10} color="secondary" />
+          </Stack>
         </Box>
       </Box>
     </>
