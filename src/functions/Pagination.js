@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 function usePagination(data, itemsPerPage) {
   const [currentPage, setCurrentPage] = useState(1);
@@ -22,8 +22,11 @@ function usePagination(data, itemsPerPage) {
     const pageNumber = Math.max(1, page);
     setCurrentPage((currentPage) => Math.min(pageNumber, maxPage));
   }
+  function reset() {
+    setCurrentPage(1);
+  }
 
-  return { next, prev, jump, currentData, currentPage, maxPage };
+  return { next, prev, jump, currentData, currentPage, maxPage, reset };
 }
 
 export default usePagination;
