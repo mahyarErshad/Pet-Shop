@@ -38,13 +38,13 @@ export default function PrimarySearchAppBar() {
       anchorEl={anchorEl}
       anchorOrigin={{
         vertical: "top",
-        horizontal: "right",
+        horizontal: "left",
       }}
       id={menuId}
       keepMounted
       transformOrigin={{
         vertical: "top",
-        horizontal: "right",
+        horizontal: "left",
       }}
       open={isMenuOpen}
       onClose={handleMenuClose}
@@ -59,13 +59,13 @@ export default function PrimarySearchAppBar() {
       anchorEl={mobileMoreAnchorEl}
       anchorOrigin={{
         vertical: "top",
-        horizontal: "right",
+        horizontal: "left",
       }}
       id={mobileMenuId}
       keepMounted
       transformOrigin={{
         vertical: "top",
-        horizontal: "right",
+        horizontal: "left",
       }}
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
