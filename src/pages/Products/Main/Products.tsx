@@ -8,6 +8,7 @@ import { IProduct } from "../../../Types/types";
 import Loading from "../../Loading/Loading";
 import NotFound from "../../NotFound/NotFound";
 import ProductsHeader from "../ProductsHeader/ProductsHeader";
+import usePagination from "../../../functions/Pagination";
 
 interface IProps {
   url: string;
@@ -20,6 +21,14 @@ function Products(props: IProps) {
   const [loading, setLoading] = useState<boolean>(true);
   const [notFound, setNotFound] = useState<boolean>(true);
   const [products, setProducts] = useState<IProduct[]>([]);
+  const [page, setPage] = useState<number>(1);
+  const PER_PAGE = 6;
+  const count = Math.ceil(products.length / PER_PAGE);
+  const _DATA = usePagination(products, PER_PAGE);
+  const handleChange = (e: any, p: any) => {
+    setPage(p);
+    _DATA.jump(p);
+  };
   useEffect(() => {
     setLoading(true);
     fetch(`${url}/${params}`)
@@ -44,10 +53,14 @@ function Products(props: IProps) {
     <>
       <Box>
         <ProductsHeader />
-        <Box sx={{ mb: "1rem", width: "100%", px: "1rem", display: "flex", justifyContent: "center", alignItems: "center", gap: "1rem", flexWrap: "wrap" }}>{products && products.map((product: any) => <Cards id={product.id} key={product.id} title={product.title} image={product.image} price={product.price} />)}</Box>
+        <Box sx={{ mb: "1rem", width: "100%", px: "1rem", display: "flex", justifyContent: "center", alignItems: "center", gap: "1rem", flexWrap: "wrap" }}>
+          {_DATA.currentData().map((product: { id: number; title: string; image: string; price: number }) => {
+            return <Cards id={product.id} key={product.id} title={product.title} image={product.image} price={product.price} />;
+          })}
+        </Box>
         <Box sx={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center", mb: "1rem" }}>
           <Stack spacing={2}>
-            <Pagination size="large" count={10} color="secondary" />
+            <Pagination size="large" color="secondary" page={page} count={count} onChange={handleChange} />
           </Stack>
         </Box>
       </Box>
