@@ -40,7 +40,8 @@ function App() {
             <Route path="/payment-methods" element={<PaymentMethods />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/products/:breed" element={<Products />} />
+            <Route path="/products/breed/:params" element={<Products url="/api/breed" />} />
+            <Route path="/products/category/:params" element={<Products url="/api/products" />} />
             <Route path="/product/:id" element={<SingleProduct />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="*" element={<NotFound />} />

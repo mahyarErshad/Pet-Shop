@@ -8,30 +8,34 @@ import Loading from "../../Loading/Loading";
 import NotFound from "../../NotFound/NotFound";
 import ProductsHeader from "../ProductsHeader/ProductsHeader";
 
-function Products() {
+interface IProps {
+  url: string;
+}
+
+function Products(props: IProps) {
   document.title = "محصولات | پت شاپ فینیکس";
-  const { breed } = useParams<string>();
+  const { url } = props;
+  const { params } = useParams();
   const [loading, setLoading] = useState<boolean>(true);
   const [notFound, setNotFound] = useState<boolean>(true);
   const [products, setProducts] = useState<IProduct[]>([]);
-
   useEffect(() => {
-    if (breed) {
-      setLoading(true);
-      fetch(`/api/products/${breed}`)
-        .then((res) => res.json())
-        .then((data) => {
-          if (data && data.products.length) {
-            setProducts(data.products);
-            setNotFound(false);
-          }
-        })
-        .then(() => setLoading(false))
-        .catch((error) => console.log(error))
-        .finally(() => setLoading(false));
-    }
+    setLoading(true);
+    fetch(`${url}/${params}`)
+      .then((res) => res.json())
+      .then((data) => {
+        if (data && data.products.length) {
+          setProducts(data.products);
+          setNotFound(false);
+        } else {
+          setNotFound(true);
+        }
+      })
+      .then(() => setLoading(false))
+      .catch((error) => console.log(error))
+      .finally(() => setLoading(false));
     // eslint-disable-next-line
-  }, [breed]);
+  }, [url, params]);
 
   if (loading) return <Loading />;
   if (notFound) return <NotFound />;

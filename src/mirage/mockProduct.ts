@@ -37,7 +37,7 @@ const mockProducts: IProduct[] = [
 
 قابل استفاده برای سگ های نژاد بزرگ بالغ`,
     category: "غذای سگ",
-    price: 30000,
+    price: 3000000,
     quantity: randomNumber(),
   },
   {
@@ -471,7 +471,7 @@ const mockProducts: IProduct[] = [
     description: `
     چرخ و فلک همستر سایز کوچک
     `,
-    category: "ملزومات جوندگان",
+    category: "بازی جوندگان",
     price: 300000,
     quantity: randomNumber(),
   },
@@ -501,7 +501,7 @@ const mockProducts: IProduct[] = [
     description: `
     توپ همستر با استند فلزی
     `,
-    category: "ملزومات جوندگان",
+    category: "بازی جوندگان",
     price: 250000,
     quantity: randomNumber(),
   },

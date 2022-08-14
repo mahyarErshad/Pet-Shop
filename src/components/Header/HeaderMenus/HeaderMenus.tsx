@@ -1,11 +1,8 @@
 import React from "react";
+import MenuItems from "../../Utils/MenuItems/MenuItems";
 
 // MUI
-import Button from "@mui/material/Button";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem"; // @ts-ignore
-import PopupState, { bindTrigger, bindMenu } from "material-ui-popup-state";
-import { Box, Typography, useTheme } from "@mui/material";
+import { Box } from "@mui/material";
 // icons
 import { GiCat } from "react-icons/gi";
 import { GiSittingDog } from "react-icons/gi";
@@ -16,106 +13,14 @@ interface Iprops {
 }
 
 function HeaderMenus(props: Iprops) {
-  const theme = useTheme();
   const flexDirection = props.flexRow;
   const row = flexDirection ? "row-reverse" : "column";
-  const menuFontStyle = { fontSize: "0.875rem" };
   return (
     <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: row }}>
-      {/* Hardcoded Cat */}
-      <PopupState variant="popover" popupId="demo-popup-menu">
-        {(popupState: any) => (
-          <React.Fragment>
-            <Button sx={{ height: "3rem", backgroundColor: theme.palette.primary.main, border: "none", boxShadow: "none", display: "flex", justifyContent: "space-between", alignItems: "center", gap: "0.5rem" }} variant="contained" {...bindTrigger(popupState)}>
-              <Typography align="center" sx={{ fontSize: "1rem", fontWeight: "bold" }}>
-                گربه
-              </Typography>
-              <GiCat fontSize={20} />
-            </Button>
-            <Menu sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", direction: "rtl" }} {...bindMenu(popupState)}>
-              <MenuItem sx={menuFontStyle} dir="rtl" onClick={popupState.close}>
-                غذای گربه
-              </MenuItem>
-              <MenuItem sx={menuFontStyle} dir="rtl" onClick={popupState.close}>
-                خاک گربه
-              </MenuItem>
-              <MenuItem sx={menuFontStyle} dir="rtl" onClick={popupState.close}>
-                تشویقی گربه
-              </MenuItem>
-            </Menu>
-          </React.Fragment>
-        )}
-      </PopupState>
-      {/* Hardcoded Dog */}
-      <PopupState variant="popover" popupId="demo-popup-menu">
-        {(popupState: any) => (
-          <React.Fragment>
-            <Button sx={{ height: "3rem", backgroundColor: theme.palette.primary.main, border: "none", boxShadow: "none", display: "flex", justifyContent: "space-between", alignItems: "center", gap: "0.5rem" }} variant="contained" {...bindTrigger(popupState)}>
-              <Typography align="center" sx={{ fontSize: "1rem", fontWeight: "bold" }}>
-                سگ
-              </Typography>
-              <GiSittingDog fontSize={20} />
-            </Button>
-            <Menu sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", direction: "rtl" }} {...bindMenu(popupState)}>
-              <MenuItem sx={menuFontStyle} dir="rtl" onClick={popupState.close}>
-                غذای سگ
-              </MenuItem>
-              <MenuItem sx={menuFontStyle} dir="rtl" onClick={popupState.close}>
-                قلاده سگ
-              </MenuItem>
-              <MenuItem sx={menuFontStyle} dir="rtl" onClick={popupState.close}>
-                تشویقی سگ
-              </MenuItem>
-            </Menu>
-          </React.Fragment>
-        )}
-      </PopupState>
-      <PopupState variant="popover" popupId="demo-popup-menu">
-        {(popupState: any) => (
-          <React.Fragment>
-            <Button sx={{ height: "3rem", backgroundColor: theme.palette.primary.main, border: "none", boxShadow: "none", display: "flex", justifyContent: "space-between", alignItems: "center", gap: "0.5rem" }} variant="contained" {...bindTrigger(popupState)}>
-              <Typography align="center" sx={{ fontSize: "1rem", fontWeight: "bold" }}>
-                پرندگان
-              </Typography>
-              <GiHummingbird fontSize={20} />
-            </Button>
-            <Menu sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }} {...bindMenu(popupState)}>
-              <MenuItem sx={menuFontStyle} dir="rtl" onClick={popupState.close}>
-                غذای پرندگان
-              </MenuItem>
-              <MenuItem sx={menuFontStyle} dir="rtl" onClick={popupState.close}>
-                اسباب بازی پرندگان
-              </MenuItem>
-              <MenuItem sx={menuFontStyle} dir="rtl" onClick={popupState.close}>
-                لوازم بهداشتی پرندگان{" "}
-              </MenuItem>
-            </Menu>
-          </React.Fragment>
-        )}
-      </PopupState>
-      <PopupState variant="popover" popupId="demo-popup-menu">
-        {(popupState: any) => (
-          <React.Fragment>
-            <Button sx={{ height: "3rem", backgroundColor: theme.palette.primary.main, border: "none", boxShadow: "none", display: "flex", justifyContent: "space-between", alignItems: "center", gap: "0.5rem" }} variant="contained" {...bindTrigger(popupState)}>
-              <Typography align="center" sx={{ fontSize: "1rem", fontWeight: "bold" }}>
-                جوندگان
-              </Typography>
-              <GiSquirrel fontSize={20} />
-            </Button>
-            <Menu sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", direction: "rtl" }} {...bindMenu(popupState)}>
-              <MenuItem sx={menuFontStyle} dir="rtl" onClick={popupState.close}>
-                غذای جوندگان
-              </MenuItem>
-              <MenuItem sx={menuFontStyle} dir="rtl" onClick={popupState.close}>
-                اسباب بازی جوندگان
-              </MenuItem>
-              <MenuItem sx={menuFontStyle} dir="rtl" onClick={popupState.close}>
-                لوازم بهداشتی جوندگان{" "}
-              </MenuItem>
-            </Menu>
-          </React.Fragment>
-        )}
-      </PopupState>
+      <MenuItems title="گربه" productCategory={["غذای گربه", "خاک گربه", "بهداشتی گربه"]} icon={<GiCat fontSize={20} />} />
+      <MenuItems title="سگ" productCategory={["غذای سگ", "اسباب بازی سگ", "بهداشتی سگ"]} icon={<GiSittingDog fontSize={20} />} />
+      <MenuItems title="پرندگان" productCategory={["غذای پرندگان", "لانه پرندگان"]} icon={<GiHummingbird fontSize={20} />} />
+      <MenuItems title="جوندگان" productCategory={["ملزومات جوندگان", "بازی جوندگان"]} icon={<GiSquirrel fontSize={20} />} />
     </Box>
   );
 }
