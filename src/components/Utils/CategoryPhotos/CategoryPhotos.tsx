@@ -27,7 +27,7 @@ function CategoryPhotos(props: Iprops) {
     <>
       <LightTooltip title={title} TransitionComponent={Fade} TransitionProps={{ timeout: 600 }} followCursor>
         <Box onClick={() => goToTop()} sx={{ ...photoStyle, animationDuration: `${animationDuration}` }}>
-          <Link to={`/products/category/${breed}`}>
+          <Link to={`/products/breed/${breed}`}>
             <Box sx={{ width: "100%", height: "100%", "&:hover": { borderRadius: "16px", border: "2px solid #FFB929", zIndex: "2", transform: "scale(1.1,1.1)", transition: "all 0.3s " } }} component="img" src={image} alt={title} />
           </Link>
         </Box>
