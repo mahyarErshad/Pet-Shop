@@ -27,7 +27,7 @@ function InDeButton(props: props) {
         </Button>
         <Box sx={{ width: screen, height, backgroundColor: "#ECEFF1", display: "flex", justifyContent: "center", alignItems: "center", borderTop: "1px solid #000", borderBottom: "1px solid #000" }}>
           <Typography sx={{ fontSize }} variant="h5" color="#000">
-            ۰
+            {amount}
           </Typography>
         </Box>
         <Button onClick={() => dispatch(decreaseAmount({ id }))} sx={buttonsStyle}>
