@@ -1,6 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
+interface cartState {
+  cartItems: any[];
+  total: number;
+  amount: number;
+  isLoading: boolean;
+}
+
+const initialState: cartState = {
   cartItems: [],
   total: 0,
   amount: 0,
