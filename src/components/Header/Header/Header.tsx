@@ -11,6 +11,7 @@ import CartIcon from "../../Utils/Buttons/Cart/Icon/CartIcon";
 import AccountIcon from "../../Utils/Buttons/AccountIcon/AccountIcon";
 import Logo from "../../Utils/Logo/Logo";
 import MyButton from "../../Utils/Buttons/MyButton/MyButton";
+import { useSelector } from "react-redux";
 
 export default function PrimarySearchAppBar() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -38,13 +39,13 @@ export default function PrimarySearchAppBar() {
       anchorEl={anchorEl}
       anchorOrigin={{
         vertical: "top",
-        horizontal: "right",
+        horizontal: "left",
       }}
       id={menuId}
       keepMounted
       transformOrigin={{
         vertical: "top",
-        horizontal: "right",
+        horizontal: "left",
       }}
       open={isMenuOpen}
       onClose={handleMenuClose}
@@ -58,14 +59,14 @@ export default function PrimarySearchAppBar() {
     <Menu
       anchorEl={mobileMoreAnchorEl}
       anchorOrigin={{
-        vertical: "top",
-        horizontal: "right",
+        vertical: "bottom",
+        horizontal: "left",
       }}
       id={mobileMenuId}
       keepMounted
       transformOrigin={{
         vertical: "top",
-        horizontal: "right",
+        horizontal: "left",
       }}
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
@@ -73,11 +74,12 @@ export default function PrimarySearchAppBar() {
       <HeaderMenus flexRow={false} />
     </Menu>
   );
+  const amount = useSelector((store: any) => store.cart.amount);
   return (
     <Box sx={{ flexGrow: 1, marginBottom: "0.5rem" }}>
       <AppBar position="static">
         <Toolbar>
-          <CartIcon count={2} />
+          <CartIcon count={amount} />
           <MyButton linkTo="/register" text="ورود / عضویت" />
           <AccountIcon setAnchorEl={setAnchorEl} menuId={menuId} title="فلانی" />
           <Box sx={{ flexGrow: 1 }} />

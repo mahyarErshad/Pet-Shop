@@ -22,6 +22,7 @@ import jerhigh from "../../../../images/slider/jerhigh.jpg";
 import reflex from "../../../../images/slider/reflex.png";
 import trxie from "../../../../images/slider/trxie.png";
 import bephar from "../../../../images/slider/bephar.jpg";
+import winston from "../../../../images/slider/winston.png";
 
 export default function Slider() {
   const Root = styled("div")(({ theme }) => ({
@@ -85,6 +86,9 @@ export default function Slider() {
         </SwiperSlide>
         <SwiperSlide>
           <img src={bephar} alt="Bephar" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={winston} alt="winston" />
         </SwiperSlide>
       </Swiper>
     </>

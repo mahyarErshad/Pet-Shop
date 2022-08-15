@@ -1,9 +1,9 @@
-import { filterTemplate } from "./../slice/template";
 import { configureStore } from "@reduxjs/toolkit";
+import cartReducer from "../slice/cartReducer";
 
 export const store = configureStore({
   reducer: {
-    filterTemplate: filterTemplate.reducer,
+    cart: cartReducer,
   },
 });
 
