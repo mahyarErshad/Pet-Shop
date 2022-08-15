@@ -7,7 +7,7 @@ import catInBasket from "../../images/catInBasket.jpg";
 
 function Cart() {
   document.title = "پت شاپ فینیکس | سبد خرید";
-  const { cartItems, amount, total } = useSelector((state: any) => state.cart);
+  const { cartItems, amount } = useSelector((state: any) => state.cart);
   if (amount < 1) {
     return (
       <Box sx={{ width: "100%", p: "1rem", display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column", my: "1rem" }}>
