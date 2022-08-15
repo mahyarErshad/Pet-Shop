@@ -7,10 +7,11 @@ interface props {
   width?: string;
   height?: string;
   fontSize?: string;
+  id: string | number;
 }
 
 function InDeButton(props: props) {
-  const { width, height, fontSize } = props;
+  const { width, height, fontSize, id } = props;
   const screen = width || "2.5612rem";
   const buttons = width || "";
   const buttonsStyle = { width: buttons, fontSize, height };
