@@ -66,11 +66,11 @@ const initialState: cartState = {
     },
   ],
   total: 0,
-  amount: 0,
+  amount: 3,
   isLoading: false,
 };
 
-const cartSlice = createSlice({
+const cartReducer = createSlice({
   name: "cart",
   initialState,
   reducers: {
@@ -79,5 +79,5 @@ const cartSlice = createSlice({
     },
   },
 });
-export const { clearCart } = cartSlice.actions;
-export default cartSlice.reducer;
+export const { clearCart } = cartReducer.actions;
+export default cartReducer.reducer;
