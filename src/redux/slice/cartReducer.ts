@@ -70,7 +70,7 @@ const initialState: cartState = {
   isLoading: false,
 };
 
-const cartReducer = createSlice({
+const cartReducer: any = createSlice({
   name: "cart",
   initialState,
   reducers: {
