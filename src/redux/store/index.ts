@@ -1,10 +1,7 @@
-import { filterTemplate } from "./../slice/template";
 import { configureStore } from "@reduxjs/toolkit";
 
 export const store = configureStore({
-  reducer: {
-    filterTemplate: filterTemplate.reducer,
-  },
+  reducer: {},
 });
 
 export type RootState = ReturnType<typeof store.getState>;
