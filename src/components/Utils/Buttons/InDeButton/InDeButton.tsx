@@ -4,6 +4,7 @@ import Button from "@mui/material/Button";
 import { Box, Typography } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { decreaseAmount, increaseAmount } from "../../../../redux/slice/cartReducer";
+import { separateNumber } from "../../../../functions/functions";
 
 interface props {
   width?: string;
@@ -27,7 +28,7 @@ function InDeButton(props: props) {
         </Button>
         <Box sx={{ width: screen, height, backgroundColor: "#ECEFF1", display: "flex", justifyContent: "center", alignItems: "center", borderTop: "1px solid #000", borderBottom: "1px solid #000" }}>
           <Typography sx={{ fontSize }} variant="h5" color="#000">
-            {amount}
+            {separateNumber(amount)}
           </Typography>
         </Box>
         <Button onClick={() => dispatch(decreaseAmount({ id }))} sx={buttonsStyle}>
