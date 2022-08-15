@@ -38,7 +38,7 @@ export default function Cards(props: Iprops) {
           </Link>
         </CardActionArea>
         <CardActions sx={{ px: "1rem", py: "0.5rem" }}>
-          <InDeButton />
+          <InDeButton id={id} />
         </CardActions>
       </Card>
     </>
