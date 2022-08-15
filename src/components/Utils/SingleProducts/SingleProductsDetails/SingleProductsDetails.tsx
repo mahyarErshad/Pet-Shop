@@ -7,10 +7,11 @@ interface props {
   price: number;
   balance: number;
   fontSize?: string;
+  id: string | number;
 }
 
 function SingleProductsDetails(props: props) {
-  const { title, price, balance } = props;
+  const { title, price, balance, id } = props;
   const fontSize = props.fontSize || "";
   document.title = props.title;
 
