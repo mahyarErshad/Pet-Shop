@@ -19,7 +19,8 @@ function InDeButton(props: props) {
   const buttons = width || "";
   const buttonsStyle = { width: buttons, fontSize, height };
   const dispatch = useDispatch();
-  const amount = useSelector((state: any) => state.cart.cartItems.find((item: any) => item.id === id)?.amount) || 0;
+  const product = useSelector((state: any) => state.cart.cartItems.find((item: any) => item.id === id));
+  const amount = product ? product?.amount : 0;
   return (
     <>
       <ButtonGroup dir="rtl" disableElevation variant="contained" color="secondary">

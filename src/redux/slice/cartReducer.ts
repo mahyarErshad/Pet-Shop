@@ -30,6 +30,7 @@ const initialState: cartState = {
       `,
       category: "بهداشتی سگ",
       price: 330000,
+      amount: 3,
     },
     {
       id: 96,
@@ -46,6 +47,7 @@ const initialState: cartState = {
       `,
       category: "بهداشتی سگ",
       price: 65000,
+      amount: 2,
     },
     {
       id: 97,
@@ -63,6 +65,7 @@ const initialState: cartState = {
       `,
       category: "بهداشتی سگ",
       price: 10000,
+            amount: 6,
     },
   ],
   total: 0,

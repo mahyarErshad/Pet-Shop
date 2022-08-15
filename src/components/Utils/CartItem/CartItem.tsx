@@ -23,7 +23,7 @@ function CartItem(props: IProps) {
             {title}
           </Typography>
         </Box>
-        <Box sx={{ width: { xs: "40%", sm: "45%", md: "40%" }, display: "flex", flexDirection: { xs: "column-reverse", sm: "row-reverse" }, gap: "0.5rem", justifyContent: "center", alignItems: "center" }}>
+        <Box sx={{ width: { xs: "40%", sm: "45%", md: "40%" }, display: "flex", flexDirection: { xs: "column-reverse", sm: "row-reverse" }, gap: "0.5rem", justifyContent: { xs: "center", sm: "flex-start" }, alignItems: "center" }}>
           <InDeButton id={id} width="2.5rem" height="2rem" fontSize="1.2rem" />
           <Typography dir="rtl" variant="h5" sx={{ fontSize: "1rem", fontWeight: "normal", textAlign: "center", whiteSpace: "nowrap", overflow: "hidden" }}>
             {separateNumber(price)} تومان
