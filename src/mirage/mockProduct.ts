@@ -1,6 +1,6 @@
 import { IProduct } from "../Types/types";
 function randomNumber() {
-  return Math.floor(Math.random() * 100);
+  return Math.floor(Math.random() * 50);
 }
 
 const mockProducts: IProduct[] = [
