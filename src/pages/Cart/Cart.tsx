@@ -1,13 +1,18 @@
 import { Box } from "@mui/material";
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import CartItem from "../../components/Utils/CartItem/CartItem";
 import CartOperationSection from "./CartOperationSection";
 import catInBasket from "../../images/catInBasket.jpg";
+import { calculateTotal } from "../../redux/slice/cartReducer";
 
 function Cart() {
   document.title = "پت شاپ فینیکس | سبد خرید";
   const { cartItems, amount } = useSelector((state: any) => state.cart);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(calculateTotal()); // eslint-disable-next-line
+  }, [cartItems]);
   if (amount < 1) {
     return (
       <Box sx={{ width: "100%", p: "1rem", display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column", my: "1rem" }}>
@@ -18,7 +23,7 @@ function Cart() {
   } else {
     return (
       <>
-        <Box sx={{ width: "100%", px: "1rem", display: "flex", flexDirection: "column", gap: "1rem", my: "1rem" }}>
+        <Box sx={{ width: "100%", px: "1rem", display: "flex", flexDirection: "column", gap: "1rem", mt: "1rem", mb: "4.3rem" }}>
           <CartOperationSection />
           {cartItems.map((item: any) => {
             return <CartItem id={item.id} key={item.id} image={item.image} title={item.title} price={item.price} />;
