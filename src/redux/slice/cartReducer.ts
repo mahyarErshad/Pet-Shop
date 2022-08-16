@@ -30,6 +30,7 @@ const initialState: cartState = {
       `,
       category: "بهداشتی سگ",
       price: 330000,
+      amount: 3,
     },
     {
       id: 96,
@@ -46,6 +47,7 @@ const initialState: cartState = {
       `,
       category: "بهداشتی سگ",
       price: 65000,
+      amount: 2,
     },
     {
       id: 97,
@@ -63,6 +65,7 @@ const initialState: cartState = {
       `,
       category: "بهداشتی سگ",
       price: 10000,
+      amount: 6,
     },
   ],
   total: 0,
@@ -70,13 +73,36 @@ const initialState: cartState = {
   isLoading: false,
 };
 
-const cartSlice = createSlice({
+const cartReducer: any = createSlice({
   name: "cart",
   initialState,
   reducers: {
     clearCart: (state) => {
       state.cartItems = [];
     },
+    increaseAmount: (state, { payload }) => {
+      const cartItem = state.cartItems.find((item) => item.id === payload.id);
+      cartItem.amount = cartItem.amount + 1;
+    },
+    decreaseAmount: (state, { payload }) => {
+      const cartItem = state.cartItems.find((item) => item.id === payload.id);
+      cartItem.amount = cartItem.amount - 1;
+    },
+    removeItem: (state, action) => {
+      const itemId = action.payload;
+      state.cartItems = state.cartItems.filter((item) => item.id !== itemId);
+    },
+    calculateTotal: (state) => {
+      let amount = 0;
+      let total = 0;
+      state.cartItems.forEach((item) => {
+        amount = amount + item.amount;
+        total = total + item.price * item.amount;
+      });
+      state.amount = amount;
+      state.total = total;
+    },
   },
 });
-export default cartSlice.reducer;
+export const { clearCart, decreaseAmount, increaseAmount, removeItem, calculateTotal } = cartReducer.actions;
+export default cartReducer.reducer;

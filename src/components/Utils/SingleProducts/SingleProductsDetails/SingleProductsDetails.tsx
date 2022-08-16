@@ -7,10 +7,11 @@ interface props {
   price: number;
   balance: number;
   fontSize?: string;
+  id: string | number;
 }
 
 function SingleProductsDetails(props: props) {
-  const { title, price, balance } = props;
+  const { title, price, balance, id } = props;
   const fontSize = props.fontSize || "";
   document.title = props.title;
 
@@ -25,7 +26,7 @@ function SingleProductsDetails(props: props) {
       <Typography dir="rtl" sx={{ fontSize: "1rem", fontWeight: "normal" }}>
         موجود در انبار : {separateNumber(balance)} عدد
       </Typography>
-      <InDeButton width="4rem" height="3rem" fontSize={fontSize} />
+      <InDeButton id={id} width="4rem" height="3rem" fontSize={fontSize} />
     </>
   );
 }

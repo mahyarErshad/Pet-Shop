@@ -4,10 +4,12 @@ import { useSelector } from "react-redux";
 import CartItem from "../../components/Utils/CartItem/CartItem";
 import CartOperationSection from "./CartOperationSection";
 import catInBasket from "../../images/catInBasket.jpg";
+import CustomModal from "../../components/Utils/CustomModal/CustomModal";
 
 function Cart() {
   document.title = "پت شاپ فینیکس | سبد خرید";
-  const { cartItems, amount, total } = useSelector((state: any) => state.cart);
+  const { cartItems, amount } = useSelector((state: any) => state.cart);
+
   if (amount < 1) {
     return (
       <Box sx={{ width: "100%", p: "1rem", display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column", my: "1rem" }}>
@@ -18,10 +20,11 @@ function Cart() {
   } else {
     return (
       <>
-        <Box sx={{ width: "100%", px: "1rem", display: "flex", flexDirection: "column", gap: "1rem", my: "1rem" }}>
+        <Box sx={{ width: "100%", px: "1rem", display: "flex", flexDirection: "column", gap: "1rem", mt: "1rem", mb: "4.3rem" }}>
           <CartOperationSection />
+          <CustomModal />
           {cartItems.map((item: any) => {
-            return <CartItem key={item.id} image="https://rabinseh.com/wp-content/uploads/2022/06/4-dgdd-247x247.jpg" title="غذای خشک گربه پرشین رویال کنین" price={1200000} />;
+            return <CartItem id={item.id} key={item.id} image={item.image} title={item.title} price={item.price} />;
           })}
         </Box>
       </>

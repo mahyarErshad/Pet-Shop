@@ -26,7 +26,6 @@ function Products(props: IProps) {
   const PER_PAGE = 6;
   const count = Math.ceil(products.length / PER_PAGE);
   const _DATA = usePagination(products, PER_PAGE);
-  console.log(_DATA);
   const handleChange = (e: any, p: number) => {
     setPage(p);
     _DATA.jump(p);

@@ -1,6 +1,6 @@
 import { IProduct } from "../Types/types";
 function randomNumber() {
-  return Math.floor(Math.random() * 100);
+  return Math.floor(Math.random() * 50);
 }
 
 const mockProducts: IProduct[] = [
@@ -21,6 +21,7 @@ const mockProducts: IProduct[] = [
     category: "غذای سگ",
     price: 230000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 2,
@@ -39,6 +40,7 @@ const mockProducts: IProduct[] = [
     category: "غذای سگ",
     price: 3000000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 3,
@@ -61,6 +63,7 @@ const mockProducts: IProduct[] = [
     category: "غذای سگ",
     price: 1100000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 4,
@@ -78,6 +81,7 @@ const mockProducts: IProduct[] = [
     category: "غذای سگ",
     price: 1400000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 5,
@@ -95,6 +99,7 @@ const mockProducts: IProduct[] = [
     category: "غذای سگ",
     price: 1100000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 6,
@@ -118,6 +123,7 @@ const mockProducts: IProduct[] = [
     category: "غذای سگ",
     price: 950000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 7,
@@ -140,6 +146,7 @@ const mockProducts: IProduct[] = [
     category: "اسباب بازی سگ",
     price: 149000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 8,
@@ -162,6 +169,7 @@ const mockProducts: IProduct[] = [
     category: "اسباب بازی سگ",
     price: 209000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 9,
@@ -177,6 +185,7 @@ const mockProducts: IProduct[] = [
     category: "اسباب بازی سگ",
     price: 220000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 10,
@@ -194,6 +203,7 @@ const mockProducts: IProduct[] = [
     category: "بهداشتی سگ",
     price: 255000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 11,
@@ -209,6 +219,7 @@ const mockProducts: IProduct[] = [
     category: "بهداشتی سگ",
     price: 340000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 12,
@@ -224,6 +235,7 @@ const mockProducts: IProduct[] = [
     category: "بهداشتی سگ",
     price: 350000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 13,
@@ -241,6 +253,7 @@ const mockProducts: IProduct[] = [
     category: "غذای گربه",
     price: 2400000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 14,
@@ -256,6 +269,7 @@ const mockProducts: IProduct[] = [
     category: "غذای گربه",
     price: 800000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 15,
@@ -271,6 +285,7 @@ const mockProducts: IProduct[] = [
     category: "غذای گربه",
     price: 750000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 16,
@@ -288,6 +303,7 @@ const mockProducts: IProduct[] = [
     category: "غذای گربه",
     price: 750000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 17,
@@ -303,6 +319,7 @@ const mockProducts: IProduct[] = [
     category: "غذای گربه",
     price: 320000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 18,
@@ -318,6 +335,7 @@ const mockProducts: IProduct[] = [
     category: "غذای گربه",
     price: 990000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 19,
@@ -335,6 +353,7 @@ const mockProducts: IProduct[] = [
     category: "خاک گربه",
     price: 110000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 20,
@@ -352,6 +371,7 @@ const mockProducts: IProduct[] = [
     category: "خاک گربه",
     price: 110000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 21,
@@ -369,6 +389,7 @@ const mockProducts: IProduct[] = [
     category: "خاک گربه",
     price: 80000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 22,
@@ -384,6 +405,7 @@ const mockProducts: IProduct[] = [
     category: "بهداشتی گربه",
     price: 60000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 23,
@@ -399,6 +421,7 @@ const mockProducts: IProduct[] = [
     category: "بهداشتی گربه",
     price: 320000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 24,
@@ -414,6 +437,7 @@ const mockProducts: IProduct[] = [
     category: "بهداشتی گربه",
     price: 230000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 25,
@@ -429,6 +453,7 @@ const mockProducts: IProduct[] = [
     category: "ملزومات جوندگان",
     price: 250000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 26,
@@ -444,6 +469,7 @@ const mockProducts: IProduct[] = [
     category: "ملزومات جوندگان",
     price: 350000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 27,
@@ -459,6 +485,7 @@ const mockProducts: IProduct[] = [
     category: "ملزومات جوندگان",
     price: 320000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 28,
@@ -474,6 +501,7 @@ const mockProducts: IProduct[] = [
     category: "بازی جوندگان",
     price: 300000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 29,
@@ -489,6 +517,7 @@ const mockProducts: IProduct[] = [
     category: "ملزومات جوندگان",
     price: 275000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 30,
@@ -504,6 +533,7 @@ const mockProducts: IProduct[] = [
     category: "بازی جوندگان",
     price: 250000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 31,
@@ -519,6 +549,7 @@ const mockProducts: IProduct[] = [
     category: "غذای پرندگان",
     price: 150000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 32,
@@ -534,6 +565,7 @@ const mockProducts: IProduct[] = [
     category: "غذای پرندگان",
     price: 200000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 33,
@@ -549,6 +581,7 @@ const mockProducts: IProduct[] = [
     category: "غذای پرندگان",
     price: 150000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 34,
@@ -565,6 +598,7 @@ const mockProducts: IProduct[] = [
     category: "غذای پرندگان",
     price: 130000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 35,
@@ -582,6 +616,7 @@ const mockProducts: IProduct[] = [
     category: "لانه پرندگان",
     price: 900000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 36,
@@ -603,6 +638,7 @@ const mockProducts: IProduct[] = [
     category: "لانه پرندگان",
     price: 850000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 37,
@@ -618,6 +654,7 @@ const mockProducts: IProduct[] = [
     category: "غذای سگ",
     price: 750000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 38,
@@ -633,6 +670,7 @@ const mockProducts: IProduct[] = [
     category: "غذای سگ",
     price: 230000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 39,
@@ -648,6 +686,7 @@ const mockProducts: IProduct[] = [
     category: "غذای سگ",
     price: 1300000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 40,
@@ -663,6 +702,7 @@ const mockProducts: IProduct[] = [
     category: "غذای سگ",
     price: 1300000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 41,
@@ -678,6 +718,7 @@ const mockProducts: IProduct[] = [
     category: "غذای سگ",
     price: 1500000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 42,
@@ -693,6 +734,7 @@ const mockProducts: IProduct[] = [
     category: "غذای سگ",
     price: 1300000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 43,
@@ -708,6 +750,7 @@ const mockProducts: IProduct[] = [
     category: "غذای سگ",
     price: 80000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 44,
@@ -723,6 +766,7 @@ const mockProducts: IProduct[] = [
     category: "غذای سگ",
     price: 1250000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 45,
@@ -738,6 +782,7 @@ const mockProducts: IProduct[] = [
     category: "غذای سگ",
     price: 60000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 46,
@@ -753,6 +798,7 @@ const mockProducts: IProduct[] = [
     category: "غذای سگ",
     price: 825000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 47,
@@ -768,6 +814,7 @@ const mockProducts: IProduct[] = [
     category: "غذای سگ",
     price: 1400000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 48,
@@ -783,6 +830,7 @@ const mockProducts: IProduct[] = [
     category: "غذای سگ",
     price: 140000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 49,
@@ -798,6 +846,7 @@ const mockProducts: IProduct[] = [
     category: "غذای سگ",
     price: 1200000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 50,
@@ -813,6 +862,7 @@ const mockProducts: IProduct[] = [
     category: "غذای سگ",
     price: 60000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 51,
@@ -828,6 +878,7 @@ const mockProducts: IProduct[] = [
     category: "غذای سگ",
     price: 1150000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 52,
@@ -843,6 +894,7 @@ const mockProducts: IProduct[] = [
     category: "غذای سگ",
     price: 100000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 53,
@@ -858,6 +910,7 @@ const mockProducts: IProduct[] = [
     category: "غذای سگ",
     price: 130000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 54,
@@ -873,6 +926,7 @@ const mockProducts: IProduct[] = [
     category: "غذای سگ",
     price: 350000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 55,
@@ -888,6 +942,7 @@ const mockProducts: IProduct[] = [
     category: "غذای سگ",
     price: 2300000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 56,
@@ -903,6 +958,7 @@ const mockProducts: IProduct[] = [
     category: "غذای سگ",
     price: 360000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 57,
@@ -918,6 +974,7 @@ const mockProducts: IProduct[] = [
     category: "غذای سگ",
     price: 300000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 58,
@@ -933,6 +990,7 @@ const mockProducts: IProduct[] = [
     category: "غذای سگ",
     price: 600000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 59,
@@ -948,6 +1006,7 @@ const mockProducts: IProduct[] = [
     category: "غذای سگ",
     price: 2300000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 60,
@@ -963,6 +1022,7 @@ const mockProducts: IProduct[] = [
     category: "غذای سگ",
     price: 560000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 61,
@@ -978,6 +1038,7 @@ const mockProducts: IProduct[] = [
     category: "غذای سگ",
     price: 600000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 62,
@@ -993,6 +1054,7 @@ const mockProducts: IProduct[] = [
     category: "اسباب بازی سگ",
     price: 140000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 63,
@@ -1014,6 +1076,7 @@ const mockProducts: IProduct[] = [
     category: "اسباب بازی سگ",
     price: 190000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 64,
@@ -1029,6 +1092,7 @@ const mockProducts: IProduct[] = [
     category: "اسباب بازی سگ",
     price: 60000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 65,
@@ -1044,6 +1108,7 @@ const mockProducts: IProduct[] = [
     category: "اسباب بازی سگ",
     price: 75000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 66,
@@ -1059,6 +1124,7 @@ const mockProducts: IProduct[] = [
     category: "اسباب بازی سگ",
     price: 40000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 67,
@@ -1074,6 +1140,7 @@ const mockProducts: IProduct[] = [
     category: "اسباب بازی سگ",
     price: 180000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 68,
@@ -1089,6 +1156,7 @@ const mockProducts: IProduct[] = [
     category: "اسباب بازی سگ",
     price: 30000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 69,
@@ -1104,6 +1172,7 @@ const mockProducts: IProduct[] = [
     category: "اسباب بازی سگ",
     price: 45000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 70,
@@ -1119,6 +1188,7 @@ const mockProducts: IProduct[] = [
     category: "اسباب بازی سگ",
     price: 35000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 71,
@@ -1134,6 +1204,7 @@ const mockProducts: IProduct[] = [
     category: "اسباب بازی سگ",
     price: 120000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 72,
@@ -1149,6 +1220,7 @@ const mockProducts: IProduct[] = [
     category: "اسباب بازی سگ",
     price: 130000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 73,
@@ -1164,6 +1236,7 @@ const mockProducts: IProduct[] = [
     category: "اسباب بازی سگ",
     price: 55000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 74,
@@ -1179,6 +1252,7 @@ const mockProducts: IProduct[] = [
     category: "اسباب بازی سگ",
     price: 150000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 75,
@@ -1194,6 +1268,7 @@ const mockProducts: IProduct[] = [
     category: "اسباب بازی سگ",
     price: 90000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 76,
@@ -1209,6 +1284,7 @@ const mockProducts: IProduct[] = [
     category: "اسباب بازی سگ",
     price: 185000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 77,
@@ -1224,6 +1300,7 @@ const mockProducts: IProduct[] = [
     category: "بهداشتی سگ",
     price: 200000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 78,
@@ -1239,6 +1316,7 @@ const mockProducts: IProduct[] = [
     category: "بهداشتی سگ",
     price: 200000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 79,
@@ -1254,6 +1332,7 @@ const mockProducts: IProduct[] = [
     category: "بهداشتی سگ",
     price: 200000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 80,
@@ -1269,6 +1348,7 @@ const mockProducts: IProduct[] = [
     category: "بهداشتی سگ",
     price: 245000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 81,
@@ -1284,6 +1364,7 @@ const mockProducts: IProduct[] = [
     category: "بهداشتی سگ",
     price: 80000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 82,
@@ -1298,6 +1379,7 @@ const mockProducts: IProduct[] = [
     category: "بهداشتی سگ",
     price: 235000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 83,
@@ -1313,6 +1395,7 @@ const mockProducts: IProduct[] = [
     category: "بهداشتی سگ",
     price: 235000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 84,
@@ -1328,6 +1411,7 @@ const mockProducts: IProduct[] = [
     category: "بهداشتی سگ",
     price: 235000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 85,
@@ -1343,6 +1427,7 @@ const mockProducts: IProduct[] = [
     category: "بهداشتی سگ",
     price: 60000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 86,
@@ -1358,6 +1443,7 @@ const mockProducts: IProduct[] = [
     category: "بهداشتی سگ",
     price: 60000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 87,
@@ -1373,6 +1459,7 @@ const mockProducts: IProduct[] = [
     category: "بهداشتی سگ",
     price: 185000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 88,
@@ -1388,6 +1475,7 @@ const mockProducts: IProduct[] = [
     category: "بهداشتی سگ",
     price: 110000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 89,
@@ -1402,6 +1490,7 @@ const mockProducts: IProduct[] = [
     category: "بهداشتی سگ",
     price: 195000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 90,
@@ -1415,6 +1504,7 @@ const mockProducts: IProduct[] = [
     category: "بهداشتی سگ",
     price: 230000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 91,
@@ -1430,6 +1520,7 @@ const mockProducts: IProduct[] = [
     category: "بهداشتی سگ",
     price: 160000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 92,
@@ -1448,6 +1539,7 @@ const mockProducts: IProduct[] = [
     category: "بهداشتی سگ",
     price: 145000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 93,
@@ -1463,6 +1555,7 @@ const mockProducts: IProduct[] = [
     category: "بهداشتی سگ",
     price: 250000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 94,
@@ -1478,6 +1571,7 @@ const mockProducts: IProduct[] = [
     category: "بهداشتی سگ",
     price: 160000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 95,
@@ -1501,6 +1595,7 @@ const mockProducts: IProduct[] = [
     category: "بهداشتی سگ",
     price: 330000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 96,
@@ -1518,6 +1613,7 @@ const mockProducts: IProduct[] = [
     category: "بهداشتی سگ",
     price: 65000,
     quantity: randomNumber(),
+    amount: 0,
   },
   {
     id: 97,
@@ -1536,6 +1632,7 @@ const mockProducts: IProduct[] = [
     category: "بهداشتی سگ",
     price: 10000,
     quantity: randomNumber(),
+    amount: 0,
   },
 ];
 
