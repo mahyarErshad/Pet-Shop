@@ -15,7 +15,8 @@ interface props {
 }
 
 function SingleProductsDetails(props: props) {
-  const { title, price, balance, id, image, amount } = props;
+  const { title, price, id, image, amount } = props;
+  const [balance, setBalance] = React.useState(props.balance);
   document.title = props.title;
   const dispatch = useDispatch();
 
@@ -30,21 +31,29 @@ function SingleProductsDetails(props: props) {
       <Typography dir="rtl" sx={{ fontSize: "1rem", fontWeight: "normal" }}>
         موجود در انبار : {separateNumber(balance)} عدد
       </Typography>
-      <Box
-        onClick={() =>
-          dispatch(
-            addToCart({
-              id,
-              amount,
-              image,
-              title,
-              price,
-            })
-          )
-        }
-      >
-        <MyButton text="افزودن به سبد خرید" />
-      </Box>
+      {balance > 0 ? (
+        <Box
+          onClick={() => {
+            dispatch(
+              addToCart({
+                id,
+                amount,
+                image,
+                title,
+                price,
+              })
+            );
+            setBalance((prev) => prev - 1);
+            console.log(balance);
+          }}
+        >
+          <MyButton text="افزودن به سبد خرید" />
+        </Box>
+      ) : (
+        <Typography dir="rtl" variant="h5" color="error" sx={{ fontSize: "1.2rem" }}>
+          اتمام موجودی
+        </Typography>
+      )}
     </>
   );
 }

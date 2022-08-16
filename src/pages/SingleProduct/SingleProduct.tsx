@@ -39,7 +39,7 @@ function SingleProduct() {
         <Box sx={{ width: "100%", display: "flex", flexDirection: "row-reverse", alignItems: { xs: "center", md: "flex-start" }, justifyContent: { xs: "center", md: "flex-start" }, flexWrap: "wrap", borderBottom: "2px solid #ECEFF1", pb: "0.15rem" }}>
           <SingleProductImage image={product!.image} />
           <Box dir="rtl" sx={{ width: { xs: "90%", md: "48%" }, minHeight: "15.625rem", p: "1rem", display: "flex", justifyContent: "flex-start", alignItems: { xs: "center", md: "flex-start" }, flexDirection: "column", gap: "1rem" }}>
-            <SingleProductsDetails image={product!.image} amount={product!.amount} id={product!.id} title={product!.title} price={product!.price} balance={product!.quantity} />
+            <SingleProductsDetails image={product!.image} amount={product!.amount} id={product!.id} title={product!.title} price={product!.price} balance={product!.balance} />
             <CustomizedTables weight={product!.weight} country={product!.country} brand={product!.brand} breed={product!.breed} />
           </Box>
         </Box>

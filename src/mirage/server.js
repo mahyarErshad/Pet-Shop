@@ -27,6 +27,8 @@ export function makeServer({ environment = "test" } = {}) {
           country: product.country,
           weight: product.weight,
           price: product.price,
+          amount: product.amount,
+          balance: product.balance,
         });
       });
       mockCategories.forEach((category) => {
