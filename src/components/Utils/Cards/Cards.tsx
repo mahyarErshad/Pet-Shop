@@ -10,6 +10,8 @@ import { goToTop, separateNumber } from "../../../functions/functions";
 import MyButton from "../Buttons/MyButton/MyButton";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../../redux/slice/cartReducer";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 interface Iprops {
   title: string;
@@ -21,10 +23,21 @@ interface Iprops {
 
 export default function Cards(props: Iprops) {
   const { title, image, price, id, amount } = props;
+  const notify = () =>
+    toast.success("محصول با موفقیت اضافه شد", {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   const dispatch = useDispatch();
 
   return (
     <>
+      <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl pauseOnFocusLoss draggable pauseOnHover />
       <Card sx={{ width: { lg: "30%", md: "27%", sm: "40%", xs: "80%" } }}>
         <CardActionArea>
           <Link onClick={() => goToTop()} className="noDecoration" to={`/product/${id}`}>
@@ -43,7 +56,7 @@ export default function Cards(props: Iprops) {
         </CardActionArea>
         <CardActions sx={{ px: "1rem", py: "0.5rem" }}>
           <Box
-            onClick={() =>
+            onClick={() => {
               dispatch(
                 addToCart({
                   id,
@@ -52,8 +65,9 @@ export default function Cards(props: Iprops) {
                   title,
                   price,
                 })
-              )
-            }
+              );
+              notify();
+            }}
           >
             <MyButton text="افزودن" />
           </Box>
