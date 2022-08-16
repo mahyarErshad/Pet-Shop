@@ -4,10 +4,10 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Box, CardActionArea, CardActions } from "@mui/material";
-import InDeButton from "../Buttons/InDeButton/InDeButton";
 import { Link } from "react-router-dom";
 import "../../../Style/global/style.css";
 import { goToTop, separateNumber } from "../../../functions/functions";
+import MyButton from "../Buttons/MyButton/MyButton";
 
 interface Iprops {
   title: string;
@@ -38,7 +38,9 @@ export default function Cards(props: Iprops) {
           </Link>
         </CardActionArea>
         <CardActions sx={{ px: "1rem", py: "0.5rem" }}>
-          <InDeButton id={id} />
+          <Box>
+            <MyButton text="افزودن" />
+          </Box>
         </CardActions>
       </Card>
     </>
