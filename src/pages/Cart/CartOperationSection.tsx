@@ -3,7 +3,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import MyButton from "../../components/Utils/Buttons/MyButton/MyButton";
 import { separateNumber } from "../../functions/functions";
-import { clearCart } from "../../redux/slice/cartReducer";
+import { changeModalState } from "../../redux/slice/modalSlice";
 
 function CartOperationSection() {
   const dispatch = useDispatch();
@@ -13,7 +13,7 @@ function CartOperationSection() {
       <Box sx={{ width: "100%", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "0.7rem" }}>
         <Box sx={{ width: { xs: "100%", md: "30%" }, px: "1rem", display: "flex", justifyContent: "center", alignItems: "center", gap: "1rem" }}>
           <MyButton text="ثبت سفارش" />
-          <Box onClick={() => dispatch(clearCart())}>
+          <Box onClick={() => dispatch(changeModalState())}>
             <MyButton text="حذف همه" color="error" />
           </Box>
         </Box>

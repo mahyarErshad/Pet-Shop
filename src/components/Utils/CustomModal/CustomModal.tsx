@@ -4,8 +4,10 @@ import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Typography from "@mui/material/Typography";
 import { useSpring, animated } from "@react-spring/web";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Button } from "@mui/material";
+import { clearCart } from "../../../redux/slice/cartReducer";
+import { changeModalState } from "../../../redux/slice/modalSlice";
 
 interface FadeProps {
   children?: React.ReactElement;
@@ -54,6 +56,7 @@ const btnStyle = { width: "5rem", mt: "1.5rem" };
 
 export default function CustomModal() {
   const { isOpen } = useSelector((state: any) => state.modal);
+  const dispatch = useDispatch();
 
   return (
     <div>
@@ -73,10 +76,18 @@ export default function CustomModal() {
               سبد خرید خالی شود؟{" "}
             </Typography>
             <Box sx={{ display: "flex", justifyContent: "flex-start", alignItems: "center", gap: "1rem", flexDirection: "row" }}>
-              <Button sx={btnStyle} variant="contained" color="error">
+              <Button
+                onClick={() => {
+                  dispatch(clearCart());
+                  dispatch(changeModalState());
+                }}
+                sx={btnStyle}
+                variant="contained"
+                color="error"
+              >
                 تایید
               </Button>
-              <Button sx={btnStyle} variant="contained" color="secondary">
+              <Button onClick={() => dispatch(changeModalState())} sx={btnStyle} variant="contained" color="secondary">
                 لغو
               </Button>
             </Box>
