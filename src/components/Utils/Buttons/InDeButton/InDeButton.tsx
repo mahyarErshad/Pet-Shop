@@ -3,7 +3,7 @@ import ButtonGroup from "@mui/material/ButtonGroup";
 import Button from "@mui/material/Button";
 import { Box, Typography } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
-import { decreaseAmount, increaseAmount } from "../../../../redux/slice/cartReducer";
+import { decreaseAmount, increaseAmount, removeItem } from "../../../../redux/slice/cartReducer";
 import { separateNumber } from "../../../../functions/functions";
 
 interface props {
@@ -32,7 +32,17 @@ function InDeButton(props: props) {
             {separateNumber(amount)}
           </Typography>
         </Box>
-        <Button onClick={() => dispatch(decreaseAmount({ id }))} sx={buttonsStyle}>
+        <Button
+          onClick={() => {
+            if (amount === 1) {
+              dispatch(removeItem(id));
+              return;
+            } else {
+              dispatch(decreaseAmount({ id }));
+            }
+          }}
+          sx={buttonsStyle}
+        >
           -
         </Button>
       </ButtonGroup>
