@@ -9,6 +9,6 @@ export interface IProduct {
   description: string;
   category: string;
   price: number;
-  quantity: number;
+  balance: number;
   amount: number;
 }

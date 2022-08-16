@@ -58,8 +58,8 @@ function Products(props: IProps) {
       <Box>
         <ProductsHeader />
         <Box sx={{ mb: "1rem", width: "100%", px: "1rem", display: "flex", justifyContent: "center", alignItems: "center", gap: "1rem", flexWrap: "wrap" }}>
-          {_DATA.currentData().map((product: { id: number; title: string; image: string; price: number }) => {
-            return <Cards id={product.id} key={product.id} title={product.title} image={product.image} price={product.price} />;
+          {_DATA.currentData().map((product: { id: number; title: string; image: string; price: number; amount: number }) => {
+            return <Cards amount={product.amount} id={product.id} key={product.id} title={product.title} image={product.image} price={product.price} />;
           })}
         </Box>
         <Box sx={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center", mb: "1rem" }}>
