@@ -65,11 +65,11 @@ const initialState: cartState = {
       `,
       category: "بهداشتی سگ",
       price: 10000,
-            amount: 6,
+      amount: 6,
     },
   ],
   total: 0,
-  amount: 3,
+  amount: 0,
   isLoading: false,
 };
 
