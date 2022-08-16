@@ -5,6 +5,8 @@ import { useDispatch } from "react-redux";
 import { separateNumber } from "../../../../functions/functions";
 import { addToCart } from "../../../../redux/slice/cartReducer";
 import MyButton from "../../Buttons/MyButton/MyButton";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 interface props {
   title: string;
   price: number;
@@ -19,9 +21,20 @@ function SingleProductsDetails(props: props) {
   const [balance, setBalance] = React.useState(props.balance);
   document.title = props.title;
   const dispatch = useDispatch();
+  const notify = () =>
+    toast.success("محصول با موفقیت اضافه شد", {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
 
   return (
     <>
+      <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl pauseOnFocusLoss draggable pauseOnHover />
       <Typography dir="rtl" variant="h5" sx={{ fontSize: "1.5rem", fontWeight: "bold", mt: "1rem" }}>
         {title}
       </Typography>
@@ -44,7 +57,7 @@ function SingleProductsDetails(props: props) {
               })
             );
             setBalance((prev) => prev - 1);
-            console.log(balance);
+            notify();
           }}
         >
           <MyButton text="افزودن به سبد خرید" />
