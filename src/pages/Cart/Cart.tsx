@@ -8,9 +8,9 @@ import CustomModal from "../../components/Utils/CustomModal/CustomModal";
 
 function Cart() {
   document.title = "پت شاپ فینیکس | سبد خرید";
-  const { cartItems, amount } = useSelector((state: any) => state.cart);
+  const { cartItems, quantity } = useSelector((state: any) => state.cart);
 
-  if (amount < 1) {
+  if (quantity < 1) {
     return (
       <Box sx={{ width: "100%", p: "1rem", display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column", my: "1rem" }}>
         <Box sx={{ textAlign: "center", fontSize: "1.5rem", fontWeight: "bold", color: "#EE5564" }}>سبد خرید شما خالی است</Box>;

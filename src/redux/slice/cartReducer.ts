@@ -3,13 +3,13 @@ import { createSlice } from "@reduxjs/toolkit";
 interface cartState {
   cartItems: any[];
   total: number;
-  amount: number;
+  quantity: number;
 }
 
 const initialState: cartState = {
   cartItems: [],
   total: 0,
-  amount: 0,
+  quantity: 0,
 };
 
 const cartReducer: any = createSlice({
@@ -32,19 +32,24 @@ const cartReducer: any = createSlice({
       state.cartItems = state.cartItems.filter((item) => item.id !== itemId);
     },
     calculateTotal: (state) => {
-      let amount = 0;
+      let quantity = 0;
       let total = 0;
       state.cartItems.forEach((item) => {
-        amount = amount + item.amount;
+        quantity = quantity + item.amount;
         total = total + item.price * item.amount;
       });
-      state.amount = amount;
+      state.quantity = quantity;
       state.total = total;
     },
-    addItem: (state, { payload }) => {
-      state.cartItems.push(payload);
+    addToCart: (state, action) => {
+      const itemInCart = state.cartItems.find((item) => item.id === action.payload.id);
+      if (itemInCart) {
+        itemInCart.amount++;
+      } else {
+        state.cartItems.push({ ...action.payload, amount: 1 });
+      }
     },
   },
 });
-export const { clearCart, decreaseAmount, increaseAmount, removeItem, calculateTotal, addItem } = cartReducer.actions;
+export const { clearCart, decreaseAmount, increaseAmount, removeItem, calculateTotal, addToCart } = cartReducer.actions;
 export default cartReducer.reducer;

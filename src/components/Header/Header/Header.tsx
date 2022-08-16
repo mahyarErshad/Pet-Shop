@@ -74,12 +74,12 @@ export default function PrimarySearchAppBar() {
       <HeaderMenus flexRow={false} />
     </Menu>
   );
-  const amount = useSelector((store: any) => store.cart.amount);
+  const quantity = useSelector((store: any) => store.cart.quantity);
   return (
     <Box sx={{ flexGrow: 1, marginBottom: "0.5rem" }}>
       <AppBar position="static">
         <Toolbar>
-          <CartIcon count={amount} />
+          <CartIcon count={quantity} />
           <MyButton linkTo="/register" text="ورود / عضویت" />
           <AccountIcon setAnchorEl={setAnchorEl} menuId={menuId} title="فلانی" />
           <Box sx={{ flexGrow: 1 }} />
