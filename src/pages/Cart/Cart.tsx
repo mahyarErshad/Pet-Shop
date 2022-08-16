@@ -5,6 +5,7 @@ import CartItem from "../../components/Utils/CartItem/CartItem";
 import CartOperationSection from "./CartOperationSection";
 import catInBasket from "../../images/catInBasket.jpg";
 import { calculateTotal } from "../../redux/slice/cartReducer";
+import CustomModal from "../../components/Utils/CustomModal/CustomModal";
 
 function Cart() {
   document.title = "پت شاپ فینیکس | سبد خرید";
@@ -25,6 +26,7 @@ function Cart() {
       <>
         <Box sx={{ width: "100%", px: "1rem", display: "flex", flexDirection: "column", gap: "1rem", mt: "1rem", mb: "4.3rem" }}>
           <CartOperationSection />
+          <CustomModal />
           {cartItems.map((item: any) => {
             return <CartItem id={item.id} key={item.id} image={item.image} title={item.title} price={item.price} />;
           })}
