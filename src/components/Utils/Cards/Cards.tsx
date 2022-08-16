@@ -8,16 +8,20 @@ import { Link } from "react-router-dom";
 import "../../../Style/global/style.css";
 import { goToTop, separateNumber } from "../../../functions/functions";
 import MyButton from "../Buttons/MyButton/MyButton";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../../redux/slice/cartReducer";
 
 interface Iprops {
   title: string;
   image: string;
   price: number;
   id: number;
+  amount: number;
 }
 
 export default function Cards(props: Iprops) {
-  const { title, image, price, id } = props;
+  const { title, image, price, id, amount } = props;
+  const dispatch = useDispatch();
 
   return (
     <>
@@ -38,7 +42,19 @@ export default function Cards(props: Iprops) {
           </Link>
         </CardActionArea>
         <CardActions sx={{ px: "1rem", py: "0.5rem" }}>
-          <Box>
+          <Box
+            onClick={() =>
+              dispatch(
+                addToCart({
+                  id,
+                  amount,
+                  image,
+                  title,
+                  price,
+                })
+              )
+            }
+          >
             <MyButton text="افزودن" />
           </Box>
         </CardActions>
