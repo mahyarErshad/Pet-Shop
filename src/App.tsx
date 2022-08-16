@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 // MUI Utils
 import { ThemeProvider } from "@mui/material/styles";
@@ -26,8 +26,15 @@ import "./Style/global/style.css";
 
 // utils
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { calculateTotal } from "./redux/slice/cartReducer";
 
 function App() {
+  const dispatch = useDispatch();
+  const cartItems = useSelector((state: any) => state.cart.cartItems);
+  useEffect(() => {
+    dispatch(calculateTotal()); // eslint-disable-next-line
+  }, [cartItems]);
   return (
     <>
       <ThemeProvider theme={theme}>

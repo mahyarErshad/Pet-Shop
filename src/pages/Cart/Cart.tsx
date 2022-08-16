@@ -1,19 +1,15 @@
 import { Box } from "@mui/material";
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+import { useSelector } from "react-redux";
 import CartItem from "../../components/Utils/CartItem/CartItem";
 import CartOperationSection from "./CartOperationSection";
 import catInBasket from "../../images/catInBasket.jpg";
-import { calculateTotal } from "../../redux/slice/cartReducer";
 import CustomModal from "../../components/Utils/CustomModal/CustomModal";
 
 function Cart() {
   document.title = "پت شاپ فینیکس | سبد خرید";
   const { cartItems, amount } = useSelector((state: any) => state.cart);
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(calculateTotal()); // eslint-disable-next-line
-  }, [cartItems]);
+
   if (amount < 1) {
     return (
       <Box sx={{ width: "100%", p: "1rem", display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column", my: "1rem" }}>
