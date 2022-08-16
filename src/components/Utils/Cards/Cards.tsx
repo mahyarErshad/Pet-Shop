@@ -17,10 +17,11 @@ interface Iprops {
   price: number;
   id: number;
   amount: number;
+  balance: number;
 }
 
 export default function Cards(props: Iprops) {
-  const { title, image, price, id, amount } = props;
+  const { title, image, price, id, amount, balance } = props;
   const dispatch = useDispatch();
 
   return (
