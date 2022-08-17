@@ -87,7 +87,7 @@ export default function PrimarySearchAppBar() {
   const { loggedIn, userEmail } = useSelector((store: any) => store.loggedIn);
   return (
     <Box sx={{ flexGrow: 1, marginBottom: "0.5rem" }}>
-      <AppBar position="static">
+      <AppBar position="static" sx={{ px: { lg: "5%", xs: "1rem", md: "0rem" }, width: "100%" }}>
         <Toolbar>
           <CartIcon count={quantity} />
           {loggedIn ? <AccountIcon setAnchorEl={setAnchorEl} menuId={menuId} title={userEmail} /> : <MyButton linkTo="/register" text="ورود / عضویت" />}
