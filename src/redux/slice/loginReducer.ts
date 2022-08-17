@@ -33,7 +33,7 @@ const loginReducer = createSlice({
     setEmailError: (state) => {
       if (!state.emailValue) {
         state.emailError = true;
-        state.emailErrorMessage = "ایمیل خود را وارد کنید";
+        state.emailErrorMessage = "ایمیل خود را وارد نمایید";
       }
       if (state.emailValue && !/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(state.emailValue)) {
         state.emailError = true;
@@ -43,7 +43,7 @@ const loginReducer = createSlice({
     setPasswordError: (state) => {
       if (!state.passwordValue) {
         state.passwordError = true;
-        state.passwordErrorMessage = "رمز عبور خود را وارد کنید";
+        state.passwordErrorMessage = "رمز عبور خود را وارد نمایید";
       }
       if (state.passwordValue && state.passwordValue.length < 8) {
         state.passwordError = true;
