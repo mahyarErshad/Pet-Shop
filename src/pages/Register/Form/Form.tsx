@@ -9,9 +9,9 @@ function Form(props: IProps) {
   const { buttonText } = props;
   const inputStyle = { width: { lg: "50%", md: "50%", xs: "75%" }, mb: "1rem" };
   const [email, setEmail] = useState<string>("");
+  const [emailError, setEmailError] = useState<boolean>(false);
   const [password, setPassword] = useState<string>("");
-  console.log(email);
-  console.log(password);
+  const [passwordError, setPasswordError] = useState<boolean>(false);
   return (
     <>
       <FormControl sx={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "1rem" }}>
@@ -19,11 +19,11 @@ function Form(props: IProps) {
           <Box component="label" htmlFor="email" sx={{ direction: "rtl", fontSize: "0.875rem", cursor: "pointer" }}>
             ایمیل خود را وارد نمایید:
           </Box>
-          <TextField onChange={(e) => setEmail(e.target.value)} autoFocus sx={inputStyle} type="email" color="secondary" required id="email" label="email" variant="outlined" />
+          <TextField error={emailError} helperText="فرمت ایمیل صحیح نیست" onChange={(e) => setEmail(e.target.value)} autoFocus sx={inputStyle} type="email" color="secondary" required id="email" label="email" variant="outlined" />
           <Box component="label" htmlFor="password" sx={{ direction: "rtl", fontSize: "0.875rem", cursor: "pointer" }}>
             پسورد خود را وارد نمایید:
           </Box>
-          <TextField onChange={(e) => setPassword(e.target.value)} sx={inputStyle} type="password" color="secondary" required id="password" label="password" variant="outlined" />
+          <TextField error={passwordError} helperText="پسورد نباید کمتر از 8 کاراکتر باشد" onChange={(e) => setPassword(e.target.value)} sx={inputStyle} type="password" color="secondary" required id="password" label="password" variant="outlined" />
           <Button sx={{ p: "0.5rem", width: { lg: "25%", md: "25%", xs: "37%" }, alignSelf: "flex-end" }} variant="contained" color="secondary">
             <Typography sx={{ textOverflow: "ellipsis", whiteSpace: "nowrap", overflow: "hidden" }}>{buttonText}</Typography>
           </Button>
