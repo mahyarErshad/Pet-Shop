@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Button, FormControl, TextField, Typography } from "@mui/material";
 
-function Signup() {
+function Form() {
   const inputStyle = { width: { lg: "50%", md: "50%", xs: "75%" }, mb: "1rem" };
   return (
     <>
@@ -24,4 +24,4 @@ function Signup() {
   );
 }
 
-export default Signup;
+export default Form;
