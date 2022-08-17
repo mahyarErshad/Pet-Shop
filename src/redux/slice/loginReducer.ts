@@ -3,11 +3,19 @@ import { createSlice } from "@reduxjs/toolkit";
 interface IState {
   loggedIn: boolean;
   userEmail: string;
+  emailError: boolean;
+  passwordError: boolean;
+  emailErrorMessage: string;
+  passwordErrorMessage: string;
 }
 
 const initialState: IState = {
   loggedIn: false,
   userEmail: "",
+  emailError: false,
+  passwordError: false,
+  emailErrorMessage: "",
+  passwordErrorMessage: "",
 };
 
 const loginReducer = createSlice({
