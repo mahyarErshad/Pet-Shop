@@ -10,8 +10,8 @@ import CartIcon from "../../Utils/Buttons/Cart/Icon/CartIcon";
 import Logo from "../../Utils/Logo/Logo";
 import MyButton from "../../Utils/Buttons/MyButton/MyButton";
 import { useDispatch, useSelector } from "react-redux";
-import { setLoggedOut } from "../../../redux/slice/loginReducer";
 import { Button } from "@mui/material";
+import { changeModalState } from "../../../redux/slice/modalSlice";
 
 export default function PrimarySearchAppBar() {
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -53,7 +53,7 @@ export default function PrimarySearchAppBar() {
         <Toolbar>
           <CartIcon count={quantity} />
           {loggedIn ? (
-            <Button sx={{ fontSize: "1rem" }} onClick={() => dispatch(setLoggedOut())} color="error" variant="contained">
+            <Button sx={{ fontSize: "1rem" }} onClick={() => dispatch(changeModalState("از حساب کاربری خارج میشوید؟"))} color="error" variant="contained">
               خروج از حساب
             </Button>
           ) : (

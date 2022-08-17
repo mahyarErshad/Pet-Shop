@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Button } from "@mui/material";
 import { clearCart } from "../../../redux/slice/cartReducer";
 import { changeModalState } from "../../../redux/slice/modalSlice";
+import { setLoggedOut } from "../../../redux/slice/loginReducer";
 
 interface FadeProps {
   children?: React.ReactElement;
@@ -55,7 +56,7 @@ const style = {
 const btnStyle = { width: "5rem", mt: "1.5rem" };
 
 export default function CustomModal() {
-  const { isOpen } = useSelector((state: any) => state.modal);
+  const { isOpen, message } = useSelector((state: any) => state.modal);
   const dispatch = useDispatch();
 
   return (
@@ -73,13 +74,18 @@ export default function CustomModal() {
         <Fade in={isOpen}>
           <Box sx={style}>
             <Typography dir="rtl" sx={{ fontSize: "1rem", fontWeight: "bold" }} variant="h5" component="h2">
-              سبد خرید خالی شود؟{" "}
+              {message}
             </Typography>
             <Box sx={{ display: "flex", justifyContent: "flex-start", alignItems: "center", gap: "1rem", flexDirection: "row" }}>
               <Button
                 onClick={() => {
-                  dispatch(clearCart());
-                  dispatch(changeModalState());
+                  if (message === "سبد خرید خالی شود؟") {
+                    dispatch(clearCart());
+                  }
+                  if (message === "از حساب کاربری خارج میشوید؟") {
+                    dispatch(setLoggedOut());
+                  }
+                  dispatch(changeModalState(""));
                 }}
                 sx={btnStyle}
                 variant="contained"
@@ -87,7 +93,7 @@ export default function CustomModal() {
               >
                 تایید
               </Button>
-              <Button onClick={() => dispatch(changeModalState())} sx={btnStyle} variant="contained" color="secondary">
+              <Button onClick={() => dispatch(changeModalState(""))} sx={btnStyle} variant="contained" color="secondary">
                 لغو
               </Button>
             </Box>

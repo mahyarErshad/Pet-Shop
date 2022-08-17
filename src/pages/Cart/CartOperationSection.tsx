@@ -13,7 +13,7 @@ function CartOperationSection() {
       <Box sx={{ width: "100%", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "0.7rem" }}>
         <Box sx={{ width: { xs: "100%", md: "30%" }, px: "1rem", display: "flex", justifyContent: "center", alignItems: "center", gap: "1rem" }}>
           <MyButton text="ثبت سفارش" />
-          <Box onClick={() => dispatch(changeModalState())}>
+          <Box onClick={() => dispatch(changeModalState("سبد خرید خالی شود؟"))}>
             <MyButton text="حذف همه" color="error" />
           </Box>
         </Box>
