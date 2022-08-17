@@ -18,5 +18,5 @@ const loginReducer = createSlice({
     },
   },
 });
-
+export const { setLoggedIn, setLoggedOut } = loginReducer.actions;
 export default loginReducer.reducer;
