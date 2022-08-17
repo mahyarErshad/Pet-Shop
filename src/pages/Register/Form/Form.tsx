@@ -51,6 +51,7 @@ function Form(props: IProps) {
     dispatch(setEmailError());
     dispatch(setPasswordError());
     dispatch(submit());
+    setNotifyText(`${buttonText} با موفقیت انجام شد`);
   }
 
   return (
