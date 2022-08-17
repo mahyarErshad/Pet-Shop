@@ -64,7 +64,7 @@ function Products(props: IProps) {
         </Box>
         <Box sx={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center", mb: "1rem" }}>
           <Stack spacing={2}>
-            <Pagination size="large" color="secondary" page={page} count={count} onChange={handleChange} />
+            <Pagination siblingCount={2} size="large" color="secondary" page={page} count={count} onChange={handleChange} />
           </Stack>
         </Box>
       </Box>
