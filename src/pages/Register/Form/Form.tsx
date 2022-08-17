@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Box, Button, FormControl, TextField, Typography } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
-import { setEmailError, setEmailValue, setPasswordValue } from "../../../redux/slice/loginReducer";
+import { setEmailError, setEmailValue, setPasswordError, setPasswordValue } from "../../../redux/slice/loginReducer";
 
 interface IProps {
   buttonText: string;
@@ -13,13 +13,26 @@ function Form(props: IProps) {
   const { emailError, passwordError, emailErrorMessage, passwordErrorMessage, usernameValue, passwordValue } = useSelector((state: any) => state.loggedIn);
   const dispatch = useDispatch();
   useEffect(() => {
-    const delay = setTimeout(() => {
-      dispatch(setEmailError());
-    }, 1000);
-    return () => {
-      clearTimeout(delay);
-    }; // eslint-disable-next-line
+    if (usernameValue) {
+      const delay = setTimeout(() => {
+        dispatch(setEmailError());
+      }, 1000);
+      return () => {
+        clearTimeout(delay);
+      }; // eslint-disable-next-line
+    }
   }, [usernameValue]);
+
+  useEffect(() => {
+    if (passwordValue) {
+      const delay = setTimeout(() => {
+        dispatch(setPasswordError());
+      }, 1000);
+      return () => {
+        clearTimeout(delay);
+      };
+    } // eslint-disable-next-line
+  }, [passwordValue]);
 
   return (
     <>
