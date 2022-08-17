@@ -13,7 +13,7 @@ const loginReducer = createSlice({
       state.userEmail = action.payload;
     },
     setLoggedOut: (state) => {
-      state.loggedIn = true;
+      state.loggedIn = false;
       state.userEmail = "";
     },
   },
