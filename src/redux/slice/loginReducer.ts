@@ -29,6 +29,8 @@ const loginReducer = createSlice({
     setLoggedOut: (state) => {
       state.loggedIn = false;
       state.userEmail = "";
+      state.emailValue = "";
+      state.passwordValue = "";
     },
     setEmailError: (state) => {
       if (!state.emailValue) {

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Box, Button, TextField, Typography } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
-import { setEmailError, setEmailValue, setPasswordError, setPasswordValue, submit } from "../../../redux/slice/loginReducer";
+import { clearErrors, setEmailError, setEmailValue, setPasswordError, setPasswordValue, submit } from "../../../redux/slice/loginReducer";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
@@ -27,6 +27,10 @@ function Form(props: IProps) {
       draggable: true,
       progress: undefined,
     });
+  useEffect(() => {
+    dispatch(clearErrors());
+    // eslint-disable-next-line
+  }, []);
   useEffect(() => {
     if (emailValue) {
       const delay = setTimeout(() => {
