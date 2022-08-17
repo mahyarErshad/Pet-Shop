@@ -52,6 +52,7 @@ function Form(props: IProps) {
     dispatch(setPasswordError());
     dispatch(submit());
     setNotifyText(`${buttonText} با موفقیت انجام شد`);
+    notify();
   }
 
   return (
