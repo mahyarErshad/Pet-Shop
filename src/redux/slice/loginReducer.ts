@@ -1,6 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 interface IState {
+  emailValue: string;
+  passwordValue: string;
   loggedIn: boolean;
   userEmail: string;
   emailError: boolean;
@@ -10,6 +12,8 @@ interface IState {
 }
 
 const initialState: IState = {
+  emailValue: "",
+  passwordValue: "",
   loggedIn: false,
   userEmail: "",
   emailError: false,
