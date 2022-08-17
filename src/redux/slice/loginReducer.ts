@@ -1,4 +1,4 @@
 const initialState = {
   loggedIn: false,
-  user: {},
+  userEmail: "",
 };
