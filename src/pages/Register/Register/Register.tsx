@@ -3,9 +3,7 @@ import Switch from "@mui/material/Switch";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import React, { useState } from "react";
-import Login from "../Login/Login";
-import Signup from "../Form/Signup";
-
+]
 function Register() {
   document.title = "حساب کاربری من";
   const [checked, setChecked] = useState(false);
