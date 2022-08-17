@@ -26,10 +26,6 @@ const loginReducer = createSlice({
   name: "login",
   initialState,
   reducers: {
-    setLoggedIn: (state, action) => {
-      state.loggedIn = true;
-      state.userEmail = action.payload;
-    },
     setLoggedOut: (state) => {
       state.loggedIn = false;
       state.userEmail = "";
@@ -64,8 +60,28 @@ const loginReducer = createSlice({
       state.passwordError = false;
       state.passwordValue = action.payload;
     },
+    submit: (state) => {
+      if (state.emailError || state.passwordError) {
+        return;
+      }
+      if (!state.emailValue || !state.passwordValue) {
+        state.emailError = true;
+        state.emailErrorMessage = "ایمیل خود را وارد کنید";
+        state.passwordError = true;
+        state.passwordErrorMessage = "رمز عبور خود را وارد کنید";
+        return;
+      }
+      if (!state.emailError && !state.passwordError) {
+        setTimeout(() => {
+          state.loggedIn = true;
+          state.userEmail = state.emailValue;
+          state.emailValue = "";
+          state.passwordValue = "";
+        }, 2000);
+      }
+    },
   },
 });
 
-export const { setLoggedIn, setLoggedOut, setEmailError, setPasswordError, setEmailValue, setPasswordValue } = loginReducer.actions;
+export const { setLoggedOut, setEmailError, setPasswordError, setEmailValue, setPasswordValue, submit } = loginReducer.actions;
 export default loginReducer.reducer;
