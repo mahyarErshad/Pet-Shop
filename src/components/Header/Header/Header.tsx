@@ -3,66 +3,28 @@ import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
-import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import HeaderMenus from "../HeaderMenus/HeaderMenus";
 import CartIcon from "../../Utils/Buttons/Cart/Icon/CartIcon";
-import AccountIcon from "../../Utils/Buttons/AccountIcon/AccountIcon";
 import Logo from "../../Utils/Logo/Logo";
 import MyButton from "../../Utils/Buttons/MyButton/MyButton";
 import { useDispatch, useSelector } from "react-redux";
 import { setLoggedOut } from "../../../redux/slice/loginReducer";
+import { Button } from "@mui/material";
 
 export default function PrimarySearchAppBar() {
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState<null | HTMLElement>(null);
   const dispatch = useDispatch();
 
-  const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
   const handleMobileMenuClose = () => {
     setMobileMoreAnchorEl(null);
   };
-
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-    handleMobileMenuClose();
-  };
-
   const handleMobileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
-  const menuId = "primary-search-account-menu";
-
-  const renderMenu = (
-    <Menu
-      anchorEl={anchorEl}
-      anchorOrigin={{
-        vertical: "bottom",
-        horizontal: "left",
-      }}
-      id={menuId}
-      keepMounted
-      transformOrigin={{
-        vertical: "bottom",
-        horizontal: "left",
-      }}
-      open={isMenuOpen}
-      onClose={handleMenuClose}
-    >
-      <MenuItem
-        onClick={() => {
-          dispatch(setLoggedOut());
-          handleMenuClose();
-        }}
-      >
-        خروج از حساب کاربری
-      </MenuItem>
-    </Menu>
-  );
-
   const mobileMenuId = "primary-search-account-menu-mobile";
   const renderMobileMenu = (
     <Menu
@@ -84,13 +46,19 @@ export default function PrimarySearchAppBar() {
     </Menu>
   );
   const quantity = useSelector((store: any) => store.cart.quantity);
-  const { loggedIn, userEmail } = useSelector((store: any) => store.loggedIn);
+  const { loggedIn } = useSelector((store: any) => store.loggedIn);
   return (
     <Box sx={{ flexGrow: 1, marginBottom: "0.5rem" }}>
       <AppBar position="static" sx={{ px: { lg: "5%", xs: "1rem", md: "0rem" }, width: "100%" }}>
         <Toolbar>
           <CartIcon count={quantity} />
-          {loggedIn ? <AccountIcon setAnchorEl={setAnchorEl} menuId={menuId} title={userEmail} /> : <MyButton linkTo="/register" text="ورود / عضویت" />}
+          {loggedIn ? (
+            <Button sx={{ fontSize: "1rem" }} onClick={() => dispatch(setLoggedOut())} color="error" variant="contained">
+              خروج از حساب
+            </Button>
+          ) : (
+            <MyButton linkTo="/register" text="ورود / عضویت" />
+          )}
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <HeaderMenus flexRow={true} />
@@ -104,7 +72,6 @@ export default function PrimarySearchAppBar() {
         </Toolbar>
       </AppBar>
       {renderMobileMenu}
-      {renderMenu}
     </Box>
   );
 }
