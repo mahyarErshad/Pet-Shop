@@ -4,7 +4,7 @@ import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import React, { useState } from "react";
 import Form from "../Form/Form";
-]
+
 function Register() {
   document.title = "حساب کاربری من";
   const [checked, setChecked] = useState(false);
