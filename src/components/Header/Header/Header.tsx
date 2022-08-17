@@ -11,11 +11,13 @@ import CartIcon from "../../Utils/Buttons/Cart/Icon/CartIcon";
 import AccountIcon from "../../Utils/Buttons/AccountIcon/AccountIcon";
 import Logo from "../../Utils/Logo/Logo";
 import MyButton from "../../Utils/Buttons/MyButton/MyButton";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { setLoggedOut } from "../../../redux/slice/loginReducer";
 
 export default function PrimarySearchAppBar() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState<null | HTMLElement>(null);
+  const dispatch = useDispatch();
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -38,19 +40,26 @@ export default function PrimarySearchAppBar() {
     <Menu
       anchorEl={anchorEl}
       anchorOrigin={{
-        vertical: "top",
+        vertical: "bottom",
         horizontal: "left",
       }}
       id={menuId}
       keepMounted
       transformOrigin={{
-        vertical: "top",
+        vertical: "bottom",
         horizontal: "left",
       }}
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>خروج از حساب کاربری</MenuItem>
+      <MenuItem
+        onClick={() => {
+          dispatch(setLoggedOut());
+          handleMenuClose();
+        }}
+      >
+        خروج از حساب کاربری
+      </MenuItem>
     </Menu>
   );
 
@@ -75,13 +84,13 @@ export default function PrimarySearchAppBar() {
     </Menu>
   );
   const quantity = useSelector((store: any) => store.cart.quantity);
+  const { loggedIn, userEmail } = useSelector((store: any) => store.loggedIn);
   return (
     <Box sx={{ flexGrow: 1, marginBottom: "0.5rem" }}>
-      <AppBar position="static">
+      <AppBar position="static" sx={{ px: { lg: "5%", xs: "1rem", md: "0rem" }, width: "100%" }}>
         <Toolbar>
           <CartIcon count={quantity} />
-          <MyButton linkTo="/register" text="ورود / عضویت" />
-          <AccountIcon setAnchorEl={setAnchorEl} menuId={menuId} title="فلانی" />
+          {loggedIn ? <AccountIcon setAnchorEl={setAnchorEl} menuId={menuId} title={userEmail} /> : <MyButton linkTo="/register" text="ورود / عضویت" />}
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <HeaderMenus flexRow={true} />
