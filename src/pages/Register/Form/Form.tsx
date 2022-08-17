@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setEmailError, setEmailValue, setPasswordError, setPasswordValue, submit } from "../../../redux/slice/loginReducer";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
 
 interface IProps {
   buttonText: string;
@@ -14,6 +15,7 @@ function Form(props: IProps) {
   const inputStyle = { width: { lg: "50%", md: "50%", xs: "75%" }, mb: "1rem" };
   const { emailError, passwordError, emailErrorMessage, passwordErrorMessage, emailValue, passwordValue } = useSelector((state: any) => state.loggedIn);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [notifyText, setNotifyText] = useState<string>("");
   const notify = () =>
     toast.success(notifyText, {
@@ -53,6 +55,7 @@ function Form(props: IProps) {
     dispatch(submit());
     setNotifyText(`${buttonText} با موفقیت انجام شد`);
     notify();
+    navigate("/");
   }
 
   return (
