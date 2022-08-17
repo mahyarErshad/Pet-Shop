@@ -51,9 +51,11 @@ const loginReducer = createSlice({
       state.passwordErrorMessage = "";
     },
     setEmailValue: (state, action) => {
+      state.emailError = false;
       state.emailValue = action.payload;
     },
     setPasswordValue: (state, action) => {
+      state.passwordError = false;
       state.passwordValue = action.payload;
     },
   },
