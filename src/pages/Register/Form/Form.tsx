@@ -51,13 +51,15 @@ function Form(props: IProps) {
   function handleSubmit(e: any) {
     e.preventDefault();
     setTimeout(() => {
-      notify();
+      if (!emailError && !passwordError && emailValue && passwordValue) {
+        notify();
+      }
     }, 2000);
     setTimeout(() => {
       dispatch(setEmailError());
       dispatch(setPasswordError());
       dispatch(submit());
-      if (!emailError && !passwordError) {
+      if (!emailError && !passwordError && emailValue && passwordValue) {
         navigate("/");
         goToTop();
       }
