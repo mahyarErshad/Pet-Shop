@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Box, Button, TextField, Typography } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { setEmailError, setEmailValue, setPasswordError, setPasswordValue, submit } from "../../../redux/slice/loginReducer";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
+import { goToTop } from "../../../functions/functions";
 
 interface IProps {
   buttonText: string;
@@ -16,9 +17,8 @@ function Form(props: IProps) {
   const { emailError, passwordError, emailErrorMessage, passwordErrorMessage, emailValue, passwordValue } = useSelector((state: any) => state.loggedIn);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [notifyText, setNotifyText] = useState<string>("");
   const notify = () =>
-    toast.success(notifyText, {
+    toast.success(`${buttonText} با موفقیت انجام شد`, {
       position: "top-right",
       autoClose: 3000,
       hideProgressBar: false,
@@ -50,12 +50,18 @@ function Form(props: IProps) {
   }, [passwordValue]);
   function handleSubmit(e: any) {
     e.preventDefault();
-    dispatch(setEmailError());
-    dispatch(setPasswordError());
-    dispatch(submit());
-    setNotifyText(`${buttonText} با موفقیت انجام شد`);
-    notify();
-    navigate("/");
+    setTimeout(() => {
+      notify();
+    }, 2000);
+    setTimeout(() => {
+      dispatch(setEmailError());
+      dispatch(setPasswordError());
+      dispatch(submit());
+      if (!emailError && !passwordError) {
+        navigate("/");
+        goToTop();
+      }
+    }, 3500);
   }
 
   return (
