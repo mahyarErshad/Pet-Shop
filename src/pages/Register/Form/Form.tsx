@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { Box, Button, FormControl, TextField, Typography } from "@mui/material";
+import React, { useEffect } from "react";
+import { Box, Button, TextField, Typography } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
-import { setEmailError, setEmailValue, setPasswordError, setPasswordValue } from "../../../redux/slice/loginReducer";
+import { setEmailError, setEmailValue, setPasswordError, setPasswordValue, submit } from "../../../redux/slice/loginReducer";
 
 interface IProps {
   buttonText: string;
@@ -35,11 +35,14 @@ function Form(props: IProps) {
   }, [passwordValue]);
   function handleSubmit(e: any) {
     e.preventDefault();
+    dispatch(setEmailError());
+    dispatch(setPasswordError());
+    dispatch(submit());
   }
 
   return (
     <>
-      <FormControl sx={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "1rem" }}>
+      <Box component="form" onSubmit={(e: any) => handleSubmit(e)} sx={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "1rem" }}>
         <Box sx={{ width: "100%", display: "flex", alignItems: "flex-end", justifyContent: "center", flexDirection: "column", gap: "0.2rem" }}>
           <Box component="label" htmlFor="email" sx={{ direction: "rtl", fontSize: "0.875rem", cursor: "pointer" }}>
             ایمیل خود را وارد نمایید:
@@ -49,11 +52,11 @@ function Form(props: IProps) {
             پسورد خود را وارد نمایید:
           </Box>
           <TextField error={passwordError} helperText={passwordErrorMessage} onChange={(e) => dispatch(setPasswordValue(e.target.value))} sx={inputStyle} type="password" color="secondary" required id="password" label="password" variant="outlined" />
-          <Button onClick={handleSubmit()} type="submit" sx={{ p: "0.5rem", width: { lg: "25%", md: "25%", xs: "37%" }, alignSelf: "flex-end" }} variant="contained" color="secondary">
+          <Button onClick={(e: any) => handleSubmit(e)} type="submit" sx={{ p: "0.5rem", width: { lg: "25%", md: "25%", xs: "37%" }, alignSelf: "flex-end" }} variant="contained" color="secondary">
             <Typography sx={{ textOverflow: "ellipsis", whiteSpace: "nowrap", overflow: "hidden" }}>{buttonText}</Typography>
           </Button>
         </Box>
-      </FormControl>
+      </Box>
     </>
   );
 }
