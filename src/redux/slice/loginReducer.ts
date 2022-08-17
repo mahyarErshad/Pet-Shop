@@ -45,8 +45,14 @@ const loginReducer = createSlice({
       }
     },
     setPasswordError: (state, action) => {
-      state.passwordError = true;
-      state.passwordErrorMessage = action.payload;
+      if (!state.passwordValue) {
+        state.passwordError = true;
+        state.passwordErrorMessage = "رمز عبور خود را وارد کنید";
+      }
+      if (state.passwordValue.length < 8) {
+        state.passwordError = true;
+        state.passwordErrorMessage = "رمز عبور باید حداقل 8 کاراکتر باشد";
+      }
     },
     setEmailValue: (state, action) => {
       state.emailError = false;
