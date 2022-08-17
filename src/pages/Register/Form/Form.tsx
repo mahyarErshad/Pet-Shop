@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Box, Button, FormControl, TextField, Typography } from "@mui/material";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 interface IProps {
   buttonText: string;
@@ -12,6 +12,7 @@ function Form(props: IProps) {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const { emailError, passwordError, emailErrorMessage, passwordErrorMessage } = useSelector((state: any) => state.loggedIn);
+  const dispatch = useDispatch();
 
   return (
     <>
