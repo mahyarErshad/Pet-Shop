@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 interface IState {
-  isLoggedIn: boolean;
+  loggedIn: boolean;
   userEmail: string;
 }
 
