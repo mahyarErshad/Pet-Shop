@@ -10,8 +10,10 @@ function Form(props: IProps) {
   const inputStyle = { width: { lg: "50%", md: "50%", xs: "75%" }, mb: "1rem" };
   const [email, setEmail] = useState<string>("");
   const [emailError, setEmailError] = useState<boolean>(false);
+  const [emailErrorText, setEmailErrorText] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [passwordError, setPasswordError] = useState<boolean>(false);
+  const [passwordErrorText, setPasswordErrorText] = useState<string>("");
   return (
     <>
       <FormControl sx={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "1rem" }}>
