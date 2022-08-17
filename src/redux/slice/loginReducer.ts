@@ -65,12 +65,8 @@ const loginReducer = createSlice({
         return;
       }
       if (!state.emailError && !state.passwordError) {
-        setTimeout(() => {
-          state.loggedIn = true;
-          state.userEmail = state.emailValue;
-          state.emailValue = "";
-          state.passwordValue = "";
-        }, 2000);
+        state.loggedIn = true;
+        state.userEmail = state.emailValue;
       }
     },
   },
