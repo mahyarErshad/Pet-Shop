@@ -64,13 +64,6 @@ const loginReducer = createSlice({
       if (state.emailError || state.passwordError) {
         return;
       }
-      if (!state.emailValue || !state.passwordValue) {
-        state.emailError = true;
-        state.emailErrorMessage = "ایمیل خود را وارد کنید";
-        state.passwordError = true;
-        state.passwordErrorMessage = "رمز عبور خود را وارد کنید";
-        return;
-      }
       if (!state.emailError && !state.passwordError) {
         setTimeout(() => {
           state.loggedIn = true;
