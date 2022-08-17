@@ -7,7 +7,12 @@ const initialState = {
 const loginReducer = createSlice({
   name: "login",
   initialState,
-  reducers: {},
+  reducers: {
+    setLoggedIn: (state, action) => {
+      state.loggedIn = true;
+      state.userEmail = action.payload;
+    },
+  },
 });
 
 export default loginReducer.reducer;
