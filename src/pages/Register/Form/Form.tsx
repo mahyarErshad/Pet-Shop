@@ -10,18 +10,18 @@ interface IProps {
 function Form(props: IProps) {
   const { buttonText } = props;
   const inputStyle = { width: { lg: "50%", md: "50%", xs: "75%" }, mb: "1rem" };
-  const { emailError, passwordError, emailErrorMessage, passwordErrorMessage, usernameValue, passwordValue } = useSelector((state: any) => state.loggedIn);
+  const { emailError, passwordError, emailErrorMessage, passwordErrorMessage, emailValue, passwordValue } = useSelector((state: any) => state.loggedIn);
   const dispatch = useDispatch();
   useEffect(() => {
-    if (usernameValue) {
+    if (emailValue) {
       const delay = setTimeout(() => {
         dispatch(setEmailError());
       }, 1000);
       return () => {
         clearTimeout(delay);
-      }; // eslint-disable-next-line
-    }
-  }, [usernameValue]);
+      };
+    } // eslint-disable-next-line
+  }, [emailValue]);
 
   useEffect(() => {
     if (passwordValue) {

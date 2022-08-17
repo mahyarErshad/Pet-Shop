@@ -35,7 +35,7 @@ const loginReducer = createSlice({
         state.emailError = true;
         state.emailErrorMessage = "ایمیل خود را وارد کنید";
       }
-      if (!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(state.emailValue)) {
+      if (state.emailValue && !/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(state.emailValue)) {
         state.emailError = true;
         state.emailErrorMessage = "ایمیل وارد شده معتبر نیست";
       }
@@ -45,13 +45,13 @@ const loginReducer = createSlice({
         state.passwordError = true;
         state.passwordErrorMessage = "رمز عبور خود را وارد کنید";
       }
-      if (state.passwordValue.length < 8) {
+      if (state.passwordValue && state.passwordValue.length < 8) {
         state.passwordError = true;
-        state.passwordErrorMessage = "رمز عبور باید حداقل 8 کاراکتر باشد";
+        state.passwordErrorMessage = "رمز عبور باید حداقل ۸ کاراکتر باشد";
       }
     },
     setEmailValue: (state, action) => {
-      state.passwordErrorMessage = "";
+      state.emailErrorMessage = "";
       state.emailError = false;
       state.emailValue = action.payload;
     },
