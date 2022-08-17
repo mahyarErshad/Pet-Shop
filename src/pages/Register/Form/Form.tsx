@@ -33,6 +33,9 @@ function Form(props: IProps) {
       };
     } // eslint-disable-next-line
   }, [passwordValue]);
+  function handleSubmit(e: any) {
+    e.preventDefault();
+  }
 
   return (
     <>
@@ -46,7 +49,7 @@ function Form(props: IProps) {
             پسورد خود را وارد نمایید:
           </Box>
           <TextField error={passwordError} helperText={passwordErrorMessage} onChange={(e) => dispatch(setPasswordValue(e.target.value))} sx={inputStyle} type="password" color="secondary" required id="password" label="password" variant="outlined" />
-          <Button type="submit" sx={{ p: "0.5rem", width: { lg: "25%", md: "25%", xs: "37%" }, alignSelf: "flex-end" }} variant="contained" color="secondary">
+          <Button onClick={handleSubmit()} type="submit" sx={{ p: "0.5rem", width: { lg: "25%", md: "25%", xs: "37%" }, alignSelf: "flex-end" }} variant="contained" color="secondary">
             <Typography sx={{ textOverflow: "ellipsis", whiteSpace: "nowrap", overflow: "hidden" }}>{buttonText}</Typography>
           </Button>
         </Box>
