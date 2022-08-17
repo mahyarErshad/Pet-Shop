@@ -35,8 +35,14 @@ const loginReducer = createSlice({
       state.userEmail = "";
     },
     setEmailError: (state, action) => {
-      state.emailError = true;
-      state.emailErrorMessage = action.payload;
+      if (!state.emailValue) {
+        state.emailError = true;
+        state.emailErrorMessage = "ایمیل خود را وارد کنید";
+      }
+      if (!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(state.emailValue)) {
+        state.emailError = true;
+        state.emailErrorMessage = "ایمیل وارد شده معتبر نیست";
+      }
     },
     setPasswordError: (state, action) => {
       state.passwordError = true;
