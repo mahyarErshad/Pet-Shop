@@ -1,7 +1,12 @@
 import React from "react";
 import { Box, Button, FormControl, TextField, Typography } from "@mui/material";
 
-function Form() {
+interface IProps {
+  buttonText: string;
+}
+
+function Form(props: IProps) {
+  const { buttonText } = props;
   const inputStyle = { width: { lg: "50%", md: "50%", xs: "75%" }, mb: "1rem" };
   return (
     <>
@@ -16,7 +21,7 @@ function Form() {
           </Box>
           <TextField sx={inputStyle} type="password" color="secondary" required id="password" label="password" variant="outlined" />
           <Button sx={{ p: "0.5rem", width: { lg: "25%", md: "25%", xs: "37%" }, alignSelf: "flex-end" }} variant="contained" color="secondary">
-            <Typography sx={{ textOverflow: "ellipsis", whiteSpace: "nowrap", overflow: "hidden" }}>{title}</Typography>
+            <Typography sx={{ textOverflow: "ellipsis", whiteSpace: "nowrap", overflow: "hidden" }}>{buttonText}</Typography>
           </Button>
         </Box>
       </FormControl>
