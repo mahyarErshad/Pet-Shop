@@ -21,7 +21,7 @@ function HeaderMenus(props: Iprops) {
   return (
     <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: row }}>
       <Link className="noDecoration" to={`/products/${all}`}>
-        <Button sx={{ fontSize: "1rem", fontWeight: "bold", color: "#000", height: "3rem", borderRadius: "8px", "&:hover": { bgcolor: "#B2B2B2" } }}>همه محصولات</Button>
+        <Button sx={{ fontSize: "1rem", fontWeight: "bold", color: "#000", height: "3rem", borderRadius: "6px", "&:hover": { bgcolor: "#B2B2B2" } }}>همه محصولات</Button>
       </Link>
       <MenuItems title="گربه" productCategory={["غذای گربه", "خاک گربه", "بهداشتی گربه"]} icon={<GiCat fontSize={20} />} />
       <MenuItems title="سگ" productCategory={["غذای سگ", "اسباب بازی سگ", "بهداشتی سگ"]} icon={<GiSittingDog fontSize={20} />} />
