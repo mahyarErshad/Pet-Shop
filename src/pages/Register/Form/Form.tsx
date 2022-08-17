@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Box, Button, TextField, Typography } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { setEmailError, setEmailValue, setPasswordError, setPasswordValue, submit } from "../../../redux/slice/loginReducer";
@@ -14,8 +14,9 @@ function Form(props: IProps) {
   const inputStyle = { width: { lg: "50%", md: "50%", xs: "75%" }, mb: "1rem" };
   const { emailError, passwordError, emailErrorMessage, passwordErrorMessage, emailValue, passwordValue } = useSelector((state: any) => state.loggedIn);
   const dispatch = useDispatch();
+  const [notifyText, setNotifyText] = useState<string>("");
   const notify = () =>
-    toast.success("محصول با موفقیت اضافه شد", {
+    toast.success(notifyText, {
       position: "top-right",
       autoClose: 3000,
       hideProgressBar: false,
