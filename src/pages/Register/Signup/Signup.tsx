@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, FormControl, TextField } from "@mui/material";
+import { Box, Button, FormControl, TextField, Typography } from "@mui/material";
 
 function Signup() {
   const inputStyle = { width: { lg: "50%", md: "50%", xs: "75%" }, mb: "1rem" };
@@ -15,6 +15,9 @@ function Signup() {
             پسورد خود را وارد نمایید:
           </Box>
           <TextField sx={inputStyle} type="password" color="secondary" required id="password" label="password" variant="outlined" />
+          <Button sx={{ p: "0.5rem", width: { lg: "25%", md: "25%", xs: "37%" }, alignSelf: "flex-end" }} variant="contained" color="secondary">
+            <Typography sx={{ textOverflow: "ellipsis", whiteSpace: "nowrap", overflow: "hidden" }}>{title}</Typography>
+          </Button>
         </Box>
       </FormControl>
     </>
