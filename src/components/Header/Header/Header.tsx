@@ -75,13 +75,13 @@ export default function PrimarySearchAppBar() {
     </Menu>
   );
   const quantity = useSelector((store: any) => store.cart.quantity);
-  const { loggedIn } = useSelector((store: any) => store.loggedIn);
+  const { loggedIn, userEmail } = useSelector((store: any) => store.loggedIn);
   return (
     <Box sx={{ flexGrow: 1, marginBottom: "0.5rem" }}>
       <AppBar position="static">
-        <Toolbar></Toolbar>
+        <Toolbar>
           <CartIcon count={quantity} />
-          {loggedIn ? <AccountIcon setAnchorEl={setAnchorEl} menuId={menuId} title="فلانی" /> : <MyButton linkTo="/register" text="ورود / عضویت" />}
+          {loggedIn ? <AccountIcon setAnchorEl={setAnchorEl} menuId={menuId} title={userEmail} /> : <MyButton linkTo="/register" text="ورود / عضویت" />}
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <HeaderMenus flexRow={true} />
