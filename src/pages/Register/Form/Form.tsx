@@ -14,22 +14,34 @@ interface IProps {
 function Form(props: IProps) {
   const { buttonText } = props;
   const inputStyle = { width: { lg: "50%", md: "50%", xs: "75%" }, mb: "1rem" };
-  const { emailError, passwordError, emailErrorMessage, passwordErrorMessage, emailValue, passwordValue } = useSelector((state: any) => state.loggedIn);
+  const { emailError, passwordError, emailErrorMessage, passwordErrorMessage, emailValue, passwordValue, loggedIn } = useSelector((state: any) => state.loggedIn);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const notify = () =>
-    toast.success(`${buttonText} با موفقیت انجام شد`, {
-      position: "top-right",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    });
+
   // clears every value and error at render
   useEffect(() => {
     dispatch(clearErrors());
+    // eslint-disable-next-line
+  }, []);
+  // does not allow logged in user to go to login page
+  useEffect(() => {
+    const notify = () =>
+      toast.error("شما وارد حساب کاربری خود شده ایید", {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    if (loggedIn) {
+      notify();
+      setTimeout(() => {
+        navigate("/");
+        goToTop();
+      }, 2500);
+    }
     // eslint-disable-next-line
   }, []);
   // Checks for email errors
@@ -61,6 +73,16 @@ function Form(props: IProps) {
     dispatch(setPasswordError());
     setTimeout(() => {
       if (!emailError && !passwordError && emailValue && passwordValue) {
+        const notify = () =>
+          toast.success(`${buttonText} با موفقیت انجام شد`, {
+            position: "top-right",
+            autoClose: 2500,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          });
         notify();
       }
     }, 2000);
@@ -70,7 +92,7 @@ function Form(props: IProps) {
         navigate("/");
         goToTop();
       }
-    }, 3500);
+    }, 4500);
   }
 
   return (
