@@ -19,11 +19,11 @@ function HeaderMenus(props: Iprops) {
   const row = flexDirection ? "row-reverse" : "column";
   return (
     <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: row }}>
+      <MyButton text="همه محصولات" color="primary" linkTo={`/products/${all}`} />
       <MenuItems title="گربه" productCategory={["غذای گربه", "خاک گربه", "بهداشتی گربه"]} icon={<GiCat fontSize={20} />} />
       <MenuItems title="سگ" productCategory={["غذای سگ", "اسباب بازی سگ", "بهداشتی سگ"]} icon={<GiSittingDog fontSize={20} />} />
       <MenuItems title="پرندگان" productCategory={["غذای پرندگان", "لانه پرندگان"]} icon={<GiHummingbird fontSize={20} />} />
       <MenuItems title="جوندگان" productCategory={["ملزومات جوندگان", "بازی جوندگان"]} icon={<GiSquirrel fontSize={20} />} />
-      <MyButton text="همه محصولات" color="primary" linkTo={`/products/${all}`} />
     </Box>
   );
 }
