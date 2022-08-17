@@ -42,14 +42,6 @@ const loginReducer = createSlice({
       state.passwordError = true;
       state.passwordErrorMessage = action.payload;
     },
-    clearEmailError: (state) => {
-      state.emailError = false;
-      state.emailErrorMessage = "";
-    },
-    clearPasswordError: (state) => {
-      state.passwordError = false;
-      state.passwordErrorMessage = "";
-    },
     setEmailValue: (state, action) => {
       state.emailError = false;
       state.emailValue = action.payload;
@@ -61,5 +53,5 @@ const loginReducer = createSlice({
   },
 });
 
-export const { setLoggedIn, setLoggedOut, setEmailError, setPasswordError, clearEmailError, clearPasswordError, setEmailValue, setPasswordValue } = loginReducer.actions;
+export const { setLoggedIn, setLoggedOut, setEmailError, setPasswordError, setEmailValue, setPasswordValue } = loginReducer.actions;
 export default loginReducer.reducer;
