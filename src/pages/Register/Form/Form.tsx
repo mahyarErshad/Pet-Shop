@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Box, Button, FormControl, TextField, Typography } from "@mui/material";
 
 interface IProps {
@@ -8,6 +8,8 @@ interface IProps {
 function Form(props: IProps) {
   const { buttonText } = props;
   const inputStyle = { width: { lg: "50%", md: "50%", xs: "75%" }, mb: "1rem" };
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   return (
     <>
       <FormControl sx={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "1rem" }}>
