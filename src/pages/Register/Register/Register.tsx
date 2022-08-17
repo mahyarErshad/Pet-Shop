@@ -3,6 +3,7 @@ import Switch from "@mui/material/Switch";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import React, { useState } from "react";
+import Form from "../Form/Form";
 ]
 function Register() {
   document.title = "حساب کاربری من";
@@ -17,7 +18,7 @@ function Register() {
         <FormGroup>
           <FormControlLabel control={<Switch onChange={handleChange} color="secondary" />} label="ورود" />
         </FormGroup>
-        <Box sx={{ width: "100%", display: "flex", flexDirection: "column", mt: "1rem", px: { lg: "5rem", md: "3rem", xs: "1rem" } }}>{checked ? <Login /> : <Signup />}</Box>
+        <Box sx={{ width: "100%", display: "flex", flexDirection: "column", mt: "1rem", px: { lg: "5rem", md: "3rem", xs: "1rem" } }}>{checked ? <Form buttonText="ورود" /> : <Form buttonText="عضویت" />}</Box>
       </Box>
     </>
   );
