@@ -27,10 +27,12 @@ function Form(props: IProps) {
       draggable: true,
       progress: undefined,
     });
+  // clears every value and error at render
   useEffect(() => {
     dispatch(clearErrors());
     // eslint-disable-next-line
   }, []);
+  // Checks for email errors
   useEffect(() => {
     if (emailValue) {
       const delay = setTimeout(() => {
@@ -41,7 +43,7 @@ function Form(props: IProps) {
       };
     } // eslint-disable-next-line
   }, [emailValue]);
-
+  // Checks for password errors
   useEffect(() => {
     if (passwordValue) {
       const delay = setTimeout(() => {
@@ -52,6 +54,7 @@ function Form(props: IProps) {
       };
     } // eslint-disable-next-line
   }, [passwordValue]);
+  // handleSubmit function
   function handleSubmit(e: any) {
     e.preventDefault();
     dispatch(setEmailError());
