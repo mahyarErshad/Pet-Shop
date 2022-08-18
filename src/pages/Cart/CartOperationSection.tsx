@@ -3,21 +3,20 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import MyButton from "../../components/Utils/Buttons/MyButton/MyButton";
 import { separateNumber } from "../../functions/functions";
-import { setPhrase } from "../../redux/slice/cartReducer";
+import { setHasDiscount, setPhrase } from "../../redux/slice/cartReducer";
 import { changeModalState } from "../../redux/slice/modalSlice";
 
 function CartOperationSection() {
   const [discount, setDiscount] = useState<string>("");
   const dispatch = useDispatch();
-  const { total, discountCode, phrase } = useSelector((state: any) => state.cart);
+  const { total, discountCode, phrase, hasDiscount } = useSelector((state: any) => state.cart);
   const [totalPrice, setTotalPrice] = useState<number>(total);
-  const [hasDiscount, setHasDiscount] = useState<boolean>(false);
   const discountValue = discountCode.find((item: any) => item.name === phrase);
   useEffect(() => {
     if (discountValue) {
-      setHasDiscount(true);
+      dispatch(setHasDiscount(true));
     } else {
-      setHasDiscount(false);
+      dispatch(setHasDiscount(false));
     }
   }, [discountValue]);
   useEffect(() => {

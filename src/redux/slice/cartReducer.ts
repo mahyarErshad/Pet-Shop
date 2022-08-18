@@ -6,7 +6,7 @@ interface cartState {
   quantity: number;
   discountCode: any[];
   phrase: string;
-  isActive: boolean;
+  hasDiscount: boolean;
 }
 
 const initialState: cartState = {
@@ -26,7 +26,7 @@ const initialState: cartState = {
     },
   ],
   phrase: "",
-  isActive: false,
+  hasDiscount: false,
 };
 
 const cartReducer: any = createSlice({
@@ -69,7 +69,10 @@ const cartReducer: any = createSlice({
     setPhrase: (state, action) => {
       state.phrase = action.payload;
     },
+    setHasDiscount: (state, action) => {
+      state.hasDiscount = action.payload;
+    },
   },
 });
-export const { clearCart, decreaseAmount, increaseAmount, removeItem, calculateTotal, addToCart, setPhrase } = cartReducer.actions;
+export const { clearCart, decreaseAmount, increaseAmount, removeItem, calculateTotal, addToCart, setPhrase, setHasDiscount } = cartReducer.actions;
 export default cartReducer.reducer;
