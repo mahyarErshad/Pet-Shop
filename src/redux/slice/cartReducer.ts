@@ -47,7 +47,12 @@ const cartReducer: any = createSlice({
         total = total + item.price * item.amount;
       });
       state.quantity = quantity;
-      state.total = total;
+      const discount = state.discount.find((item) => item.active === true);
+      if (discount) {
+        total = total - total * discount.discount;
+      } else {
+        state.total = total;
+      }
     },
     addToCart: (state, action) => {
       const itemInCart = state.cartItems.find((item) => item.id === action.payload.id);
