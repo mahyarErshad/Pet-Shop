@@ -7,7 +7,7 @@ import { changeModalState } from "../../redux/slice/modalSlice";
 
 function CartOperationSection() {
   const dispatch = useDispatch();
-  const total = useSelector((state: any) => state.cart.total);
+  const { total } = useSelector((state: any) => state.cart);
   return (
     <>
       <Box sx={{ width: "100%", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "0.7rem" }}>
