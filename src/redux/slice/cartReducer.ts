@@ -15,10 +15,12 @@ const initialState: cartState = {
     {
       name: "phoenix10",
       discount: 0.1,
+      message: "تخفیف ۱۰ درصدی با موفقیت اعمال شد",
     },
     {
       name: "phoenix20",
       discount: 0.2,
+      message: "تخفیف ۲۰ درصدی با موفقیت اعمال شد",
     },
   ],
 };
