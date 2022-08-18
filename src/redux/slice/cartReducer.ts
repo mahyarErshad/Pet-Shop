@@ -4,14 +4,14 @@ interface cartState {
   cartItems: any[];
   total: number;
   quantity: number;
-  discount: any[];
+  discountCode: any[];
 }
 
 const initialState: cartState = {
   cartItems: [],
   total: 0,
   quantity: 0,
-  discount: [
+  discountCode: [
     {
       name: "phoenix",
       discount: 0.1,
@@ -47,13 +47,7 @@ const cartReducer: any = createSlice({
         total = total + item.price * item.amount;
       });
       state.quantity = quantity;
-      const discount = state.discount.find((item) => item.active === true);
-      if (discount) {
-        total = total - total * discount.discount;
-        state.total = total;
-      } else {
-        state.total = total;
-      }
+      state.total = total;
     },
     addToCart: (state, action) => {
       const itemInCart = state.cartItems.find((item) => item.id === action.payload.id);
@@ -63,13 +57,7 @@ const cartReducer: any = createSlice({
         state.cartItems.push({ ...action.payload, amount: 1 });
       }
     },
-    setDiscount: (state, { payload }) => {
-      const discount = state.discount.find((item) => item.name === payload.name);
-      if (discount) {
-        discount.active = true;
-      }
-    },
   },
 });
-export const { clearCart, decreaseAmount, increaseAmount, removeItem, calculateTotal, addToCart, setDiscount } = cartReducer.actions;
+export const { clearCart, decreaseAmount, increaseAmount, removeItem, calculateTotal, addToCart } = cartReducer.actions;
 export default cartReducer.reducer;
