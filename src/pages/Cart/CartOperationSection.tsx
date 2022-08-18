@@ -49,7 +49,7 @@ function CartOperationSection() {
           </ButtonBase>
           {hasDiscount ? (
             <ButtonBase>
-              <Typography dir="rtl" sx={{ height: "2.5rem", borderRadius: "12px", px: "1rem", paddingTop: "0.6rem", paddingBottom: "2.5rem", fontSize: "1.2rem", fontWeight: "normal", color: "#0C7F37" }} variant="h5">
+              <Typography onClick={() => dispatch(changeModalState("از حذف تخفیف مطمئن هستید؟"))} dir="rtl" sx={{ height: "2.5rem", borderRadius: "12px", px: "1rem", paddingTop: "0.6rem", paddingBottom: "2.5rem", fontSize: "1.2rem", fontWeight: "normal", color: "#0C7F37" }} variant="h5">
                 قیمت با تخفیف: {separateNumber(totalPrice)} تومان
               </Typography>
             </ButtonBase>
