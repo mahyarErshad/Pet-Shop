@@ -5,6 +5,8 @@ interface cartState {
   total: number;
   quantity: number;
   discountCode: any[];
+  phrase: string;
+  isActive: boolean;
 }
 
 const initialState: cartState = {
@@ -23,6 +25,8 @@ const initialState: cartState = {
       message: "تخفیف ۲۰ درصدی با موفقیت اعمال شد",
     },
   ],
+  phrase: "",
+  isActive: false,
 };
 
 const cartReducer: any = createSlice({
@@ -62,7 +66,10 @@ const cartReducer: any = createSlice({
         state.cartItems.push({ ...action.payload, amount: 1 });
       }
     },
+    setPhrase: (state, action) => {
+      state.phrase = action.payload;
+    },
   },
 });
-export const { clearCart, decreaseAmount, increaseAmount, removeItem, calculateTotal, addToCart } = cartReducer.actions;
+export const { clearCart, decreaseAmount, increaseAmount, removeItem, calculateTotal, addToCart, setPhrase } = cartReducer.actions;
 export default cartReducer.reducer;
