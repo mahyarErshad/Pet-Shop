@@ -72,7 +72,11 @@ const cartReducer: any = createSlice({
     setHasDiscount: (state, action) => {
       state.hasDiscount = action.payload;
     },
+    setDiscountInactive: (state) => {
+      state.hasDiscount = false;
+      state.phrase = "";
+    },
   },
 });
-export const { clearCart, decreaseAmount, increaseAmount, removeItem, calculateTotal, addToCart, setPhrase, setHasDiscount } = cartReducer.actions;
+export const { clearCart, decreaseAmount, increaseAmount, removeItem, calculateTotal, addToCart, setPhrase, setHasDiscount, setDiscountInactive } = cartReducer.actions;
 export default cartReducer.reducer;
