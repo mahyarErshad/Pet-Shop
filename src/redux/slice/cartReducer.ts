@@ -13,9 +13,12 @@ const initialState: cartState = {
   quantity: 0,
   discountCode: [
     {
-      name: "phoenix",
+      name: "phoenix10",
       discount: 0.1,
-      active: false,
+    },
+    {
+      name: "phoenix20",
+      discount: 0.2,
     },
   ],
 };

@@ -21,7 +21,7 @@ function CartOperationSection() {
     } else {
       setTotalPrice(total);
     }
-  }, [hasDiscount, total]);
+  }, [hasDiscount, total, discountValue]);
   function handleSubmit(e: any) {
     e.preventDefault();
     if (discountValue) {
