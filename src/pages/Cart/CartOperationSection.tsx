@@ -30,6 +30,8 @@ function CartOperationSection() {
     e.preventDefault();
     dispatch(setPhrase(discount));
   }
+  const color = hasDiscount ? "#D32F2F" : "#532482";
+  const textDecoration = hasDiscount ? "line-through" : "none";
   return (
     <>
       <Box sx={{ width: "100%", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "0.7rem" }}>
@@ -41,13 +43,13 @@ function CartOperationSection() {
         </Box>
         <Box sx={{ width: { xs: "100%", md: "65%" }, flexDirection: { xs: "column", md: "row-reverse" }, px: "1rem", display: "flex", justifyContent: "center", alignItems: "center", gap: "1rem" }}>
           <ButtonBase>
-            <Typography dir="rtl" sx={{ height: "2.5rem", borderRadius: "12px", px: "1rem", paddingTop: "0.6rem", paddingBottom: "2.5rem", fontSize: "1.2rem", fontWeight: "normal" }} variant="h5">
+            <Typography dir="rtl" sx={{ height: "2.5rem", borderRadius: "12px", px: "1rem", paddingTop: "0.6rem", paddingBottom: "2.5rem", fontSize: "1.2rem", fontWeight: "normal", color, textDecoration }} variant="h5">
               جمع کل: {separateNumber(total)} تومان
             </Typography>
           </ButtonBase>
           {hasDiscount ? (
             <ButtonBase>
-              <Typography dir="rtl" sx={{ height: "2.5rem", borderRadius: "12px", px: "1rem", paddingTop: "0.6rem", paddingBottom: "2.5rem", fontSize: "1.2rem", fontWeight: "normal", color: "#2E7D31" }} variant="h5">
+              <Typography dir="rtl" sx={{ height: "2.5rem", borderRadius: "12px", px: "1rem", paddingTop: "0.6rem", paddingBottom: "2.5rem", fontSize: "1.2rem", fontWeight: "normal", color: "#0C7F37" }} variant="h5">
                 قیمت با تخفیف: {separateNumber(totalPrice)} تومان
               </Typography>
             </ButtonBase>
