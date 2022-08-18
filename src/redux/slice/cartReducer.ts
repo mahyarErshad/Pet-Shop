@@ -50,6 +50,7 @@ const cartReducer: any = createSlice({
       const discount = state.discount.find((item) => item.active === true);
       if (discount) {
         total = total - total * discount.discount;
+        state.total = total;
       } else {
         state.total = total;
       }
