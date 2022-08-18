@@ -6,7 +6,7 @@ import Typography from "@mui/material/Typography";
 import { useSpring, animated } from "@react-spring/web";
 import { useDispatch, useSelector } from "react-redux";
 import { Button } from "@mui/material";
-import { clearCart } from "../../../redux/slice/cartReducer";
+import { clearCart, setDiscountInactive } from "../../../redux/slice/cartReducer";
 import { changeModalState } from "../../../redux/slice/modalSlice";
 import { setLoggedOut } from "../../../redux/slice/loginReducer";
 
@@ -84,6 +84,9 @@ export default function CustomModal() {
                   }
                   if (message === "از حساب کاربری خارج میشوید؟") {
                     dispatch(setLoggedOut());
+                  }
+                  if (message === "از حذف تخفیف مطمئن هستید؟") {
+                    dispatch(setDiscountInactive());
                   }
                   dispatch(changeModalState(""));
                 }}
