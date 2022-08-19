@@ -72,6 +72,9 @@ function Form(props: IProps) {
     dispatch(setEmailError());
     dispatch(setPasswordError());
     setTimeout(() => {
+      // because of the simulator timer it should check new values again. unless it will be submitted while typing
+      dispatch(setEmailError());
+      dispatch(setPasswordError());
       if (!emailError && !passwordError && emailValue && passwordValue) {
         const notify = () =>
           toast.success(`${buttonText} با موفقیت انجام شد`, {
@@ -87,8 +90,11 @@ function Form(props: IProps) {
       }
     }, 2000);
     setTimeout(() => {
-      dispatch(submit());
+      // because of the simulator timer it should check new values again. unless it will be submitted while typing
+      dispatch(setEmailError());
+      dispatch(setPasswordError());
       if (!emailError && !passwordError && emailValue && passwordValue) {
+        dispatch(submit());
         navigate("/");
         goToTop();
       }
