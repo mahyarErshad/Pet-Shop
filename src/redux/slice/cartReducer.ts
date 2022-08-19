@@ -4,12 +4,29 @@ interface cartState {
   cartItems: any[];
   total: number;
   quantity: number;
+  discountCode: any[];
+  phrase: string;
+  hasDiscount: boolean;
 }
 
 const initialState: cartState = {
   cartItems: [],
   total: 0,
   quantity: 0,
+  discountCode: [
+    {
+      name: "phoenix10",
+      discount: 0.1,
+      message: "تخفیف ۱۰ درصدی با موفقیت اعمال شد",
+    },
+    {
+      name: "phoenix20",
+      discount: 0.2,
+      message: "تخفیف ۲۰ درصدی با موفقیت اعمال شد",
+    },
+  ],
+  phrase: "",
+  hasDiscount: false,
 };
 
 const cartReducer: any = createSlice({
@@ -49,7 +66,17 @@ const cartReducer: any = createSlice({
         state.cartItems.push({ ...action.payload, amount: 1 });
       }
     },
+    setPhrase: (state, action) => {
+      state.phrase = action.payload;
+    },
+    setHasDiscount: (state, action) => {
+      state.hasDiscount = action.payload;
+    },
+    setDiscountInactive: (state) => {
+      state.hasDiscount = false;
+      state.phrase = "";
+    },
   },
 });
-export const { clearCart, decreaseAmount, increaseAmount, removeItem, calculateTotal, addToCart } = cartReducer.actions;
+export const { clearCart, decreaseAmount, increaseAmount, removeItem, calculateTotal, addToCart, setPhrase, setHasDiscount, setDiscountInactive } = cartReducer.actions;
 export default cartReducer.reducer;
