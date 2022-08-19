@@ -19,6 +19,7 @@ function Form(props: IProps) {
   const navigate = useNavigate();
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false);
 
   // clears every value and error at render
   useEffect(() => {
@@ -68,6 +69,7 @@ function Form(props: IProps) {
     dispatch(setEmailError());
     dispatch(setPasswordError());
     if (!emailError && !passwordError && emailValue && passwordValue) {
+      setLoading(true);
       setTimeout(() => {
         const notify = () =>
           toast.success(`${buttonText} با موفقیت انجام شد`, {
@@ -85,6 +87,7 @@ function Form(props: IProps) {
         dispatch(submit());
         navigate("/");
         goToTop();
+        setLoading(false);
       }, 4500);
     }
   }
@@ -102,8 +105,10 @@ function Form(props: IProps) {
             رمز عبور خود را وارد نمایید:
           </Box>
           <TextField error={passwordError} helperText={passwordErrorMessage} onChange={(e) => setPassword(e.target.value)} sx={inputStyle} type="password" color="secondary" required id="password" label="password" variant="outlined" />
-          <Button onClick={(e: any) => handleSubmit(e)} type="submit" sx={{ p: "0.5rem", width: { lg: "25%", md: "25%", xs: "37%" }, alignSelf: "flex-end" }} variant="contained" color="secondary">
-            <Typography sx={{ textOverflow: "ellipsis", whiteSpace: "nowrap", overflow: "hidden" }}>{buttonText}</Typography>
+          <Button disabled={loading} onClick={(e: any) => handleSubmit(e)} type="submit" sx={{ p: "0.5rem", width: { lg: "25%", md: "25%", xs: "37%" }, alignSelf: "flex-end" }} variant="contained" color="secondary">
+            <Typography dir="rtl" sx={{ textOverflow: "ellipsis", whiteSpace: "nowrap", overflow: "hidden" }}>
+              {loading ? "در حال ارسال ..." : buttonText}
+            </Typography>
           </Button>
         </Box>
       </Box>
