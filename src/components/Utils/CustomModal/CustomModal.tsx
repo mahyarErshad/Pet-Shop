@@ -86,7 +86,7 @@ export default function CustomModal() {
                     const notify = () =>
                       toast.error("سبد خرید خالی شد", {
                         position: "top-right",
-                        autoClose: 2000,
+                        autoClose: 1000,
                         hideProgressBar: false,
                         closeOnClick: true,
                         pauseOnHover: true,
@@ -96,7 +96,7 @@ export default function CustomModal() {
                     notify();
                     setTimeout(() => {
                       dispatch(clearCart());
-                    }, 2000);
+                    }, 1000);
                   } else if (message === "از حساب کاربری خارج میشوید؟") {
                     dispatch(setLoggedOut());
                     const notify = () =>
