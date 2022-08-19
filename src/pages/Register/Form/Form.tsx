@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Box, Button, TextField, Typography } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { clearErrors, setEmailError, setEmailValue, setPasswordError, setPasswordValue, submit } from "../../../redux/slice/loginReducer";
@@ -17,6 +17,8 @@ function Form(props: IProps) {
   const { emailError, passwordError, emailErrorMessage, passwordErrorMessage, emailValue, passwordValue, loggedIn } = useSelector((state: any) => state.loggedIn);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
 
   // clears every value and error at render
   useEffect(() => {
@@ -46,36 +48,27 @@ function Form(props: IProps) {
   }, []);
   // Checks for email errors
   useEffect(() => {
-    if (emailValue) {
-      const delay = setTimeout(() => {
-        dispatch(setEmailError());
-      }, 1000);
-      return () => {
-        clearTimeout(delay);
-      };
+    if (email) {
+      dispatch(setEmailValue(email));
+      dispatch(setEmailError());
     } // eslint-disable-next-line
-  }, [emailValue]);
+  }, [email]);
   // Checks for password errors
   useEffect(() => {
-    if (passwordValue) {
-      const delay = setTimeout(() => {
-        dispatch(setPasswordError());
-      }, 1000);
-      return () => {
-        clearTimeout(delay);
-      };
+    if (password) {
+      dispatch(setPasswordValue(password));
+      dispatch(setPasswordError());
     } // eslint-disable-next-line
-  }, [passwordValue]);
+  }, [password]);
   // handleSubmit function
   function handleSubmit(e: any) {
     e.preventDefault();
+    dispatch(setEmailValue(email));
+    dispatch(setPasswordValue(password));
     dispatch(setEmailError());
     dispatch(setPasswordError());
-    setTimeout(() => {
-      // because of the simulator timer it should check new values again. unless it will be submitted while typing
-      dispatch(setEmailError());
-      dispatch(setPasswordError());
-      if (!emailError && !passwordError && emailValue && passwordValue) {
+    if (!emailError && !passwordError && emailValue && passwordValue) {
+      setTimeout(() => {
         const notify = () =>
           toast.success(`${buttonText} با موفقیت انجام شد`, {
             position: "top-right",
@@ -87,18 +80,13 @@ function Form(props: IProps) {
             progress: undefined,
           });
         notify();
-      }
-    }, 2000);
-    setTimeout(() => {
-      // because of the simulator timer it should check new values again. unless it will be submitted while typing
-      dispatch(setEmailError());
-      dispatch(setPasswordError());
-      if (!emailError && !passwordError && emailValue && passwordValue) {
+      }, 2000);
+      setTimeout(() => {
         dispatch(submit());
         navigate("/");
         goToTop();
-      }
-    }, 4500);
+      }, 4500);
+    }
   }
 
   return (
@@ -109,11 +97,11 @@ function Form(props: IProps) {
           <Box component="label" htmlFor="email" sx={{ direction: "rtl", fontSize: "0.875rem", cursor: "pointer" }}>
             ایمیل خود را وارد نمایید:
           </Box>
-          <TextField autoComplete="off" error={emailError} helperText={emailErrorMessage} onChange={(e) => dispatch(setEmailValue(e.target.value))} autoFocus sx={inputStyle} type="email" color="secondary" required id="email" label="email" variant="outlined" />
+          <TextField autoComplete="off" error={emailError} helperText={emailErrorMessage} onChange={(e) => setEmail(e.target.value)} autoFocus sx={inputStyle} type="email" color="secondary" required id="email" label="email" variant="outlined" />
           <Box component="label" htmlFor="password" sx={{ direction: "rtl", fontSize: "0.875rem", cursor: "pointer" }}>
             رمز عبور خود را وارد نمایید:
           </Box>
-          <TextField error={passwordError} helperText={passwordErrorMessage} onChange={(e) => dispatch(setPasswordValue(e.target.value))} sx={inputStyle} type="password" color="secondary" required id="password" label="password" variant="outlined" />
+          <TextField error={passwordError} helperText={passwordErrorMessage} onChange={(e) => setPassword(e.target.value)} sx={inputStyle} type="password" color="secondary" required id="password" label="password" variant="outlined" />
           <Button onClick={(e: any) => handleSubmit(e)} type="submit" sx={{ p: "0.5rem", width: { lg: "25%", md: "25%", xs: "37%" }, alignSelf: "flex-end" }} variant="contained" color="secondary">
             <Typography sx={{ textOverflow: "ellipsis", whiteSpace: "nowrap", overflow: "hidden" }}>{buttonText}</Typography>
           </Button>
