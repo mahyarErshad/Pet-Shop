@@ -5,6 +5,8 @@ import MyButton from "../../components/Utils/Buttons/MyButton/MyButton";
 import { separateNumber } from "../../functions/functions";
 import { setHasDiscount, setPhrase } from "../../redux/slice/cartReducer";
 import { changeModalState } from "../../redux/slice/modalSlice";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function CartOperationSection() {
   const [discount, setDiscount] = useState<string>("");
@@ -15,10 +17,33 @@ function CartOperationSection() {
   useEffect(() => {
     if (discountValue) {
       dispatch(setHasDiscount(true));
-    } else {
+      const notify = () =>
+        toast.success(discountValue.message, {
+          position: "top-right",
+          autoClose: 2500,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+      notify();
+    }
+    if (phrase && !discountValue) {
       dispatch(setHasDiscount(false));
+      const notify = () =>
+        toast.error("کد تخفیف معتبر نیست", {
+          position: "top-right",
+          autoClose: 2500,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+      notify();
     } // eslint-disable-next-line
-  }, [discountValue]);
+  }, [discountValue, phrase]);
   useEffect(() => {
     if (hasDiscount) {
       setTotalPrice(total - total * discountValue.discount);
@@ -34,6 +59,8 @@ function CartOperationSection() {
   const textDecoration = hasDiscount ? "line-through" : "none";
   return (
     <>
+      <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl pauseOnFocusLoss draggable pauseOnHover />
+
       <Box sx={{ width: "100%", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "0.7rem" }}>
         <Box sx={{ width: { xs: "100%", md: "30%" }, px: "1rem", display: "flex", justifyContent: "center", alignItems: "center", gap: "1rem" }}>
           <MyButton text="ثبت سفارش" />

@@ -9,6 +9,8 @@ import { Button } from "@mui/material";
 import { clearCart, setDiscountInactive } from "../../../redux/slice/cartReducer";
 import { changeModalState } from "../../../redux/slice/modalSlice";
 import { setLoggedOut } from "../../../redux/slice/loginReducer";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 interface FadeProps {
   children?: React.ReactElement;
@@ -61,6 +63,7 @@ export default function CustomModal() {
 
   return (
     <div>
+      <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl pauseOnFocusLoss draggable pauseOnHover />
       <Modal
         aria-labelledby="spring-modal-title"
         aria-describedby="spring-modal-description"
@@ -80,12 +83,45 @@ export default function CustomModal() {
               <Button
                 onClick={() => {
                   if (message === "سبد خرید خالی شود؟") {
-                    dispatch(clearCart());
-                  }
-                  if (message === "از حساب کاربری خارج میشوید؟") {
+                    const notify = () =>
+                      toast.error("سبد خرید خالی شد", {
+                        position: "top-right",
+                        autoClose: 2000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                      });
+                    notify();
+                    setTimeout(() => {
+                      dispatch(clearCart());
+                    }, 2000);
+                  } else if (message === "از حساب کاربری خارج میشوید؟") {
                     dispatch(setLoggedOut());
-                  }
-                  if (message === "از حذف تخفیف مطمئن هستید؟") {
+                    const notify = () =>
+                      toast.error("از حساب کاربری خارج شدید", {
+                        position: "top-right",
+                        autoClose: 2500,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                      });
+                    notify();
+                  } else if (message === "از حذف تخفیف مطمئن هستید؟") {
+                    const notify = () =>
+                      toast.error("کد تخفیف حذف شد", {
+                        position: "top-right",
+                        autoClose: 2500,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                      });
+                    notify();
                     dispatch(setDiscountInactive());
                   }
                   dispatch(changeModalState(""));
