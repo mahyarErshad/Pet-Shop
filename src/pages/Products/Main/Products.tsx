@@ -10,7 +10,6 @@ import NotFound from "../../NotFound/NotFound";
 import usePagination from "../../../functions/Pagination";
 import { goToTop } from "../../../functions/functions";
 import ProductsSelect from "../../../components/Utils/SelectButton/ProductsSelect/ProductsSelect";
-import SearchBar from "../../../components/Utils/SearchBar/SearchBar";
 
 interface IProps {
   url: string;
@@ -63,9 +62,7 @@ function Products(props: IProps) {
             <ProductsSelect label="برند" categories={["رویال کنین", "جوسرا", "رفلکس"]} />
             <ProductsSelect label="قیمت" categories={["کمترین", "بیشترین"]} />
           </Box>
-          <Box sx={{ display: "flex", gap: "1.5rem", justifyContent: "center", alignItems: "center", alignSelf: { md: "flex-end", xs: "center" } }}>
-            <SearchBar />
-          </Box>
+          <Box sx={{ display: "flex", gap: "1.5rem", justifyContent: "center", alignItems: "center", alignSelf: { md: "flex-end", xs: "center" } }}></Box>
         </Box>
         {/* cards */}
         <Box sx={{ mb: "1rem", width: "100%", px: "1rem", display: "flex", justifyContent: "center", alignItems: "center", gap: "1rem", flexWrap: "wrap" }}>
