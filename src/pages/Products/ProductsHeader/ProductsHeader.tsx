@@ -7,7 +7,7 @@ import { filterByName, RemoveFilterByName, setFilteredProducts } from "../../../
 function ProductsHeader() {
   const [title, setTitle] = useState("");
   const dispatch = useDispatch();
-  const { products, filteredProducts } = useSelector((state: any) => state.products);
+  const { products } = useSelector((state: any) => state.products);
   function handleSearch(e: any) {
     e.preventDefault();
     if (title === "") {
