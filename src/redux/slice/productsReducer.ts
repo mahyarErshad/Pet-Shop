@@ -47,7 +47,7 @@ const productsReducer = createSlice({
     filterByName: (state, action) => {
       if (!action.payload.length) {
         state.filteredByName = [];
-        state.isFilteredByName = true;
+        state.isFilteredByName = false;
       } else {
         state.filteredByName = action.payload;
         state.isFilteredByName = true;
