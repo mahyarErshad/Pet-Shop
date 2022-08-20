@@ -61,6 +61,7 @@ function Products(props: IProps) {
           <Box sx={{ display: "flex", gap: "1.5rem", justifyContent: "center", alignItems: "center", flexWrap: "wrap", flexDirection: "row-reverse" }}>
             <ProductsSelect label="برند" categories={["رویال کنین", "جوسرا", "رفلکس"]} />
             <ProductsSelect label="قیمت" categories={["کمترین", "بیشترین"]} />
+            <ProductsSelect label="کشور سازنده" categories={["آلمان", "فرانسه", "ترکیه", "ایران"]} />
           </Box>
           <Box sx={{ display: "flex", gap: "1.5rem", justifyContent: "center", alignItems: "center", alignSelf: { md: "flex-end", xs: "center" } }}></Box>
         </Box>
