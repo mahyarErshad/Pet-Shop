@@ -65,7 +65,7 @@ function Products(props: IProps) {
           </Box>
           <Box sx={{ display: "flex", gap: "1.5rem", justifyContent: "center", alignItems: "center" }}>
             <Box component="form">
-              <Input dir="rtl" color="secondary" sx={{ width: "14.4025rem" }} placeholder="کد تخفیف دارید؟" />
+              <Input dir="rtl" color="secondary" sx={{ width: "14.4025rem" }} placeholder="جستجو کنید" />
             </Box>
           </Box>
         </Box>

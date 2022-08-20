@@ -19,7 +19,7 @@ export default function SelectVariants(props: Iprops) {
   const { label, categories } = props;
   return (
     <div>
-      <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
+      <FormControl variant="standard" sx={{ m: 1, width: { sm: 120, xs: 105 } }}>
         <InputLabel dir="rtl" sx={{ fontSize: "0.875rem", fontWeight: "normal" }} color="secondary" id="demo-simple-select-standard-label">
           {label}
         </InputLabel>
