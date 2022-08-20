@@ -6,6 +6,7 @@ interface ProductsState {
   filteredByCountry: any[];
   filteredByBrand: any[];
   filteredByPrice: any[];
+  filteredByName: any[];
   filteredNotFound: boolean;
   isFiltered: boolean;
 }
@@ -16,6 +17,7 @@ const initialState: ProductsState = {
   filteredByCountry: [],
   filteredByBrand: [],
   filteredByPrice: [],
+  filteredByName: [],
   filteredNotFound: false,
   isFiltered: false,
 };
