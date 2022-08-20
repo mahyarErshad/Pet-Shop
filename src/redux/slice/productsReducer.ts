@@ -32,22 +32,22 @@ const productsReducer = createSlice({
       state.products = action.payload;
     },
     setFilteredProducts: (state) => {
-      state.filteredProducts = [...state.filteredByBrand, ...state.filteredByCountry, ...state.filteredByPrice, ...state.filteredByName];
-      if (!state.filteredProducts.length) {
-        state.filteredNotFound = true;
-      } else {
-        state.filteredNotFound = false;
-      }
       if (state.isFilteredByName) {
         state.isFiltered = true;
       } else {
         state.isFiltered = false;
       }
+      state.filteredProducts = [...state.filteredByBrand, ...state.filteredByCountry, ...state.filteredByPrice, ...state.filteredByName];
+      if (!state.filteredProducts.length && state.isFiltered) {
+        state.filteredNotFound = true;
+      } else {
+        state.filteredNotFound = false;
+      }
     },
     filterByName: (state, action) => {
       if (!action.payload.length) {
         state.filteredByName = [];
-        state.isFilteredByName = false;
+        state.isFilteredByName = true;
       } else {
         state.filteredByName = action.payload;
         state.isFilteredByName = true;
