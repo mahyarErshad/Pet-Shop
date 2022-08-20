@@ -29,6 +29,9 @@ const productsReducer = createSlice({
     setProducts: (state, action) => {
       state.products = action.payload;
     },
+    setFilteredProducts: (state) => {
+      state.filteredProducts = [...state.filteredByBrand, ...state.filteredByCountry, ...state.filteredByPrice, ...state.filteredByName];
+    },
     filterByBrand: (state, action) => {
       state.filteredProducts = state.products.filter((product) => product.brand === action.payload);
       if (state.filteredProducts.length === 0) {
@@ -82,6 +85,6 @@ const productsReducer = createSlice({
   },
 });
 
-export const { setProducts, filterByBrand, filterByMinPrice, filterByMaxPrice, filterByName, filterByCountry, resetFilter } = productsReducer.actions;
+export const { setProducts, setFilteredProducts, filterByBrand, filterByMinPrice, filterByMaxPrice, filterByName, filterByCountry, resetFilter } = productsReducer.actions;
 
 export default productsReducer.reducer;
