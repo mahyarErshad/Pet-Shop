@@ -95,8 +95,14 @@ const productsReducer = createSlice({
     },
     resetFilter: (state) => {
       state.products = [];
+      state.filteredProducts = [];
+      state.filteredByCountry = [];
+      state.filteredByBrand = [];
+      state.filteredByPrice = [];
+      state.filteredByName = [];
       state.filteredNotFound = false;
       state.isFiltered = false;
+      state.isFilteredByName = false;
     },
   },
 });
