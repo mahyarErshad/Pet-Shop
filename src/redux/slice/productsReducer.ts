@@ -31,6 +31,11 @@ const productsReducer = createSlice({
     },
     setFilteredProducts: (state) => {
       state.filteredProducts = [...state.filteredByBrand, ...state.filteredByCountry, ...state.filteredByPrice, ...state.filteredByName];
+      if (state.filteredProducts.length === 0) {
+        state.filteredNotFound = true;
+      } else {
+        state.filteredNotFound = false;
+      }
     },
     filterByBrand: (state, action) => {
       state.filteredProducts = state.products.filter((product) => product.brand === action.payload);
@@ -60,13 +65,13 @@ const productsReducer = createSlice({
       state.isFiltered = true;
     },
     filterByName: (state, action) => {
-      state.filteredProducts = state.products.filter((product) => product.name === action.payload);
-      if (state.filteredProducts.length === 0) {
-        state.filteredNotFound = true;
+      if (action.payload === "") {
+        state.filteredByName = [];
+        state.isFiltered = false;
       } else {
-        state.filteredNotFound = false;
+        state.filteredByName = state.products.filter((product) => product.name.toLowerCase().includes(action.payload.toLowerCase()));
+        state.isFiltered = true;
       }
-      state.isFiltered = true;
     },
     filterByCountry: (state, action) => {
       state.filteredProducts = state.products.filter((product) => product.country === action.payload);
