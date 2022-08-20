@@ -1,5 +1,7 @@
+import { createSlice } from "@reduxjs/toolkit";
+
 interface ProductsState {
-  products: Product[];
+  products: any[];
   isAny: boolean;
   isFiltered: boolean;
 }
@@ -9,3 +11,10 @@ const initialState = <ProductsState>{
   isAny: false,
   isFiltered: false,
 };
+
+const productsReducer = createSlice({
+  name: "products",
+  initialState,
+  reducers: {},
+});
+export default productsReducer.reducer;
