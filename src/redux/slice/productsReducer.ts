@@ -33,7 +33,7 @@ const productsReducer = createSlice({
     },
     setFilteredProducts: (state) => {
       state.filteredProducts = [...state.filteredByBrand, ...state.filteredByCountry, ...state.filteredByPrice, ...state.filteredByName];
-      if (state.filteredProducts.length === 0) {
+      if (!state.filteredProducts.length) {
         state.filteredNotFound = true;
       } else {
         state.filteredNotFound = false;
@@ -43,6 +43,19 @@ const productsReducer = createSlice({
       } else {
         state.isFiltered = false;
       }
+    },
+    filterByName: (state, action) => {
+      if (!action.payload.length) {
+        state.filteredByName = [];
+        state.isFilteredByName = true;
+      } else {
+        state.filteredByName = action.payload;
+        state.isFilteredByName = true;
+      }
+    },
+    RemoveFilterByName: (state) => {
+      state.filteredByName = [];
+      state.isFilteredByName = false;
     },
     filterByBrand: (state, action) => {
       state.filteredProducts = state.products.filter((product) => product.brand === action.payload);
@@ -71,15 +84,6 @@ const productsReducer = createSlice({
       }
       state.isFiltered = true;
     },
-    filterByName: (state, action) => {
-      if (action.payload === "") {
-        state.filteredByName = [];
-        state.isFilteredByName = false;
-      } else {
-        state.filteredByName = state.products.filter((product) => product.name.toLowerCase().includes(action.payload.toLowerCase()));
-        state.isFilteredByName = true;
-      }
-    },
     filterByCountry: (state, action) => {
       state.filteredProducts = state.products.filter((product) => product.country === action.payload);
       if (state.filteredProducts.length === 0) {
@@ -97,6 +101,6 @@ const productsReducer = createSlice({
   },
 });
 
-export const { setProducts, setFilteredProducts, filterByBrand, filterByMinPrice, filterByMaxPrice, filterByName, filterByCountry, resetFilter } = productsReducer.actions;
+export const { setProducts, setFilteredProducts, filterByBrand, filterByMinPrice, filterByMaxPrice, filterByName, RemoveFilterByName, filterByCountry, resetFilter } = productsReducer.actions;
 
 export default productsReducer.reducer;
