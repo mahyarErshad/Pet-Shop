@@ -10,6 +10,8 @@ import NotFound from "../../NotFound/NotFound";
 import ProductsHeader from "../ProductsHeader/ProductsHeader";
 import usePagination from "../../../functions/Pagination";
 import { goToTop } from "../../../functions/functions";
+import ProductsSelect from "../../../components/Utils/SelectButton/ProductsSelect/ProductsSelect";
+import SearchBar from "../../../components/Utils/SearchBar/SearchBar";
 
 interface IProps {
   url: string;
@@ -56,7 +58,17 @@ function Products(props: IProps) {
   return (
     <>
       <Box>
-        <ProductsHeader />
+        {/* operation section */}
+        <Box sx={{ px: "1rem", mt: "1rem", mb: "1.5rem", display: "flex", justifyContent: "center", alignItems: "center", gap: { lg: "13rem", md: "5rem", sm: "1rem", xs: "0.5rem" }, flexWrap: "wrap", flexDirection: { xs: "column-reverse", md: "row" } }}>
+          <Box sx={{ display: "flex", gap: "1.5rem", justifyContent: "center", alignItems: "center", flexWrap: "wrap", flexDirection: "row-reverse" }}>
+            <ProductsSelect label="برند" categories={["رویال کنین", "جوسرا", "رفلکس"]} />
+            <ProductsSelect label="قیمت" categories={["کمترین", "بیشترین"]} />
+          </Box>
+          <Box sx={{ display: "flex", gap: "1.5rem", justifyContent: "center", alignItems: "center", alignSelf: { md: "flex-end", xs: "center" } }}>
+            <SearchBar />
+          </Box>
+        </Box>
+        {/* cards */}
         <Box sx={{ mb: "1rem", width: "100%", px: "1rem", display: "flex", justifyContent: "center", alignItems: "center", gap: "1rem", flexWrap: "wrap" }}>
           {_DATA.currentData().map((product: { id: number; title: string; image: string; price: number; amount: number }) => {
             return <Cards amount={product.amount} id={product.id} key={product.id} title={product.title} image={product.image} price={product.price} />;
