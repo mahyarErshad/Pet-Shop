@@ -2,12 +2,14 @@ import { createSlice } from "@reduxjs/toolkit";
 
 interface ProductsState {
   products: any[];
+  filteredProducts: any[];
   filteredNotFound: boolean;
   isFiltered: boolean;
 }
 
 const initialState: ProductsState = {
   products: [],
+  filteredProducts: [],
   filteredNotFound: false,
   isFiltered: false,
 };
