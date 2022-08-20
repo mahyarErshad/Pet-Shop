@@ -63,7 +63,7 @@ function Products(props: IProps) {
             <ProductsSelect label="قیمت" categories={["کمترین", "بیشترین"]} />
             <ProductsSelect label="کشور سازنده" categories={["آلمان", "فرانسه", "ترکیه", "ایران"]} />
           </Box>
-          <Box sx={{ display: "flex", gap: "1.5rem", justifyContent: "center", alignItems: "center", alignSelf: { md: "flex-end", xs: "center" } }}>
+          <Box sx={{ display: "flex", gap: "1.5rem", justifyContent: "center", alignItems: "center" }}>
             <Box component="form">
               <Input dir="rtl" color="secondary" sx={{ width: "14.4025rem" }} placeholder="کد تخفیف دارید؟" />
             </Box>
