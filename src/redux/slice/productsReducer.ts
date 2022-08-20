@@ -58,11 +58,13 @@ const productsReducer = createSlice({
       state.isFiltered = true;
     },
     filterByCountry: (state, action) => {
-      state.products = state.products.filter((product) => product.country === action.payload);
-      state.isFiltered = true;
-      if (state.products.length === 0) {
+      state.filteredProducts = state.products.filter((product) => product.country === action.payload);
+      if (state.filteredProducts.length === 0) {
         state.filteredNotFound = true;
+      } else {
+        state.filteredNotFound = false;
       }
+      state.isFiltered = true;
     },
     resetFilter: (state) => {
       state.products = [];
