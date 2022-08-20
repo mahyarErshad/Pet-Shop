@@ -4,12 +4,13 @@ import { useParams } from "react-router-dom";
 import Cards from "../../../components/Utils/Cards/Cards";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
-import { IProduct } from "../../../Types/types";
 import Loading from "../../Loading/Loading";
 import NotFound from "../../NotFound/NotFound";
 import usePagination from "../../../functions/Pagination";
 import { goToTop } from "../../../functions/functions";
 import ProductsSelect from "../../../components/Utils/SelectButton/ProductsSelect/ProductsSelect";
+import { useDispatch, useSelector } from "react-redux";
+import { setProducts } from "../../../redux/slice/productsReducer";
 
 interface IProps {
   url: string;
@@ -19,13 +20,14 @@ function Products(props: IProps) {
   document.title = "محصولات | پت شاپ فینیکس";
   const { url } = props;
   const { params } = useParams();
+  const { products } = useSelector((state: any) => state.products);
   const [loading, setLoading] = useState<boolean>(true);
   const [notFound, setNotFound] = useState<boolean>(true);
-  const [products, setProducts] = useState<IProduct[]>([]);
   const [page, setPage] = useState<number>(1);
   const PER_PAGE = 6;
   const count = Math.ceil(products.length / PER_PAGE);
   const _DATA = usePagination(products, PER_PAGE);
+  const dispatch = useDispatch();
   const handleChange = (e: any, p: number) => {
     setPage(p);
     _DATA.jump(p);
@@ -37,7 +39,7 @@ function Products(props: IProps) {
       .then((res) => res.json())
       .then((data) => {
         if (data && data.products.length) {
-          setProducts(data.products);
+          dispatch(setProducts(data.products));
           _DATA.reset();
           setPage(1);
           setNotFound(false);
