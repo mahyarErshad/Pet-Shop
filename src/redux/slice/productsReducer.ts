@@ -9,6 +9,7 @@ interface ProductsState {
   filteredByName: any[];
   filteredNotFound: boolean;
   isFiltered: boolean;
+  isFilteredByName: boolean;
 }
 
 const initialState: ProductsState = {
@@ -20,6 +21,7 @@ const initialState: ProductsState = {
   filteredByName: [],
   filteredNotFound: false,
   isFiltered: false,
+  isFilteredByName: false,
 };
 
 const productsReducer = createSlice({
@@ -35,6 +37,11 @@ const productsReducer = createSlice({
         state.filteredNotFound = true;
       } else {
         state.filteredNotFound = false;
+      }
+      if (state.isFilteredByName) {
+        state.isFiltered = true;
+      } else {
+        state.isFiltered = false;
       }
     },
     filterByBrand: (state, action) => {
@@ -67,10 +74,10 @@ const productsReducer = createSlice({
     filterByName: (state, action) => {
       if (action.payload === "") {
         state.filteredByName = [];
-        state.isFiltered = false;
+        state.isFilteredByName = false;
       } else {
         state.filteredByName = state.products.filter((product) => product.name.toLowerCase().includes(action.payload.toLowerCase()));
-        state.isFiltered = true;
+        state.isFilteredByName = true;
       }
     },
     filterByCountry: (state, action) => {
