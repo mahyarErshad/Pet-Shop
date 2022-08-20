@@ -1,4 +1,4 @@
-import { Box, Input, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Cards from "../../../components/Utils/Cards/Cards";
@@ -8,9 +8,9 @@ import Loading from "../../Loading/Loading";
 import NotFound from "../../NotFound/NotFound";
 import usePagination from "../../../functions/Pagination";
 import { goToTop } from "../../../functions/functions";
-import ProductsSelect from "../../../components/Utils/SelectButton/ProductsSelect/ProductsSelect";
 import { useDispatch, useSelector } from "react-redux";
 import { setProducts } from "../../../redux/slice/productsReducer";
+import ProductsHeader from "../ProductsHeader/ProductsHeader";
 
 interface IProps {
   url: string;
@@ -59,20 +59,7 @@ function Products(props: IProps) {
   return (
     <>
       <Box>
-        {/* operation section */}
-        <Box sx={{ px: "1rem", mt: "1rem", mb: "1.5rem", display: "flex", justifyContent: "center", alignItems: "center", gap: { lg: "13rem", md: "5rem", sm: "1rem", xs: "0.5rem" }, flexWrap: "wrap", flexDirection: { xs: "column-reverse", md: "row" } }}>
-          <Box sx={{ display: "flex", gap: "1.5rem", justifyContent: "center", alignItems: "center", flexWrap: "wrap", flexDirection: "row-reverse" }}>
-            <ProductsSelect label="برند" categories={["رویال کنین", "جوسرا", "رفلکس"]} />
-            <ProductsSelect label="قیمت" categories={["کمترین", "بیشترین"]} />
-            <ProductsSelect label="کشور سازنده" categories={["آلمان", "فرانسه", "ترکیه", "ایران"]} />
-          </Box>
-          <Box sx={{ display: "flex", gap: "1.5rem", justifyContent: "center", alignItems: "center" }}>
-            <Box component="form">
-              <Input dir="rtl" color="secondary" sx={{ width: "14.4025rem" }} placeholder="جستجو کنید" />
-            </Box>
-          </Box>
-        </Box>
-        {/* cards */}
+        <ProductsHeader />
         <Box sx={{ mb: "1rem", width: "100%", px: "1rem", display: "flex", justifyContent: "center", alignItems: "center", gap: "1rem", flexWrap: "wrap" }}>
           {filteredNotFound ? (
             <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center", width: "100%" }}>
