@@ -7,7 +7,6 @@ import Stack from "@mui/material/Stack";
 import { IProduct } from "../../../Types/types";
 import Loading from "../../Loading/Loading";
 import NotFound from "../../NotFound/NotFound";
-import ProductsHeader from "../ProductsHeader/ProductsHeader";
 import usePagination from "../../../functions/Pagination";
 import { goToTop } from "../../../functions/functions";
 import ProductsSelect from "../../../components/Utils/SelectButton/ProductsSelect/ProductsSelect";
