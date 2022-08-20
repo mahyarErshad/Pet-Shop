@@ -6,7 +6,7 @@ interface ProductsState {
   isFiltered: boolean;
 }
 
-const initialState = <ProductsState>{
+const initialState: ProductsState = {
   products: [],
   isAny: false,
   isFiltered: false,
