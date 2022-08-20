@@ -30,12 +30,22 @@ const productsReducer = createSlice({
       }
       state.isFiltered = true;
     },
-    filterByMinPrice: (state, action) => {
-      state.products = state.products.filter((product) => product.price >= action.payload);
+    filterByMinPrice: (state) => {
+      state.filteredProducts = state.products.filter((product) => product.price >= state.filteredProducts[0].price);
+      if (state.filteredProducts.length === 0) {
+        state.filteredNotFound = true;
+      } else {
+        state.filteredNotFound = false;
+      }
       state.isFiltered = true;
     },
-    filterByMaxPrice: (state, action) => {
-      state.products = state.products.filter((product) => product.price <= action.payload);
+    filterByMaxPrice: (state) => {
+      state.filteredProducts = state.products.filter((product) => product.price <= state.filteredProducts[0].price);
+      if (state.filteredProducts.length === 0) {
+        state.filteredNotFound = true;
+      } else {
+        state.filteredNotFound = false;
+      }
       state.isFiltered = true;
     },
     filterByName: (state, action) => {
