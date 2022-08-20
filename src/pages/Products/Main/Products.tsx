@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Input } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Cards from "../../../components/Utils/Cards/Cards";
@@ -63,7 +63,11 @@ function Products(props: IProps) {
             <ProductsSelect label="قیمت" categories={["کمترین", "بیشترین"]} />
             <ProductsSelect label="کشور سازنده" categories={["آلمان", "فرانسه", "ترکیه", "ایران"]} />
           </Box>
-          <Box sx={{ display: "flex", gap: "1.5rem", justifyContent: "center", alignItems: "center", alignSelf: { md: "flex-end", xs: "center" } }}></Box>
+          <Box sx={{ display: "flex", gap: "1.5rem", justifyContent: "center", alignItems: "center", alignSelf: { md: "flex-end", xs: "center" } }}>
+            <Box component="form">
+              <Input dir="rtl" color="secondary" sx={{ width: "14.4025rem" }} placeholder="کد تخفیف دارید؟" />
+            </Box>
+          </Box>
         </Box>
         {/* cards */}
         <Box sx={{ mb: "1rem", width: "100%", px: "1rem", display: "flex", justifyContent: "center", alignItems: "center", gap: "1rem", flexWrap: "wrap" }}>
