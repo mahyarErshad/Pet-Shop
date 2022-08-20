@@ -22,11 +22,13 @@ const productsReducer = createSlice({
       state.products = action.payload;
     },
     filterByBrand: (state, action) => {
-      state.products = state.products.filter((product) => product.brand === action.payload);
-      state.isFiltered = true;
-      if (state.products.length === 0) {
+      state.filteredProducts = state.products.filter((product) => product.brand === action.payload);
+      if (state.filteredProducts.length === 0) {
         state.filteredNotFound = true;
+      } else {
+        state.filteredNotFound = false;
       }
+      state.isFiltered = true;
     },
     filterByMinPrice: (state, action) => {
       state.products = state.products.filter((product) => product.price >= action.payload);
