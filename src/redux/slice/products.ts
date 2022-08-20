@@ -3,7 +3,7 @@ interface ProductsState {
   isAny: boolean;
 }
 
-const initialState<ProductsState> = {
+const initialState = <ProductsState>{
   products: [],
   isAny: false,
 };
