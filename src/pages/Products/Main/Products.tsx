@@ -9,7 +9,7 @@ import NotFound from "../../NotFound/NotFound";
 import usePagination from "../../../functions/Pagination";
 import { goToTop } from "../../../functions/functions";
 import { useDispatch, useSelector } from "react-redux";
-import { setProducts } from "../../../redux/slice/productsReducer";
+import { resetFilter, setProducts } from "../../../redux/slice/productsReducer";
 import ProductsHeader from "../ProductsHeader/ProductsHeader";
 
 interface IProps {
@@ -36,6 +36,7 @@ function Products(props: IProps) {
   };
   useEffect(() => {
     setLoading(true);
+    dispatch(resetFilter());
     fetch(`${url}/${params}`)
       .then((res) => res.json())
       .then((data) => {
