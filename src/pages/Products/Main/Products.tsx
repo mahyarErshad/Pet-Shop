@@ -1,4 +1,4 @@
-import { Box, Input } from "@mui/material";
+import { Box, Input, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Cards from "../../../components/Utils/Cards/Cards";
@@ -20,13 +20,14 @@ function Products(props: IProps) {
   document.title = "محصولات | پت شاپ فینیکس";
   const { url } = props;
   const { params } = useParams();
-  const { products } = useSelector((state: any) => state.products);
+  const { products, filteredProducts, filteredNotFound, isFiltered } = useSelector((state: any) => state.products);
+  const productsToShow = isFiltered ? filteredProducts : products;
   const [loading, setLoading] = useState<boolean>(true);
   const [notFound, setNotFound] = useState<boolean>(true);
   const [page, setPage] = useState<number>(1);
   const PER_PAGE = 6;
-  const count = Math.ceil(products.length / PER_PAGE);
-  const _DATA = usePagination(products, PER_PAGE);
+  const count = Math.ceil(productsToShow.length / PER_PAGE);
+  const _DATA = usePagination(productsToShow, PER_PAGE);
   const dispatch = useDispatch();
   const handleChange = (e: any, p: number) => {
     setPage(p);
@@ -73,9 +74,17 @@ function Products(props: IProps) {
         </Box>
         {/* cards */}
         <Box sx={{ mb: "1rem", width: "100%", px: "1rem", display: "flex", justifyContent: "center", alignItems: "center", gap: "1rem", flexWrap: "wrap" }}>
-          {_DATA.currentData().map((product: { id: number; title: string; image: string; price: number; amount: number }) => {
-            return <Cards amount={product.amount} id={product.id} key={product.id} title={product.title} image={product.image} price={product.price} />;
-          })}
+          {filteredNotFound ? (
+            <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center", width: "100%" }}>
+              <Typography dir="rtl" sx={{ fontSize: "1.5rem", color: "#D2302F", my: "3rem", backgroundColor: "#F9F927", p: "1.5rem", borderRadius: "10px" }} variant="h5">
+                محصولی با این مشخصات یافت نشد
+              </Typography>
+            </Box>
+          ) : (
+            _DATA.currentData().map((product: { id: number; title: string; image: string; price: number; amount: number }) => {
+              return <Cards amount={product.amount} id={product.id} key={product.id} title={product.title} image={product.image} price={product.price} />;
+            })
+          )}
         </Box>
         <Box sx={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center", mb: "1rem" }}>
           <Stack spacing={2}>
