@@ -17,12 +17,21 @@ export default function SelectVariants(props: Iprops) {
 
   const handleChange = (event: SelectChangeEvent) => {
     setState(event.target.value);
+    console.log(state);
   };
   const { label, categories } = props;
   const dispatch = useDispatch();
 
   React.useEffect(() => {
-    if (state) {
+    if (state === "حذف") {
+      if (label === "برند") {
+        dispatch(filterByBrand(""));
+      } else if (label === "قیمت") {
+        dispatch(filterByPrice(""));
+      } else if (label === "کشور سازنده") {
+        dispatch(filterByCountry(""));
+      }
+    } else {
       if (label === "برند") {
         dispatch(filterByBrand(state));
       } else if (label === "قیمت") {
@@ -30,8 +39,6 @@ export default function SelectVariants(props: Iprops) {
       } else if (label === "کشور سازنده") {
         dispatch(filterByCountry(state));
       }
-    } else {
-      return;
     }
     // eslint-disable-next-line
   }, [state]);
@@ -42,8 +49,8 @@ export default function SelectVariants(props: Iprops) {
           {label}
         </InputLabel>
         <Select dir="rtl" sx={{ fontSize: "0.875rem", fontWeight: "normal" }} autoWidth labelId="demo-simple-select-standard-label" id={label} value={state} onChange={handleChange} label={label}>
-          <MenuItem dir="rtl" sx={{ fontSize: "0.75rem" }} value="">
-            <em>انتخاب کنید</em>
+          <MenuItem dir="rtl" sx={{ fontSize: "0.75rem" }} value="حذف">
+            حذف فیلتر
           </MenuItem>
           {categories.map((category: any, index: number) => {
             return (
