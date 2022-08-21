@@ -69,6 +69,15 @@ const productsReducer = createSlice({
         state.priceFilterValue = action.payload;
       }
     },
+    filterByBrand: (state, action) => {
+      if (!action.payload) {
+        state.isFilteredByBrand = false;
+        state.brandFilterValue = "";
+      } else {
+        state.isFilteredByBrand = true;
+        state.brandFilterValue = action.payload;
+      }
+    },
     resetProducts: (state) => {
       state.products = [];
       state.filteredProducts = [];
@@ -79,6 +88,6 @@ const productsReducer = createSlice({
   },
 });
 
-export const { setProducts, filterByName, resetProducts, setFilteredProducts, filterByPrice } = productsReducer.actions;
+export const { setProducts, filterByName, resetProducts, setFilteredProducts, filterByPrice, filterByBrand } = productsReducer.actions;
 
 export default productsReducer.reducer;
