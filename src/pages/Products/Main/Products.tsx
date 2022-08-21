@@ -68,7 +68,7 @@ function Products(props: IProps) {
     <>
       <Box>
         <ProductsHeader />
-        <Box sx={{ mb: "1rem", width: "100%", px: "1rem", display: "flex", justifyContent: "center", alignItems: "center", gap: "1rem", flexWrap: "wrap" }}>
+        <Box sx={{ mb: "1rem", width: "100%", px: "1rem", display: "flex", justifyContent: "center", alignItems: "center", gap: "1rem", flexWrap: "wrap", flexDirection: "row-reverse" }}>
           {filteredNotFound ? (
             <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center", width: "100%" }}>
               <Typography dir="rtl" sx={{ fontSize: "1.5rem", color: "#D2302F", my: "3rem", backgroundColor: "#F9F927", p: "1.5rem", borderRadius: "10px" }} variant="h5">
