@@ -7,6 +7,12 @@ interface ProductsState {
   isFiltered: boolean;
   isFilteredByName: boolean;
   searchTerm: string;
+  priceFilterValue: string;
+  isFilteredByPrice: boolean;
+  brandFilterValue: string;
+  isFilteredByBrand: boolean;
+  countryFilterValue: string;
+  isFilteredByCountry: boolean;
 }
 
 const initialState: ProductsState = {
@@ -16,6 +22,12 @@ const initialState: ProductsState = {
   isFiltered: false,
   isFilteredByName: false,
   searchTerm: "",
+  priceFilterValue: "",
+  isFilteredByPrice: false,
+  brandFilterValue: "",
+  isFilteredByBrand: false,
+  countryFilterValue: "",
+  isFilteredByCountry: false,
 };
 
 const productsReducer = createSlice({

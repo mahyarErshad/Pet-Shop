@@ -3,6 +3,8 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
+import { useDispatch, useSelector } from "react-redux";
+import { setFilteredProducts } from "../../../../redux/slice/productsReducer";
 
 interface Iprops {
   categories: any[];
@@ -17,6 +19,17 @@ export default function SelectVariants(props: Iprops) {
     setState(event.target.value);
   };
   const { label, categories } = props;
+  const { products } = useSelector((state: any) => state.products);
+  const dispatch = useDispatch();
+
+  React.useEffect(() => {
+    let tempProducts = [...products];
+    if (state) {
+      tempProducts = tempProducts.filter((product: any) => product.brand === state);
+    }
+    console.log(tempProducts);
+    // eslint-disable-next-line
+  }, [state]);
   return (
     <div>
       <FormControl variant="standard" sx={{ m: 1, width: { sm: 120, xs: 105 } }}>
@@ -29,7 +42,7 @@ export default function SelectVariants(props: Iprops) {
           </MenuItem>
           {categories.map((category: any, index: number) => {
             return (
-              <MenuItem sx={{ fontSize: "0.75rem" }} dir="rtl" key={index} value={index}>
+              <MenuItem sx={{ fontSize: "0.75rem" }} dir="rtl" key={index} value={category}>
                 {category}
               </MenuItem>
             );
