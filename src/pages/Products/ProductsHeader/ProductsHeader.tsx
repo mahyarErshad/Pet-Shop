@@ -7,7 +7,7 @@ import { filterByName, setFilteredProducts } from "../../../redux/slice/products
 function ProductsHeader() {
   const [title, setTitle] = useState("");
   const dispatch = useDispatch();
-  const { products, searchTerm } = useSelector((state: any) => state.products);
+  const { products, searchTerm, brandFilterValue, countryFilterValue } = useSelector((state: any) => state.products);
   function handleSearch(e: any) {
     e.preventDefault();
     dispatch(filterByName(title));
@@ -19,7 +19,7 @@ function ProductsHeader() {
     }
     dispatch(setFilteredProducts(tempProducts));
     // eslint-disable-next-line
-  }, [searchTerm]);
+  }, [searchTerm, brandFilterValue, countryFilterValue]);
   return (
     <>
       <Box sx={{ px: "1rem", mt: "1rem", mb: "1.5rem", display: "flex", justifyContent: "center", alignItems: "center", gap: { lg: "13rem", md: "5rem", sm: "1rem", xs: "0.5rem" }, flexWrap: "wrap", flexDirection: { xs: "column-reverse", md: "row" } }}>
