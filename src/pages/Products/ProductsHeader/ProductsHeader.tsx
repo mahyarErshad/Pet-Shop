@@ -7,7 +7,7 @@ import { filterByName, setFilteredProducts } from "../../../redux/slice/products
 function ProductsHeader() {
   const [title, setTitle] = useState("");
   const dispatch = useDispatch();
-  const { products, searchTerm, brandFilterValue, countryFilterValue } = useSelector((state: any) => state.products);
+  const { products, searchTerm, brandFilterValue, countryFilterValue, priceFilterValue } = useSelector((state: any) => state.products);
   function handleSearch(e: any) {
     e.preventDefault();
     dispatch(filterByName(title));
@@ -23,9 +23,17 @@ function ProductsHeader() {
     if (countryFilterValue) {
       tempProducts = tempProducts.filter((product: any) => product.country === countryFilterValue);
     }
+    if (priceFilterValue) {
+      if (priceFilterValue === "بیشترین") {
+        tempProducts = tempProducts.sort((a: any, b: any) => b.price - a.price);
+      }
+      if (priceFilterValue === "کمترین") {
+        tempProducts = tempProducts.sort((a: any, b: any) => a.price - b.price);
+      }
+    }
     dispatch(setFilteredProducts(tempProducts));
     // eslint-disable-next-line
-  }, [searchTerm, brandFilterValue, countryFilterValue]);
+  }, [searchTerm, brandFilterValue, countryFilterValue, priceFilterValue]);
   return (
     <>
       <Box sx={{ px: "1rem", mt: "1rem", mb: "1.5rem", display: "flex", justifyContent: "center", alignItems: "center", gap: { lg: "13rem", md: "5rem", sm: "1rem", xs: "0.5rem" }, flexWrap: "wrap", flexDirection: { xs: "column-reverse", md: "row" } }}>
