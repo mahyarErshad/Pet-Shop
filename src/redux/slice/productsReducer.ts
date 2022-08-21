@@ -27,13 +27,16 @@ const productsReducer = createSlice({
     },
     filterByName: (state, action) => {
       if (!action.payload.length) {
-        state.isFilteredByName = true;
+        state.isFilteredByName = false;
+        state.searchTerm = "";
       } else {
         state.isFilteredByName = true;
+        state.searchTerm = action.payload;
       }
     },
     RemoveFilterByName: (state) => {
       state.isFilteredByName = false;
+      state.searchTerm = "";
     },
     resetProducts: (state) => {
       state.products = [];
