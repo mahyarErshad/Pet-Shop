@@ -13,7 +13,7 @@ interface Iprops {
 }
 
 export default function SelectVariants(props: Iprops) {
-  const [state, setState] = React.useState("");
+  const [state, setState] = React.useState<string>("");
 
   const handleChange = (event: SelectChangeEvent) => {
     setState(event.target.value);
@@ -25,7 +25,15 @@ export default function SelectVariants(props: Iprops) {
   React.useEffect(() => {
     let tempProducts = [...products];
     if (state) {
-      tempProducts = tempProducts.filter((product: any) => product.brand === state);
+      if (label === "برند") {
+        tempProducts = tempProducts.filter((product: any) => product.brand === state);
+      } else if (label === "قیمت") {
+        tempProducts = tempProducts.filter((product: any) => product.price === state);
+      } else if (label === "کشور سازنده") {
+        tempProducts = tempProducts.filter((product: any) => product.country === state);
+      }
+    } else {
+      tempProducts = [...products];
     }
     console.log(tempProducts);
     // eslint-disable-next-line
