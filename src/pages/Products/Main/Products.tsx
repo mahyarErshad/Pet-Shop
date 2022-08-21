@@ -20,7 +20,7 @@ function Products(props: IProps) {
   document.title = "محصولات | پت شاپ فینیکس";
   const { url } = props;
   const { params } = useParams();
-  const { products, filteredProducts, filteredNotFound, isFiltered, searchTerm, brandFilterValue, countryFilterValue } = useSelector((state: any) => state.products);
+  const { products, filteredProducts, filteredNotFound, isFiltered, searchTerm, brandFilterValue, countryFilterValue, priceFilterValue } = useSelector((state: any) => state.products);
   const productsToShow = isFiltered ? filteredProducts : products;
   const [loading, setLoading] = useState<boolean>(true);
   const [notFound, setNotFound] = useState<boolean>(true);
@@ -54,11 +54,13 @@ function Products(props: IProps) {
       .finally(() => setLoading(false));
     // eslint-disable-next-line
   }, [url, params]);
-  useEffect(() => {
-    _DATA.reset();
-    setPage(1);
-    // eslint-disable-next-line
-  }, [searchTerm, brandFilterValue, countryFilterValue]);
+  useEffect(
+    () => {
+      _DATA.reset();
+      setPage(1);
+    }, // eslint-disable-next-line
+    [searchTerm, brandFilterValue, countryFilterValue, priceFilterValue]
+  );
 
   if (loading) return <Loading />;
   if (notFound) return <NotFound />;
