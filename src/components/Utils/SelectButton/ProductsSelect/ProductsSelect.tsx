@@ -3,8 +3,8 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
-import { useDispatch, useSelector } from "react-redux";
-import { setFilteredProducts } from "../../../../redux/slice/productsReducer";
+import { useDispatch } from "react-redux";
+import { filterByBrand, filterByCountry, filterByPrice } from "../../../../redux/slice/productsReducer";
 
 interface Iprops {
   categories: any[];
@@ -19,23 +19,20 @@ export default function SelectVariants(props: Iprops) {
     setState(event.target.value);
   };
   const { label, categories } = props;
-  const { products } = useSelector((state: any) => state.products);
   const dispatch = useDispatch();
 
   React.useEffect(() => {
-    let tempProducts = [...products];
     if (state) {
       if (label === "برند") {
-        tempProducts = tempProducts.filter((product: any) => product.brand === state);
+        dispatch(filterByBrand(state));
       } else if (label === "قیمت") {
-        tempProducts = tempProducts.filter((product: any) => product.price === state);
+        dispatch(filterByPrice(state));
       } else if (label === "کشور سازنده") {
-        tempProducts = tempProducts.filter((product: any) => product.country === state);
+        dispatch(filterByCountry(state));
       }
     } else {
-      tempProducts = [...products];
+      return;
     }
-    console.log(tempProducts);
     // eslint-disable-next-line
   }, [state]);
   return (
