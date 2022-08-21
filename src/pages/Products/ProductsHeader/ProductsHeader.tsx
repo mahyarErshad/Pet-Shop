@@ -23,6 +23,8 @@ function ProductsHeader() {
     if (countryFilterValue) {
       tempProducts = tempProducts.filter((product: any) => product.country === countryFilterValue);
     }
+    console.log(brandFilterValue);
+    console.log(countryFilterValue);
     dispatch(setFilteredProducts(tempProducts));
     // eslint-disable-next-line
   }, [searchTerm, brandFilterValue, countryFilterValue]);
