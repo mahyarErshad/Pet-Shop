@@ -17,6 +17,12 @@ function ProductsHeader() {
     if (searchTerm) {
       tempProducts = tempProducts.filter((product: any) => product.title.includes(searchTerm));
     }
+    if (brandFilterValue) {
+      tempProducts = tempProducts.filter((product: any) => product.brand === brandFilterValue);
+    }
+    if (countryFilterValue) {
+      tempProducts = tempProducts.filter((product: any) => product.country === countryFilterValue);
+    }
     dispatch(setFilteredProducts(tempProducts));
     // eslint-disable-next-line
   }, [searchTerm, brandFilterValue, countryFilterValue]);

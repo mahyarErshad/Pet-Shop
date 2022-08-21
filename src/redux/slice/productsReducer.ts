@@ -66,7 +66,7 @@ const productsReducer = createSlice({
       }
     },
     filterByBrand: (state, action) => {
-      if (!action.payload) {
+      if (!action.payload.length) {
         state.isFilteredByBrand = false;
         state.brandFilterValue = "";
       } else {
@@ -75,7 +75,7 @@ const productsReducer = createSlice({
       }
     },
     filterByCountry: (state, action) => {
-      if (!action.payload) {
+      if (!action.payload.length) {
         state.isFilteredByCountry = false;
         state.countryFilterValue = "";
       } else {
@@ -89,6 +89,12 @@ const productsReducer = createSlice({
       state.filteredNotFound = false;
       state.isFiltered = false;
       state.isFilteredByName = false;
+      state.searchTerm = "";
+      state.priceFilterValue = "";
+      state.brandFilterValue = "";
+      state.isFilteredByBrand = false;
+      state.countryFilterValue = "";
+      state.isFilteredByCountry = false;
     },
   },
 });
