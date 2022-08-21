@@ -25,6 +25,15 @@ const productsReducer = createSlice({
     setProducts: (state, action) => {
       state.products = action.payload;
     },
+    setFilteredProducts: (state, action) => {
+      if (state.isFilteredByName) {
+        state.filteredProducts = action.payload;
+        state.isFiltered = true;
+      } else {
+        state.filteredProducts = action.payload;
+        state.isFiltered = false;
+      }
+    },
     filterByName: (state, action) => {
       if (!action.payload.length) {
         state.isFilteredByName = false;
@@ -33,10 +42,6 @@ const productsReducer = createSlice({
         state.isFilteredByName = true;
         state.searchTerm = action.payload;
       }
-    },
-    RemoveFilterByName: (state) => {
-      state.isFilteredByName = false;
-      state.searchTerm = "";
     },
     resetProducts: (state) => {
       state.products = [];
@@ -48,6 +53,6 @@ const productsReducer = createSlice({
   },
 });
 
-export const { setProducts, filterByName, RemoveFilterByName, resetProducts } = productsReducer.actions;
+export const { setProducts, filterByName, resetProducts, setFilteredProducts } = productsReducer.actions;
 
 export default productsReducer.reducer;
