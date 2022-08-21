@@ -8,7 +8,6 @@ interface ProductsState {
   isFilteredByName: boolean;
   searchTerm: string;
   priceFilterValue: string;
-  isFilteredByPrice: boolean;
   brandFilterValue: string;
   isFilteredByBrand: boolean;
   countryFilterValue: string;
@@ -23,7 +22,6 @@ const initialState: ProductsState = {
   isFilteredByName: false,
   searchTerm: "",
   priceFilterValue: "",
-  isFilteredByPrice: false,
   brandFilterValue: "",
   isFilteredByBrand: false,
   countryFilterValue: "",
@@ -38,7 +36,7 @@ const productsReducer = createSlice({
       state.products = action.payload;
     },
     setFilteredProducts: (state, action) => {
-      if (state.isFilteredByName) {
+      if (state.isFilteredByName || state.isFilteredByBrand || state.isFilteredByCountry) {
         state.filteredProducts = action.payload;
         state.isFiltered = true;
       } else {
@@ -62,10 +60,8 @@ const productsReducer = createSlice({
     },
     filterByPrice: (state, action) => {
       if (!action.payload) {
-        state.isFilteredByPrice = false;
         state.priceFilterValue = "";
       } else {
-        state.isFilteredByPrice = true;
         state.priceFilterValue = action.payload;
       }
     },
