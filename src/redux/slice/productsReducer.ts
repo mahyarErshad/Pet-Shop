@@ -6,6 +6,7 @@ interface ProductsState {
   filteredNotFound: boolean;
   isFiltered: boolean;
   isFilteredByName: boolean;
+  searchTerm: string;
 }
 
 const initialState: ProductsState = {
@@ -14,6 +15,7 @@ const initialState: ProductsState = {
   filteredNotFound: false,
   isFiltered: false,
   isFilteredByName: false,
+  searchTerm: "",
 };
 
 const productsReducer = createSlice({
