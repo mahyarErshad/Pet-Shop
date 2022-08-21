@@ -17,7 +17,6 @@ export default function SelectVariants(props: Iprops) {
 
   const handleChange = (event: SelectChangeEvent) => {
     setState(event.target.value);
-    console.log(state);
   };
   const { label, categories } = props;
   const dispatch = useDispatch();
