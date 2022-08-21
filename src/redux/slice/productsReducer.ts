@@ -78,6 +78,15 @@ const productsReducer = createSlice({
         state.brandFilterValue = action.payload;
       }
     },
+    filterByCountry: (state, action) => {
+      if (!action.payload) {
+        state.isFilteredByCountry = false;
+        state.countryFilterValue = "";
+      } else {
+        state.isFilteredByCountry = true;
+        state.countryFilterValue = action.payload;
+      }
+    },
     resetProducts: (state) => {
       state.products = [];
       state.filteredProducts = [];
@@ -88,6 +97,6 @@ const productsReducer = createSlice({
   },
 });
 
-export const { setProducts, filterByName, resetProducts, setFilteredProducts, filterByPrice, filterByBrand } = productsReducer.actions;
+export const { setProducts, filterByName, resetProducts, setFilteredProducts, filterByPrice, filterByBrand, filterByCountry } = productsReducer.actions;
 
 export default productsReducer.reducer;
