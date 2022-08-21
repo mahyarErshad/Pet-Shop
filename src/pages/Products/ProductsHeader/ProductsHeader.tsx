@@ -1,5 +1,5 @@
 import { Box, Input } from "@mui/material";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ProductsSelect from "../../../components/Utils/SelectButton/ProductsSelect/ProductsSelect";
 import { filterByName } from "../../../redux/slice/productsReducer";
@@ -12,6 +12,14 @@ function ProductsHeader() {
     e.preventDefault();
     dispatch(filterByName(title));
   }
+  useEffect(() => {
+    let tempProducts = [];
+    if (searchTerm) {
+      tempProducts = products.filter((product: any) => product.title.includes(searchTerm));
+    }
+    console.log(tempProducts);
+    // eslint-disable-next-line
+  }, [searchTerm]);
   return (
     <>
       <Box sx={{ px: "1rem", mt: "1rem", mb: "1.5rem", display: "flex", justifyContent: "center", alignItems: "center", gap: { lg: "13rem", md: "5rem", sm: "1rem", xs: "0.5rem" }, flexWrap: "wrap", flexDirection: { xs: "column-reverse", md: "row" } }}>
