@@ -33,6 +33,11 @@ const productsReducer = createSlice({
         state.filteredProducts = [];
         state.isFiltered = false;
       }
+      if (state.isFiltered && !state.filteredProducts.length) {
+        state.filteredNotFound = true;
+      } else {
+        state.filteredNotFound = false;
+      }
     },
     filterByName: (state, action) => {
       if (!action.payload.length) {

@@ -2,7 +2,7 @@ import { Box, Input } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ProductsSelect from "../../../components/Utils/SelectButton/ProductsSelect/ProductsSelect";
-import { filterByName } from "../../../redux/slice/productsReducer";
+import { filterByName, setFilteredProducts } from "../../../redux/slice/productsReducer";
 
 function ProductsHeader() {
   const [title, setTitle] = useState("");
@@ -13,11 +13,11 @@ function ProductsHeader() {
     dispatch(filterByName(title));
   }
   useEffect(() => {
-    let tempProducts = [];
+    let tempProducts = [...products];
     if (searchTerm) {
-      tempProducts = products.filter((product: any) => product.title.includes(searchTerm));
+      tempProducts = tempProducts.filter((product: any) => product.title.includes(searchTerm));
     }
-    console.log(tempProducts);
+    dispatch(setFilteredProducts(tempProducts));
     // eslint-disable-next-line
   }, [searchTerm]);
   return (
