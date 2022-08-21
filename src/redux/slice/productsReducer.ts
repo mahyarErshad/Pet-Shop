@@ -30,7 +30,7 @@ const productsReducer = createSlice({
         state.filteredProducts = action.payload;
         state.isFiltered = true;
       } else {
-        state.filteredProducts = action.payload;
+        state.filteredProducts = [];
         state.isFiltered = false;
       }
     },
