@@ -11,6 +11,7 @@ import { changeModalState } from "../../../redux/slice/modalSlice";
 import { setLoggedOut } from "../../../redux/slice/loginReducer";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { v4 as uuidv4 } from "uuid";
 
 interface FadeProps {
   children?: React.ReactElement;
@@ -135,7 +136,7 @@ export default function CustomModal() {
                         progress: undefined,
                       });
                     notify();
-                    dispatch(setHistory());
+                    dispatch(setHistory(uuidv4()));
                   }
                   dispatch(changeModalState(""));
                 }}
