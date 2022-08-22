@@ -19,6 +19,7 @@ import Contact from "./pages/Contact/Contact";
 import Products from "./pages/Products/Main/Products";
 import SingleProduct from "./pages/SingleProduct/SingleProduct";
 import Cart from "./pages/Cart/Cart";
+import Bill from "./pages/Bill/Bill";
 
 // CSS
 import "./Style/ResetCSS/reset.css";
@@ -52,6 +53,7 @@ function App() {
             <Route path="/products/:params" element={<Products url="/api/products" />} />
             <Route path="/product/:id" element={<SingleProduct />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/bill/:id" element={<Bill />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />

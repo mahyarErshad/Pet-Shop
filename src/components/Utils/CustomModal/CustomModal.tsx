@@ -123,6 +123,18 @@ export default function CustomModal() {
                       });
                     notify();
                     dispatch(setDiscountInactive());
+                  } else if (message === "سفارش ثبت نهایی شود") {
+                    const notify = () =>
+                      toast.success("سفارش با موفقیت ثبت شد", {
+                        position: "top-right",
+                        autoClose: 2500,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                      });
+                    notify();
                   }
                   dispatch(changeModalState(""));
                 }}
