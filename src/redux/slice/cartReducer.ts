@@ -7,6 +7,7 @@ interface cartState {
   discountCode: any[];
   phrase: string;
   hasDiscount: boolean;
+  history: any[];
 }
 
 const initialState: cartState = {
@@ -27,6 +28,7 @@ const initialState: cartState = {
   ],
   phrase: "",
   hasDiscount: false,
+  history: [],
 };
 
 const cartReducer: any = createSlice({
