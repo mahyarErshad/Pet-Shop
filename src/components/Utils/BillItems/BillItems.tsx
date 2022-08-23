@@ -12,7 +12,7 @@ interface IProps {
   id: string | number;
 }
 
-function CartItem(props: IProps) {
+function BillItems(props: IProps) {
   const { image, title, price, id } = props;
   return (
     <>
@@ -34,4 +34,4 @@ function CartItem(props: IProps) {
   );
 }
 
-export default CartItem;
+export default BillItems;
