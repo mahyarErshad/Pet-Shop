@@ -150,6 +150,8 @@ export default function CustomModal() {
                     );
                     dispatch(setDiscountInactive());
                     navigate(`/bill/${id}`);
+                  } else if (message === "لطفا برای ادامه وارد حساب کاربری شوید") {
+                    navigate("/register");
                   }
                   dispatch(changeModalState(""));
                 }}
