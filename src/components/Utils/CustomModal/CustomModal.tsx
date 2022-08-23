@@ -139,6 +139,7 @@ export default function CustomModal() {
                     notify();
                     const id = Math.floor(10000000 + Math.random() * 90000000);
                     dispatch(setHistory(id));
+                    dispatch(setDiscountInactive());
                     navigate(`/bill/${id}`);
                   }
                   dispatch(changeModalState(""));
