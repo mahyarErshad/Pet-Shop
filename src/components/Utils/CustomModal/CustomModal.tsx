@@ -60,6 +60,9 @@ const btnStyle = { width: "5rem", mt: "1.5rem" };
 
 export default function CustomModal() {
   const { isOpen, message } = useSelector((state: any) => state.modal);
+  const { total, discountCode, phrase } = useSelector((state: any) => state.cart);
+  const discountValue = discountCode.find((item: any) => item.name === phrase);
+  const discount = discountValue ? total * discountValue.discount : 0;
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -138,7 +141,13 @@ export default function CustomModal() {
                       });
                     notify();
                     const id = Math.floor(10000000 + Math.random() * 90000000);
-                    dispatch(setHistory(id));
+                    dispatch(
+                      setHistory({
+                        id,
+                        total,
+                        discount,
+                      })
+                    );
                     dispatch(setDiscountInactive());
                     navigate(`/bill/${id}`);
                   }
