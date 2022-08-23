@@ -6,11 +6,12 @@ import Typography from "@mui/material/Typography";
 import { useSpring, animated } from "@react-spring/web";
 import { useDispatch, useSelector } from "react-redux";
 import { Button } from "@mui/material";
-import { clearCart, setDiscountInactive } from "../../../redux/slice/cartReducer";
+import { clearCart, setDiscountInactive, setHistory } from "../../../redux/slice/cartReducer";
 import { changeModalState } from "../../../redux/slice/modalSlice";
 import { setLoggedOut } from "../../../redux/slice/loginReducer";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
 
 interface FadeProps {
   children?: React.ReactElement;
@@ -59,7 +60,11 @@ const btnStyle = { width: "5rem", mt: "1.5rem" };
 
 export default function CustomModal() {
   const { isOpen, message } = useSelector((state: any) => state.modal);
+  const { total, discountCode, phrase } = useSelector((state: any) => state.cart);
+  const discountValue = discountCode.find((item: any) => item.name === phrase);
+  const discount = discountValue ? total * discountValue.discount : 0;
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   return (
     <div>
@@ -135,6 +140,18 @@ export default function CustomModal() {
                         progress: undefined,
                       });
                     notify();
+                    const id = Math.floor(10000000 + Math.random() * 90000000);
+                    dispatch(
+                      setHistory({
+                        id,
+                        total,
+                        discount,
+                      })
+                    );
+                    dispatch(setDiscountInactive());
+                    navigate(`/bill/${id}`);
+                  } else if (message === "لطفا برای ادامه وارد حساب کاربری شوید") {
+                    navigate("/register");
                   }
                   dispatch(changeModalState(""));
                 }}

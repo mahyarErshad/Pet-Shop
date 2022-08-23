@@ -12,6 +12,7 @@ function CartOperationSection() {
   const [discount, setDiscount] = useState<string>("");
   const dispatch = useDispatch();
   const { total, discountCode, phrase, hasDiscount } = useSelector((state: any) => state.cart);
+  const { loggedIn } = useSelector((store: any) => store.loggedIn);
   const [totalPrice, setTotalPrice] = useState<number>(total);
   const discountValue = discountCode.find((item: any) => item.name === phrase);
   useEffect(() => {
@@ -57,13 +58,20 @@ function CartOperationSection() {
   }
   const color = hasDiscount ? "#D32F2F" : "#532482";
   const textDecoration = hasDiscount ? "line-through" : "none";
+  function handleClick() {
+    if (loggedIn) {
+      dispatch(changeModalState("سفارش ثبت نهایی شود"));
+    } else {
+      dispatch(changeModalState("لطفا برای ادامه وارد حساب کاربری شوید"));
+    }
+  }
   return (
     <>
       <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl pauseOnFocusLoss draggable pauseOnHover />
 
       <Box sx={{ width: "100%", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "0.7rem" }}>
         <Box sx={{ width: { xs: "100%", md: "30%" }, px: "1rem", display: "flex", justifyContent: "center", alignItems: "center", gap: "1rem" }}>
-          <Box onClick={() => dispatch(changeModalState("سفارش ثبت نهایی شود"))}>
+          <Box onClick={handleClick}>
             <MyButton text="ثبت سفارش" />
           </Box>
           <Box onClick={() => dispatch(changeModalState("سبد خرید خالی شود؟"))}>
