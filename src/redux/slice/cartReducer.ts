@@ -81,7 +81,6 @@ const cartReducer: any = createSlice({
     setHistory: (state, action) => {
       state.history = [...state.history, { cartID: action.payload, ...state.cartItems }];
       state.cartItems = [];
-      console.log(state.history);
     },
   },
 });
