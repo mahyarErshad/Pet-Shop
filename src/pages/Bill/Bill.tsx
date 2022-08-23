@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import BillItems from "../../components/Utils/BillItems/BillItems";
 import { persian } from "../../functions/functions";
+import NotFound from "../NotFound/NotFound";
 
 function Bill() {
   const theme = useTheme();
@@ -22,7 +23,7 @@ function Bill() {
     // eslint-disable-next-line
   }, [id]);
   if (notFound) {
-    return <div>notFound</div>;
+    return <NotFound />;
   } else {
     return (
       <>
