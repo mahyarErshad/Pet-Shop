@@ -3,7 +3,7 @@ import { Box, useTheme } from "@mui/system";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import CartItem from "../../components/Utils/CartItem/CartItem";
+import BillItems from "../../components/Utils/BillItems/BillItems";
 import { persian } from "../../functions/functions";
 
 function Bill() {
@@ -28,10 +28,10 @@ function Bill() {
       <>
         <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column", width: "100%", my: "1rem" }}>
           <Box>
-            <Typography dir="rtl" variant="h5" sx={{ mt: "1rem", textAlign: "center", fontWeight: "normal", fontSize: "1.5rem", color: theme.palette.secondary.main }}>{`سفارش شماره: ${persian(id!)}`}</Typography>
+            <Typography dir="rtl" variant="h5" sx={{ my: "1rem", textAlign: "center", fontWeight: "normal", fontSize: "1.5rem", color: theme.palette.secondary.main }}>{`سفارش شماره: ${persian(id!)}`}</Typography>
           </Box>
           {cartHistory.items.map((item: any) => {
-            return <CartItem id={item.id} key={item.id} image={item.image} title={item.title} price={item.price} />;
+            return <BillItems id={item.id} key={item.id} image={item.image} title={item.title} price={item.price} amount={item.amount} />;
           })}
         </Box>
       </>
