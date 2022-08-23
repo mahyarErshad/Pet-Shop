@@ -79,7 +79,7 @@ const cartReducer: any = createSlice({
       state.phrase = "";
     },
     setHistory: (state, action) => {
-      state.history = [...state.history, { cartID: action.payload, ...state.cartItems }];
+      state.history = [...state.history, { cartID: action.payload, items: [...state.cartItems] }];
       state.cartItems = [];
     },
   },
