@@ -35,9 +35,9 @@ function Bill() {
           {cartHistory.items.map((item: any) => {
             return <BillItems id={item.id} key={item.id} image={item.image} title={item.title} price={item.price} amount={item.amount} />;
           })}
-          <BillCalculate text="جمع کل:" fee={5000000} />
-          <BillCalculate text="تخفیف:" fee={5000000} discount />
-          <BillCalculate text="قابل پرداخت:" fee={5000000} />
+          <BillCalculate text="جمع کل:" fee={cartHistory.total} />
+          <BillCalculate text="تخفیف:" fee={cartHistory.discount} discount />
+          <BillCalculate text="قابل پرداخت:" fee={cartHistory.total - cartHistory.discount} />
         </Box>
       </>
     );
