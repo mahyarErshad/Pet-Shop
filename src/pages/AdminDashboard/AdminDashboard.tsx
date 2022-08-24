@@ -19,6 +19,7 @@ import DashboardListItem from "./DashboardListItem";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
 import LocalAtmIcon from "@mui/icons-material/LocalAtm";
+import DashboardUsers from "./DashboardUsers";
 
 const drawerWidth = 140;
 
@@ -62,6 +63,7 @@ function AdminDashboard() {
         </AppBar>
         <Box component="main" sx={{ flexGrow: 1, bgcolor: "background.default", p: 3 }}>
           <Toolbar />
+          <DashboardUsers />
         </Box>
         <Drawer
           sx={{
