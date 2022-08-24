@@ -12,11 +12,11 @@ import List from "@mui/material/List";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import { changeModalState } from "../../redux/slice/modalSlice";
 import { Button } from "@mui/material";
 import CustomModal from "../../components/Utils/CustomModal/CustomModal";
+import DashboardListItem from "./DashboardListItem";
 
 const drawerWidth = 240;
 
@@ -77,7 +77,11 @@ function AdminDashboard() {
           <Toolbar />
           <Divider />
           <List>
-            <ListItem dir="rtl" disablePadding></ListItem>
+            <ListItem dir="rtl" disablePadding sx={{ display: "flex", flexDirection: "column" }}>
+              <DashboardListItem icon={<InboxIcon />} text="کاربران" />
+              <DashboardListItem icon={<InboxIcon />} text="محصولات" />
+              <DashboardListItem icon={<InboxIcon />} text="سفارشات" />
+            </ListItem>
           </List>
         </Drawer>
       </Box>
