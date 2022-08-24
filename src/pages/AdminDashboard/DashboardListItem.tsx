@@ -1,7 +1,13 @@
 import { ListItemButton, Typography } from "@mui/material";
 import React from "react";
 
-function DashboardListItem() {
+interface IProps {
+  text: string;
+  icon: any;
+}
+
+function DashboardListItem(props: IProps) {
+  const { text, icon } = props;
   return (
     <>
       <ListItemButton sx={{ display: "flex", justifyContent: "flex-start", alignItems: "center", gap: "0.5rem" }}>
