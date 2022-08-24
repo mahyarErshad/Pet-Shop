@@ -1,3 +1,5 @@
+import { Button, Typography } from "@mui/material";
+import { Box } from "@mui/system";
 import React, { useEffect, useState } from "react";
 
 function DashboardUsers() {
@@ -6,17 +8,28 @@ function DashboardUsers() {
     fetch("/api/users/all")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setUsers(data.users);
       })
       .catch((error) => console.log(error));
-    console.log(users);
     // eslint-disable-next-line
   }, []);
   return (
-    <div>
-      <div>hi</div>
-    </div>
+    <>
+      <Box sx={{ display: "flex", flexDirection: "column" }}>
+        <Box sx={{ px: "0.5rem", border: "solid 1px #000", height: "3rem", borderRadius: "8px", display: "flex", justifyContent: "flex-start", alignItems: "center", flexDirection: "row-reverse", gap: "3rem" }}>
+          <Typography>ایمیل</Typography>
+          <Typography>پسورد</Typography>
+          <Box sx={{ display: "flex", gap: ".5rem" }}>
+            <Button sx={{ height: "2.5rem" }} variant="outlined" color="error">
+              حذف
+            </Button>
+            <Button sx={{ height: "2.5rem" }} variant="outlined" color="secondary">
+              ویرایش
+            </Button>
+          </Box>
+        </Box>
+      </Box>
+    </>
   );
 }
 
