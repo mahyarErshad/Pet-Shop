@@ -3,7 +3,7 @@ import { Box } from "@mui/system";
 import React, { useEffect, useState } from "react";
 
 function DashboardUsers() {
-  const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState<any[]>([]);
   useEffect(() => {
     fetch("/api/users/all")
       .then((res) => res.json())
@@ -16,18 +16,23 @@ function DashboardUsers() {
   return (
     <>
       <Box sx={{ display: "flex", flexDirection: "column" }}>
-        <Box sx={{ px: "0.5rem", border: "solid 1px #000", height: "3rem", borderRadius: "8px", display: "flex", justifyContent: "flex-start", alignItems: "center", flexDirection: "row-reverse", gap: "3rem" }}>
-          <Typography>ایمیل</Typography>
-          <Typography>پسورد</Typography>
-          <Box sx={{ display: "flex", gap: ".5rem" }}>
-            <Button sx={{ height: "2.5rem" }} variant="outlined" color="error">
-              حذف
-            </Button>
-            <Button sx={{ height: "2.5rem" }} variant="outlined" color="secondary">
-              ویرایش
-            </Button>
-          </Box>
-        </Box>
+        {users.length &&
+          users.map((user: any) => {
+            return (
+              <Box sx={{ px: "0.5rem", border: "solid 1px #000", height: "3rem", borderRadius: "8px", display: "flex", justifyContent: "flex-start", alignItems: "center", flexDirection: "row-reverse", gap: "3rem" }}>
+                <Typography>{user.email}</Typography>
+                <Typography>{user.password}</Typography>
+                <Box sx={{ display: "flex", gap: ".5rem" }}>
+                  <Button sx={{ height: "2.5rem" }} variant="outlined" color="error">
+                    حذف
+                  </Button>
+                  <Button sx={{ height: "2.5rem" }} variant="outlined" color="secondary">
+                    ویرایش
+                  </Button>
+                </Box>
+              </Box>
+            );
+          })}
       </Box>
     </>
   );
