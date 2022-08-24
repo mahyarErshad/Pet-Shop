@@ -5,17 +5,17 @@ const mockUsers = [
     cart: [],
   },
   {
-    email: "user2@gmail.com",
+    email: "mock.user.number1@gmail.com",
     password: "09120343545",
     cart: [],
   },
   {
-    email: "user3@gmail.com",
+    email: "mock.user.number2@gmail.com",
     password: "09120343545",
     cart: [],
   },
   {
-    email: "user4@gmail.com",
+    email: "mock.user.number3@gmail.com",
     password: "09120343545",
     cart: [],
   },
