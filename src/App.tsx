@@ -26,16 +26,24 @@ import "./Style/ResetCSS/reset.css";
 import "./Style/global/style.css";
 
 // utils
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { calculateTotal } from "./redux/slice/cartReducer";
 
 function App() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { emailValue, loggedIn } = useSelector((state: any) => state.loggedIn);
   const cartItems = useSelector((state: any) => state.cart.cartItems);
   useEffect(() => {
     dispatch(calculateTotal()); // eslint-disable-next-line
   }, [cartItems]);
+  useEffect(() => {
+    if (loggedIn && emailValue === "admin@admin") {
+      navigate("/dashboard");
+    }
+    // eslint-disable-next-line
+  }, [emailValue, loggedIn]);
   return (
     <>
       <ThemeProvider theme={theme}>
