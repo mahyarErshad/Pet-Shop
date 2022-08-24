@@ -1,4 +1,4 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -17,12 +17,16 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
+import { changeModalState } from "../../redux/slice/modalSlice";
+import { Button } from "@mui/material";
+import CustomModal from "../../components/Utils/CustomModal/CustomModal";
 
 const drawerWidth = 240;
 
 function AdminDashboard() {
   const { userEmail } = useSelector((state: any) => state.loggedIn);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   React.useEffect(() => {
     if (userEmail !== "admin@admin") {
       navigate("/");
@@ -42,14 +46,18 @@ function AdminDashboard() {
   }, [userEmail]);
   return (
     <>
+      <CustomModal />
       <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl pauseOnFocusLoss draggable pauseOnHover />
       <Box sx={{ display: "flex" }}>
         <CssBaseline />
         <AppBar position="fixed" sx={{ width: `calc(100% - ${drawerWidth}px)`, mr: `${drawerWidth}px` }}>
-          <Toolbar sx={{ display: "flex", justifyContent: "flex-end", width: "100%" }}>
+          <Toolbar sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexDirection: "row-reverse", width: "100%" }}>
             <Typography variant="h6" noWrap component="div" sx={{ textAlign: "right" }}>
               داشبورد
             </Typography>
+            <Button sx={{ fontSize: "1rem" }} onClick={() => dispatch(changeModalState("از حساب کاربری خارج میشوید؟"))} color="error" variant="contained">
+              خروج
+            </Button>
           </Toolbar>
         </AppBar>
         <Box component="main" sx={{ flexGrow: 1, bgcolor: "background.default", p: 3 }}>
