@@ -46,9 +46,9 @@ function AdminDashboard() {
       <Box sx={{ display: "flex" }}>
         <CssBaseline />
         <AppBar position="fixed" sx={{ width: `calc(100% - ${drawerWidth}px)`, mr: `${drawerWidth}px` }}>
-          <Toolbar>
-            <Typography variant="h6" noWrap component="div">
-              Permanent drawer
+          <Toolbar sx={{ display: "flex", justifyContent: "flex-end", width: "100%" }}>
+            <Typography variant="h6" noWrap component="div" sx={{ textAlign: "right" }}>
+              داشبورد
             </Typography>
           </Toolbar>
         </AppBar>
