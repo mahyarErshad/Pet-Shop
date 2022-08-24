@@ -34,6 +34,7 @@ import { calculateTotal } from "./redux/slice/cartReducer";
 function App() {
   const dispatch = useDispatch();
   const cartItems = useSelector((state: any) => state.cart.cartItems);
+  const { userEmail } = useSelector((state: any) => state.loggedIn);
   useEffect(() => {
     dispatch(calculateTotal()); // eslint-disable-next-line
   }, [cartItems]);
@@ -41,7 +42,7 @@ function App() {
     <>
       <ThemeProvider theme={theme}>
         <BrowserRouter>
-          <Header />
+          {userEmail !== "admin@admin" && <Header />}
           <Routes>
             <Route path="/" element={<Main />} />
             <Route path="/register" element={<Register />} />
@@ -58,7 +59,7 @@ function App() {
             <Route path="/dashboard" element={<AdminDashboard />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
-          <Footer />
+          {userEmail !== "admin@admin" && <Footer />}
         </BrowserRouter>
       </ThemeProvider>
     </>
