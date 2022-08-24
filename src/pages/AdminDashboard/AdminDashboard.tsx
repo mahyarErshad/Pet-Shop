@@ -63,7 +63,7 @@ function AdminDashboard() {
         </AppBar>
         <Box component="main" sx={{ flexGrow: 1, bgcolor: "background.default", p: 3 }}>
           <Toolbar />
-          <DashboardUsers />
+          {state === "users" && <DashboardUsers />}
         </Box>
         <Drawer
           sx={{
