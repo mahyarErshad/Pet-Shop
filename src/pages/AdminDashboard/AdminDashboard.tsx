@@ -12,11 +12,13 @@ import List from "@mui/material/List";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import ListItem from "@mui/material/ListItem";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
 import { changeModalState } from "../../redux/slice/modalSlice";
 import { Button } from "@mui/material";
 import CustomModal from "../../components/Utils/CustomModal/CustomModal";
 import DashboardListItem from "./DashboardListItem";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import LocalMallIcon from "@mui/icons-material/LocalMall";
+import LocalAtmIcon from "@mui/icons-material/LocalAtm";
 
 const drawerWidth = 240;
 
@@ -78,9 +80,9 @@ function AdminDashboard() {
           <Divider />
           <List>
             <ListItem dir="rtl" disablePadding sx={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
-              <DashboardListItem icon={<InboxIcon />} text="کاربران" />
-              <DashboardListItem icon={<InboxIcon />} text="محصولات" />
-              <DashboardListItem icon={<InboxIcon />} text="سفارشات" />
+              <DashboardListItem icon={<AccountCircleIcon />} text="کاربران" />
+              <DashboardListItem icon={<LocalMallIcon />} text="محصولات" />
+              <DashboardListItem icon={<LocalAtmIcon />} text="سفارشات" />
             </ListItem>
           </List>
         </Drawer>
