@@ -77,7 +77,7 @@ function AdminDashboard() {
           <Toolbar />
           <Divider />
           <List>
-            <ListItem dir="rtl" disablePadding sx={{ display: "flex", flexDirection: "column" }}>
+            <ListItem dir="rtl" disablePadding sx={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
               <DashboardListItem icon={<InboxIcon />} text="کاربران" />
               <DashboardListItem icon={<InboxIcon />} text="محصولات" />
               <DashboardListItem icon={<InboxIcon />} text="سفارشات" />
