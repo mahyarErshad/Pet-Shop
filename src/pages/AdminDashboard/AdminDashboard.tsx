@@ -24,6 +24,7 @@ const drawerWidth = 240;
 
 function AdminDashboard() {
   const { userEmail } = useSelector((state: any) => state.loggedIn);
+  const [state, setState] = React.useState<string>("products");
   const navigate = useNavigate();
   const dispatch = useDispatch();
   React.useEffect(() => {
@@ -80,9 +81,15 @@ function AdminDashboard() {
           <Divider />
           <List>
             <ListItem dir="rtl" disablePadding sx={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
-              <DashboardListItem icon={<AccountCircleIcon />} text="کاربران" />
-              <DashboardListItem icon={<LocalMallIcon />} text="محصولات" />
-              <DashboardListItem icon={<LocalAtmIcon />} text="سفارشات" />
+              <Box onClick={() => setState("users")}>
+                <DashboardListItem icon={<AccountCircleIcon />} text="کاربران" />
+              </Box>
+              <Box onClick={() => setState("products")}>
+                <DashboardListItem icon={<LocalMallIcon />} text="محصولات" />
+              </Box>
+              <Box onClick={() => setState("orders")}>
+                <DashboardListItem icon={<LocalAtmIcon />} text="سفارشات" />
+              </Box>
             </ListItem>
           </List>
         </Drawer>
