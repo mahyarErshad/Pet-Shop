@@ -11,8 +11,8 @@ function DashboardListItem(props: IProps) {
   return (
     <>
       <ListItemButton sx={{ display: "flex", justifyContent: "flex-start", alignItems: "center", gap: "0.5rem" }}>
-        <InboxIcon />
-        <Typography sx={{ fontSize: "1rem", fontWeight: "bold" }}>کاربران</Typography>
+        {icon}
+        <Typography sx={{ fontSize: "1rem", fontWeight: "bold" }}>{text}</Typography>
       </ListItemButton>
     </>
   );
