@@ -80,14 +80,12 @@ function AdminDashboard() {
           <Toolbar />
           <Divider />
           <List>
-            {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-              <ListItem key={text} disablePadding>
-                <ListItemButton>
-                  <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                  <ListItemText primary={text} />
-                </ListItemButton>
-              </ListItem>
-            ))}
+            <ListItem dir="rtl" disablePadding>
+              <ListItemButton sx={{ display: "flex", justifyContent: "flex-start", alignItems: "center", gap: "0.5rem" }}>
+                <InboxIcon />
+                <Typography sx={{ fontSize: "1rem", fontWeight: "bold" }}>کاربران</Typography>
+              </ListItemButton>
+            </ListItem>
           </List>
         </Drawer>
       </Box>
