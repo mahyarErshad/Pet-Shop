@@ -7,8 +7,11 @@ function DashboardUsers() {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        setUsers(data.users);
       })
       .catch((error) => console.log(error));
+    console.log(users);
+    // eslint-disable-next-line
   }, []);
   return (
     <div>
