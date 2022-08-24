@@ -1,7 +1,7 @@
 const mockUsers = [
   {
     email: "mahyar.ershad92@gmail.com",
-    password: "123456",
+    password: "09120343545",
     cart: [],
   },
 ];
