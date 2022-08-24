@@ -30,9 +30,6 @@ function DashboardUsers() {
                   <Button onClick={() => handleDelete(user.email)} sx={{ height: "2.5rem" }} variant="outlined" color="error">
                     حذف
                   </Button>
-                  <Button sx={{ height: "2.5rem" }} variant="outlined" color="secondary">
-                    ویرایش
-                  </Button>
                 </Box>
               </Box>
             );
