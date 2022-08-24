@@ -13,10 +13,7 @@ import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
 import { changeModalState } from "../../redux/slice/modalSlice";
 import { Button } from "@mui/material";
 import CustomModal from "../../components/Utils/CustomModal/CustomModal";
@@ -80,12 +77,7 @@ function AdminDashboard() {
           <Toolbar />
           <Divider />
           <List>
-            <ListItem dir="rtl" disablePadding>
-              <ListItemButton sx={{ display: "flex", justifyContent: "flex-start", alignItems: "center", gap: "0.5rem" }}>
-                <InboxIcon />
-                <Typography sx={{ fontSize: "1rem", fontWeight: "bold" }}>کاربران</Typography>
-              </ListItemButton>
-            </ListItem>
+            <ListItem dir="rtl" disablePadding></ListItem>
           </List>
         </Drawer>
       </Box>
