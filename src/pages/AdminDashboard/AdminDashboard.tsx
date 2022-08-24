@@ -20,7 +20,7 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
 import LocalAtmIcon from "@mui/icons-material/LocalAtm";
 
-const drawerWidth = 240;
+const drawerWidth = 140;
 
 function AdminDashboard() {
   const { userEmail } = useSelector((state: any) => state.loggedIn);
