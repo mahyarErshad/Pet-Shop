@@ -61,7 +61,7 @@ function Bill() {
           <BillCalculate text="تخفیف:" fee={cartHistory.discount} discount />
           <BillCalculate text="قابل پرداخت:" fee={cartHistory.total - cartHistory.discount} />
           {userEmail === "admin@admin" && (
-            <Box className="noDecoration" component={Link} to="/dashboard">
+            <Box sx={{ mt: "1rem" }} className="noDecoration" component={Link} to="/dashboard">
               <Button variant="contained" color="secondary">
                 بازگشت
               </Button>
