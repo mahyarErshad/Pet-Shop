@@ -20,6 +20,7 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
 import LocalAtmIcon from "@mui/icons-material/LocalAtm";
 import DashboardUsers from "./DashboardUsers";
+import DashboardProducts from "./DashboardProducts";
 
 const drawerWidth = 140;
 
@@ -64,6 +65,7 @@ function AdminDashboard() {
         <Box component="main" sx={{ flexGrow: 1, bgcolor: "background.default", p: 3 }}>
           <Toolbar />
           {state === "users" && <DashboardUsers />}
+          {state === "products" && <DashboardProducts />}
         </Box>
         <Drawer
           sx={{
