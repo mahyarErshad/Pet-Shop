@@ -49,6 +49,9 @@ export function makeServer({ environment = "test" } = {}) {
       this.get("/products/all", (schema) => {
         return schema.products.all();
       });
+      this.get("/users/all", (schema) => {
+        return schema.users.all();
+      });
 
       this.get("/products/single/:id", (schema, request) => {
         let id = request.params.id;

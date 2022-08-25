@@ -20,6 +20,7 @@ import Products from "./pages/Products/Main/Products";
 import SingleProduct from "./pages/SingleProduct/SingleProduct";
 import Cart from "./pages/Cart/Cart";
 import Bill from "./pages/Bill/Bill";
+import AdminDashboard from "./pages/AdminDashboard/AdminDashboard";
 
 // CSS
 import "./Style/ResetCSS/reset.css";
@@ -33,6 +34,7 @@ import { calculateTotal } from "./redux/slice/cartReducer";
 function App() {
   const dispatch = useDispatch();
   const cartItems = useSelector((state: any) => state.cart.cartItems);
+  const { userEmail } = useSelector((state: any) => state.loggedIn);
   useEffect(() => {
     dispatch(calculateTotal()); // eslint-disable-next-line
   }, [cartItems]);
@@ -40,7 +42,7 @@ function App() {
     <>
       <ThemeProvider theme={theme}>
         <BrowserRouter>
-          <Header />
+          {userEmail !== "admin@admin" && <Header />}
           <Routes>
             <Route path="/" element={<Main />} />
             <Route path="/register" element={<Register />} />
@@ -54,9 +56,10 @@ function App() {
             <Route path="/product/:id" element={<SingleProduct />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/bill/:id" element={<Bill />} />
+            <Route path="/dashboard" element={<AdminDashboard />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
-          <Footer />
+          {userEmail !== "admin@admin" && <Footer />}
         </BrowserRouter>
       </ThemeProvider>
     </>

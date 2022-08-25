@@ -61,6 +61,7 @@ const btnStyle = { width: "5rem", mt: "1.5rem" };
 export default function CustomModal() {
   const { isOpen, message } = useSelector((state: any) => state.modal);
   const { total, discountCode, phrase } = useSelector((state: any) => state.cart);
+  const { userEmail } = useSelector((state: any) => state.loggedIn);
   const discountValue = discountCode.find((item: any) => item.name === phrase);
   const discount = discountValue ? total * discountValue.discount : 0;
   const dispatch = useDispatch();
@@ -146,6 +147,7 @@ export default function CustomModal() {
                         id,
                         total,
                         discount,
+                        user: userEmail,
                       })
                     );
                     dispatch(setDiscountInactive());
