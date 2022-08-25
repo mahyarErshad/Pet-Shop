@@ -27,7 +27,7 @@ const drawerWidth = 140;
 
 function AdminDashboard() {
   const { userEmail } = useSelector((state: any) => state.loggedIn);
-  const [state, setState] = React.useState<string>("products");
+  const [state, setState] = React.useState<string>("users");
   const navigate = useNavigate();
   const dispatch = useDispatch();
   React.useEffect(() => {
