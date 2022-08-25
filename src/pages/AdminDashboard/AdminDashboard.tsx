@@ -21,6 +21,7 @@ import LocalMallIcon from "@mui/icons-material/LocalMall";
 import LocalAtmIcon from "@mui/icons-material/LocalAtm";
 import DashboardUsers from "./DashboardUsers";
 import DashboardProducts from "./DashboardProducts";
+import DashboardCartHistory from "./DashboardCartHistory";
 
 const drawerWidth = 140;
 
@@ -66,6 +67,7 @@ function AdminDashboard() {
           <Toolbar />
           {state === "users" && <DashboardUsers />}
           {state === "products" && <DashboardProducts />}
+          {state === "orders" && <DashboardCartHistory />}
         </Box>
         <Drawer
           sx={{
