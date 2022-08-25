@@ -23,7 +23,7 @@ function DashboardUsers() {
         {users.length &&
           users.map((user: any) => {
             return (
-              <Box sx={{ px: "0.5rem", border: "solid 1px #000", height: "3rem", borderRadius: "8px", display: "flex", justifyContent: "flex-start", alignItems: "center", flexDirection: "row-reverse", gap: "3rem" }}>
+              <Box key={user.email} sx={{ px: "0.5rem", border: "solid 1px #000", height: "3rem", borderRadius: "8px", display: "flex", justifyContent: "flex-start", alignItems: "center", flexDirection: "row-reverse", gap: "3rem" }}>
                 <Typography>{user.email}</Typography>
                 <Typography>{user.password}</Typography>
                 <Box sx={{ display: "flex", gap: ".5rem" }}>
