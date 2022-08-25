@@ -1,20 +1,21 @@
-import { Typography } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import { Box, useTheme } from "@mui/system";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import BillCalculate from "../../components/Utils/BillItems/BillCalculate";
 import BillItems from "../../components/Utils/BillItems/BillItems";
 import { persian } from "../../functions/functions";
 import NotFound from "../NotFound/NotFound";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import "../../Style/global/style.css";
 
 function Bill() {
   const theme = useTheme();
   const { id } = useParams();
   const { history } = useSelector((state: any) => state.cart);
-  const { loggedIn } = useSelector((store: any) => store.loggedIn);
+  const { loggedIn, userEmail } = useSelector((store: any) => store.loggedIn);
   const [notFound, setNotFound] = useState<boolean>(true);
   const cartHistory = history.find((product: any) => product.cartID.toString() === id);
   const navigate = useNavigate();
@@ -59,6 +60,13 @@ function Bill() {
           <BillCalculate text="جمع کل:" fee={cartHistory.total} />
           <BillCalculate text="تخفیف:" fee={cartHistory.discount} discount />
           <BillCalculate text="قابل پرداخت:" fee={cartHistory.total - cartHistory.discount} />
+          {userEmail === "admin@admin" && (
+            <Box className="noDecoration" component={Link} to="/dashboard">
+              <Button variant="contained" color="secondary">
+                بازگشت
+              </Button>
+            </Box>
+          )}
         </Box>
       </>
     );
