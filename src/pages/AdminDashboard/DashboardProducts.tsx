@@ -19,13 +19,13 @@ function DashboardProducts() {
   }
   return (
     <>
-      <Box sx={{ display: "flex", flexDirection: "column" }}>
+      <Box sx={{ display: "flex", flexDirection: "column", overflow: "auto" }}>
         {products.length &&
           products.map((product: any) => {
             return (
               <Box sx={{ px: "0.5rem", border: "solid 1px #000", height: "3rem", borderRadius: "8px", display: "flex", justifyContent: "flex-start", alignItems: "center", flexDirection: "row-reverse", gap: "3rem" }}>
-                <Typography>{product.email}</Typography>
-                <Typography>{product.password}</Typography>
+                <Typography>{product.title}</Typography>
+                <Typography>{product.price}</Typography>
                 <Box sx={{ display: "flex", gap: ".5rem" }}>
                   <Button onClick={() => handleDelete(product.id)} sx={{ height: "2.5rem" }} variant="outlined" color="error">
                     حذف
