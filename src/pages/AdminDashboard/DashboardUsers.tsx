@@ -13,10 +13,7 @@ function DashboardUsers() {
       .catch((error) => console.log(error));
     // eslint-disable-next-line
   }, []);
-  function handleDelete(email: string) {
-    const filteredUsers = users.filter((item: any) => item.email !== email);
-    setUsers(filteredUsers);
-  }
+
   return (
     <>
       <Box sx={{ display: "flex", flexDirection: "column" }}>
@@ -26,11 +23,6 @@ function DashboardUsers() {
               <Box key={user.email} sx={{ px: "0.5rem", border: "solid 1px #000", height: "3rem", borderRadius: "8px", display: "flex", justifyContent: "flex-start", alignItems: "center", flexDirection: "row-reverse", gap: "3rem" }}>
                 <Typography>{user.email}</Typography>
                 <Typography>{user.password}</Typography>
-                <Box sx={{ display: "flex", gap: ".5rem" }}>
-                  <Button onClick={() => handleDelete(user.email)} sx={{ height: "2.5rem" }} variant="outlined" color="error">
-                    حذف
-                  </Button>
-                </Box>
               </Box>
             );
           })}
