@@ -27,9 +27,12 @@ function DashboardProducts() {
                     {product.title}
                   </Typography>
                 </Box>
-                <Box sx={{ width: { xs: "40%", sm: "45%", md: "40%" }, display: "flex", flexDirection: { xs: "column-reverse", sm: "row-reverse" }, gap: "0.5rem", justifyContent: { xs: "center", sm: "flex-start" }, alignItems: "center" }}>
+                <Box sx={{ width: { xs: "40%", sm: "45%", md: "40%" }, display: "flex", flexDirection: { xs: "column-reverse", sm: "row-reverse" }, gap: "1.5rem", justifyContent: { xs: "center", sm: "flex-start" }, alignItems: "center" }}>
                   <Typography dir="rtl" variant="h5" sx={{ fontSize: "1rem", fontWeight: "normal", textAlign: "center", whiteSpace: "nowrap", overflow: "hidden" }}>
                     {separateNumber(product.price)} تومان
+                  </Typography>
+                  <Typography dir="rtl" variant="h5" sx={{ fontSize: "1rem", fontWeight: "normal", textAlign: "center", whiteSpace: "nowrap", overflow: "hidden" }}>
+                    {separateNumber(product.balance)} عدد
                   </Typography>
                 </Box>
               </Box>
