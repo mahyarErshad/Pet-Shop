@@ -7,7 +7,7 @@ import usePagination from "../../functions/Pagination";
 function DashboardProducts() {
   const [products, setProducts] = useState<any[]>([]);
   const [page, setPage] = useState<number>(1);
-  const PER_PAGE = 6;
+  const PER_PAGE = 7;
   const count = Math.ceil(products.length / PER_PAGE);
   const _DATA = usePagination(products, PER_PAGE);
   useEffect(() => {
@@ -28,7 +28,7 @@ function DashboardProducts() {
   };
   return (
     <>
-      <Box sx={{ display: "flex", flexDirection: "column", overflow: "scroll", height: "85vh" }}>
+      <Box sx={{ display: "flex", flexDirection: "column", height: "85vh" }}>
         {products.length &&
           _DATA.currentData().map((product: any) => {
             return (
