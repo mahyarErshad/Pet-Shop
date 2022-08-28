@@ -1,4 +1,4 @@
-import { Pagination, Stack, Typography } from "@mui/material";
+import { FormControl, InputLabel, MenuItem, Pagination, Select, SelectChangeEvent, Stack, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useEffect, useState } from "react";
 import { goToTop, separateNumber } from "../../functions/functions";
@@ -26,8 +26,21 @@ function DashboardProducts() {
     _DATA.jump(p);
     goToTop();
   };
+  const [sort, setSort] = useState<string>("old");
+  console.log(sort);
+
+  const handleSort = (event: SelectChangeEvent) => {
+    setSort(event.target.value as string);
+  };
   return (
     <>
+      <FormControl fullWidth>
+        <InputLabel id="sortSelect">دسته بندی</InputLabel>
+        <Select labelId="sortSelect" id="demo-simple-select" value={sort} label="دسته بندی" onChange={handleSort}>
+          <MenuItem value={"new"}>جدیدترین</MenuItem>
+          <MenuItem value={"old"}>قدیمی ترین</MenuItem>
+        </Select>
+      </FormControl>
       <Box sx={{ display: "flex", flexDirection: "column", height: "85vh" }}>
         {products.length &&
           _DATA.currentData().map((product: any) => {
