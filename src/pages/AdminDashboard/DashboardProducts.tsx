@@ -7,7 +7,7 @@ import usePagination from "../../functions/Pagination";
 function DashboardProducts() {
   const [products, setProducts] = useState<any[]>([]);
   const [page, setPage] = useState<number>(1);
-  const PER_PAGE = 7;
+  const PER_PAGE = 6;
   const count = Math.ceil(products.length / PER_PAGE);
   const _DATA = usePagination(products, PER_PAGE);
   useEffect(() => {
