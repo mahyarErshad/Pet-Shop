@@ -6,6 +6,7 @@ import usePagination from "../../functions/Pagination";
 
 function DashboardProducts() {
   const [products, setProducts] = useState<any[]>([]);
+  const [sort, setSort] = useState<string>("old");
   const [page, setPage] = useState<number>(1);
   const PER_PAGE = 6;
   const count = Math.ceil(products.length / PER_PAGE);
@@ -21,26 +22,38 @@ function DashboardProducts() {
       .catch((error) => console.log(error));
     // eslint-disable-next-line
   }, []);
+  useEffect(() => {
+    const sortedProducts = [...products];
+    sortedProducts.reverse();
+    setProducts(sortedProducts);
+    // eslint-disable-next-line
+  }, [sort]);
   const handleChange = (e: any, p: number) => {
     setPage(p);
     _DATA.jump(p);
     goToTop();
   };
-  const [sort, setSort] = useState<string>("old");
-  console.log(sort);
 
   const handleSort = (event: SelectChangeEvent) => {
     setSort(event.target.value as string);
   };
   return (
     <>
-      <FormControl fullWidth>
-        <InputLabel id="sortSelect">دسته بندی</InputLabel>
-        <Select labelId="sortSelect" id="demo-simple-select" value={sort} label="دسته بندی" onChange={handleSort}>
-          <MenuItem value={"new"}>جدیدترین</MenuItem>
-          <MenuItem value={"old"}>قدیمی ترین</MenuItem>
-        </Select>
-      </FormControl>
+      <Box sx={{ width: "100%", display: "flex", justifyContent: "flex-end" }}>
+        <FormControl dir="rtl">
+          <InputLabel dir="rtl" id="sortSelect">
+            دسته بندی
+          </InputLabel>
+          <Select dir="rtl" labelId="sortSelect" id="demo-simple-select" value={sort} label="دسته بندی" onChange={handleSort}>
+            <MenuItem dir="rtl" value={"new"}>
+              جدیدترین
+            </MenuItem>
+            <MenuItem dir="rtl" value={"old"}>
+              قدیمی ترین
+            </MenuItem>
+          </Select>
+        </FormControl>
+      </Box>
       <Box sx={{ display: "flex", flexDirection: "column", height: "85vh" }}>
         {products.length &&
           _DATA.currentData().map((product: any) => {
