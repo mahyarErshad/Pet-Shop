@@ -20,17 +20,14 @@ function DashboardProducts() {
         {products.length &&
           products.map((product: any) => {
             return (
-              <Box key={product.id} sx={{ px: "0.5rem", border: "solid 1px #000", height: "3rem", borderRadius: "8px", display: "flex", justifyContent: "flex-start", alignItems: "center", flexDirection: "row-reverse", gap: "5rem" }}>
-                <Box sx={{ maxWidth: "70%", display: "flex", flexDirection: "row-reverse", gap: "0.2rem", justifyContent: "flex-start", alignItems: "center" }}>
+              <Box sx={{ width: { xs: "100%", sm: "100%", md: "70%", lg: "60%" }, display: "flex", flexWrap: "wrap", flexDirection: "row-reverse", justifyContent: "space-between", alignItems: "center", gap: "0.5rem", borderRadius: "16px", border: "1px solid #ECEFF1", p: "0.5rem", alignSelf: "center" }}>
+                <Box sx={{ width: { xs: "50%", sm: "40%", md: "50%" }, display: "flex", flexDirection: "row-reverse", gap: "0.2rem", justifyContent: "flex-start", alignItems: "center" }}>
                   <Box component="img" src={product.image} alt="تصویر محصول" sx={{ width: "3rem", height: "3rem", borderRadius: "50%" }} />
                   <Typography dir="rtl" variant="h5" sx={{ fontSize: "1rem", color: "#000", fontWeight: "normal", textOverflow: "ellipsis", overflow: "hidden" }}>
                     {product.title}
                   </Typography>
                 </Box>
-                <Box sx={{ width: "25%", display: "flex", flexDirection: { xs: "column-reverse", sm: "row-reverse" }, gap: "4rem", justifyContent: { xs: "center", sm: "flex-start" }, alignItems: "center" }}>
-                  <Typography dir="rtl" variant="h5" sx={{ fontSize: "1rem", fontWeight: "normal", textAlign: "center", whiteSpace: "nowrap", overflow: "hidden" }}>
-                    {separateNumber(product.balance)} عدد
-                  </Typography>
+                <Box sx={{ width: { xs: "40%", sm: "45%", md: "40%" }, display: "flex", flexDirection: { xs: "column-reverse", sm: "row-reverse" }, gap: "0.5rem", justifyContent: { xs: "center", sm: "flex-start" }, alignItems: "center" }}>
                   <Typography dir="rtl" variant="h5" sx={{ fontSize: "1rem", fontWeight: "normal", textAlign: "center", whiteSpace: "nowrap", overflow: "hidden" }}>
                     {separateNumber(product.price)} تومان
                   </Typography>
