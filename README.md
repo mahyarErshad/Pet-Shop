@@ -3,7 +3,7 @@ This project has no backend or data base and uses Mirage.js for a backend simula
 
 # Discount Code
 For discount code you can use one of these codes:  
-phoenix10 (for 10% discount)
+phoenix10 (for 10% discount)  
 phoenix20 (for 20% discount)
 
 # Getting Started with Create React App 
