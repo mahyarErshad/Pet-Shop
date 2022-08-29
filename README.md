@@ -9,6 +9,8 @@ phoenix20 (for 20% discount)
 # Admin Dashboard
 In Login/Register page use admin@admin email address and enter any password you want to see the admin dashboard. You can't add, edit or delete anything there!
 
+### Dedicated to my beloved cat, Phoenix
+
 
 # Getting Started with Create React App 
 
