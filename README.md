@@ -1,6 +1,11 @@
 # Note that 
 This project has no backend or data base and uses Mirage.js for a backend simulation so creating an account, your purchase history, products quantity and else will not be permanent.
 
+# Discount Code
+For discount code you can use one of these codes:  
+phoenix10 (for 10% discount)
+phoenix20 (for 20% discount)
+
 # Getting Started with Create React App 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). 
