@@ -4,7 +4,11 @@ This project has no backend or data base and uses Mirage.js for a backend simula
 # Discount Code
 For discount code you can use one of these codes:  
 phoenix10 (for 10% discount)  
-phoenix20 (for 20% discount)
+phoenix20 (for 20% discount)  
+
+# Admin Dashboard
+In Login/Register page use admin@admin email address and enter any password you want to see the admin dashboard. You can't add, edit or delete anything there!
+
 
 # Getting Started with Create React App 
 
