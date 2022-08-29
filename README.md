@@ -7,7 +7,7 @@ phoenix10 (for 10% discount)
 phoenix20 (for 20% discount)  
 
 # Admin Dashboard
-In Login/Register page use admin@admin email address and enter any password you want to see the admin dashboard. You can't add, edit or delete anything there!
+In Login/Register page use admin@admin email address and enter any password you want to see the admin dashboard. You can't add, edit or delete anything there, just watch it!
 
 ### Dedicated to my beloved cat, Phoenix
 
