@@ -1,5 +1,5 @@
 # Note that 
-This project has no backend or data base and uses Mirage.js for a backend simulation so creating an account, your purchase history, products quantity and else will not be permanent.
+This project has no backend or data base and uses Mirage.js for a backend simulation so creating an account, your purchase history, products quantity and else will not be permanent. 
 
 # Discount Code
 For discount code you can use one of these codes:  
